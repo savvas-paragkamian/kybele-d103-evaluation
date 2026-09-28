@@ -1,9 +1,9 @@
 # KYBELE D10.3 evaluation: Collembola trait question answering
 
 This repository publishes the scripts, benchmark and results of deliverable D10.3 of KYBELE
-(Knowledge Yield from BiodivΕrsity Literature through LLM Extraction), an ELIXIR-funded project
-(January–December 2026; ELIXIR Greece, Italy and Switzerland; leads Stelios Ninidakis,
-HCMR / ELIXIR Greece, and Patrick Ruch, SIB / HES-SO, ELIXIR Switzerland). D10.3 is titled
+(Knowledge Yield from BiodivErsity Literature through LLM Extraction), an ELIXIR-funded project
+(January–December 2026; ELIXIR Greece, Italy and Switzerland; leads Stelios Ninidakis and
+Patrick Ruch). D10.3 is titled
 "Model evaluation results based on a curated sample of taxonomic treatments (N>100 instances)
 and the actions to optimize the entire system". It evaluates the SIB / SIBiLS biomedical and
 biodiversity question-answering service (API `https://qa.sibils.org/api`, code
@@ -136,10 +136,9 @@ valid answer per question and configuration is scored; failed requests are ignor
 
 To re-score the published runs, pass `results/traits_main/runs.jsonl` (or
 `results/traits_repeat/runs.jsonl`) and an empty folder. This reproduces `summary.json`,
-`scored.csv` and `summary_traits.json` of both runs exactly. `results/traits_main/scored_traits.csv`
-was written by an earlier version of `score_traits.py` and lacks the `plazi_food` and
-`top_food` columns; all other values are identical. `results/traits_main/runs.jsonl` also
-contains runs for questions of an earlier benchmark version, which the scorers skip.
+`scored.csv`, `scored_traits.csv` and `summary_traits.json` of both runs exactly.
+`results/traits_main/runs.jsonl` also contains runs for questions of an earlier benchmark
+version, which the scorers skip.
 
 **Trait-level outcomes** (`score_traits.py`). Each answer is read the way the trait pipeline
 would read it:

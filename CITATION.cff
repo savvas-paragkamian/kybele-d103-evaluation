@@ -2,21 +2,19 @@ cff-version: 1.2.0
 message: "If you use this benchmark, code or results, please cite them as below."
 title: "KYBELE D10.3 evaluation: Collembola trait question-answering benchmark and results"
 type: software
-# Author list to be completed.
+# Author list, affiliations and ORCIDs to be completed.
 authors:
   - family-names: Ninidakis
     given-names: Stelios
-    affiliation: "Hellenic Centre for Marine Research (HCMR), ELIXIR Greece"
   - family-names: Ruch
     given-names: Patrick
-    affiliation: "SIB Swiss Institute of Bioinformatics / HES-SO, ELIXIR Switzerland"
 version: 1.0.0-draft
 license: MIT
 # repository-code: "https://github.com/[TBC]/kybele-d103-evaluation"
 # doi: "[TBC: Zenodo DOI]"
 abstract: >-
   Benchmark, scripts and results of deliverable D10.3 of the ELIXIR-funded KYBELE project
-  (Knowledge Yield from BiodivΕrsity Literature through LLM Extraction): an evaluation of the
+  (Knowledge Yield from BiodivErsity Literature through LLM Extraction): an evaluation of the
   SIBiLS biomedical and biodiversity question-answering service on 126 curated questions about
   body size, habitat and trophic guild of Collembola (springtails), drawn from Plazi taxonomic
   treatments.
