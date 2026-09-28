@@ -1,0 +1,1264 @@
+15:12:01 KYBELE D10.3 evaluation runner, output folder: ./kybele_d103
+15:12:01 Probe: SIBiLS Plazi search ...
+15:12:02       3 hits; first _source fields: ['annotations', 'article-title', 'docid', 'ftp_archive_id', 'nomenclature-taxon-name', 'publication-doi', 'taxon_name', 'text', 'treatment-bank-uri', 'treatment_title', 'zenodo-doi']
+15:12:02       first: 'Mucronia enigmatica Fjellberg, 2010, sp. n.', text length 5787, species 'Mucronia enigmatica'
+15:12:02 Probe: QA service ...
+15:12:50       https://qa.dev.sibils.org/api/health: HTTP 503 <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>503 Service Unavailable</title>
+</head><body>
+<h1>Service Unavailable</h1>
+<p>The server is temporarily unable to service your
+request due to maintenance downtime or capacity
+problems. Please try again later.</p>
+<p>Additionally,
+15:12:50       https://qa.dev.sibils.org/health: HTTP 404 <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>404 Not Found</title>
+</head><body>
+<h1>Not Found</h1>
+<p>The requested URL was not found on this server.</p>
+<p>Additionally, a 404 Not Found
+error was encountered while trying to use an ErrorDocument to handle the request.</p>
+
+15:13:07 KYBELE D10.3 evaluation runner, output folder: ./kybele_d103
+15:13:07 [1/3] Searching the SIBiLS Plazi collection for Collembola treatments ...
+15:13:10       (1/34) 'Hypogastruridae': 100 hits, 100 new
+15:13:13       (2/34) 'Neanuridae': 100 hits, 95 new
+15:13:17       (3/34) 'Onychiuridae': 100 hits, 79 new
+15:13:20       (4/34) 'Tullbergiidae': 61 hits, 58 new
+15:13:22       (5/34) 'Odontellidae': 26 hits, 21 new
+15:13:24       (6/34) 'Brachystomellidae': 20 hits, 20 new
+15:13:26       (7/34) 'Poduridae': 5 hits, 4 new
+15:13:31       (8/34) 'Isotomidae': 100 hits, 90 new
+15:13:35       (9/34) 'Entomobryidae': 100 hits, 92 new
+15:13:38       (10/34) 'Orchesellidae': 39 hits, 33 new
+15:13:40       (11/34) 'Lepidocyrtidae': 0 hits, 0 new
+15:13:45       (12/34) 'Paronellidae': 100 hits, 87 new
+15:13:47       (13/34) 'Cyphoderidae': 10 hits, 8 new
+15:13:51       (14/34) 'Tomoceridae': 86 hits, 76 new
+15:13:53       (15/34) 'Oncopoduridae': 17 hits, 16 new
+15:13:55       (16/34) 'Isotogastruridae': 4 hits, 2 new
+15:13:57       (17/34) 'Sminthuridae': 49 hits, 46 new
+15:13:59       (18/34) 'Katiannidae': 11 hits, 8 new
+15:14:00       (19/34) 'Dicyrtomidae': 7 hits, 6 new
+15:14:02       (20/34) 'Bourletiellidae': 17 hits, 13 new
+15:14:04       (21/34) 'Sminthurididae': 18 hits, 16 new
+15:14:08       (22/34) 'Arrhopalitidae': 100 hits, 97 new
+15:14:10       (23/34) 'Neelidae': 34 hits, 29 new
+15:14:12       (24/34) 'Mackenziellidae': 1 hits, 1 new
+15:14:13       (25/34) 'Spinothecidae': 0 hits, 0 new
+15:14:15       (26/34) 'Actaletidae': 0 hits, 0 new
+15:14:16       (27/34) 'Coenaletidae': 2 hits, 2 new
+15:14:18       (28/34) 'Protentomobryidae': 0 hits, 0 new
+15:14:21       (29/34) 'Collembola new species': 100 hits, 63 new
+15:14:24       (30/34) 'Collembola sp. nov.': 100 hits, 78 new
+15:14:29       (31/34) 'Collembola redescription': 100 hits, 48 new
+15:14:32       (32/34) 'springtail new species': 45 hits, 27 new
+15:14:38       (33/34) 'Collembola Europe new species': 100 hits, 67 new
+15:14:44       (34/34) 'Collembola cave': 100 hits, 35 new
+15:14:45       fetching full text for 36 treatments with no text in search results ...
+15:15:37       kept 859 species-level Collembola treatments with text
+15:15:38 [2/3] Built 150 candidate questions: {'body_length': 26, 'etymology': 27, 'type_locality': 25, 'habitat': 25, 'distribution': 25, 'holotype_depository': 22}
+15:15:38 [3/3] Querying the QA system ...
+15:16:25       https://qa.dev.sibils.org/api/health: HTTP 503 <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>503 Service Unavailable</title>
+</head><body>
+<h1>Service Unavailable</h1>
+<p>The server is temporarily unable to service your
+request due to maintenance downtime or capacity
+problems. Please try again later.</p>
+<p>Additionally,
+15:16:25       https://qa.dev.sibils.org/health: HTTP 404 <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>404 Not Found</title>
+</head><body>
+<h1>Not Found</h1>
+<p>The requested URL was not found on this server.</p>
+<p>Additionally, a 404 Not Found
+error was encountered while trying to use an ErrorDocument to handle the request.</p>
+
+15:16:47       https://qa.dev.sibils.org/api/qa/multi: HTTP 503 <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>503 Service Unavailable</title>
+</head><body>
+<h1>Service Unavailable</h1>
+<p>The server is temporarily unable to service your
+request due to maintenance downtime or capacity
+problems. Please try again later.</p>
+<p>Additionally,
+15:16:47       https://qa.dev.sibils.org/qa/multi: HTTP 404 <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>404 Not Found</title>
+</head><body>
+<h1>Not Found</h1>
+<p>The requested URL was not found on this server.</p>
+<p>Additionally, a 404 Not Found
+error was encountered while trying to use an ErrorDocument to handle the request.</p>
+
+15:16:47       Could not reach the QA service at qa.dev.sibils.org. Check your connection or VPN and re-run.
+15:16:47 Done. Upload this file to the chat: ./kybele_d103_results.zip (1.5 MB)
+20:33:18 KYBELE D10.3 evaluation runner, output folder: ./kybele_d103
+20:33:18 [1/3] Reusing 859 sampled treatments from kybele_d103/treatments.jsonl
+20:33:18 [2/3] STOP: kybele_d103/candidates.csv is the uncurated version. Replace it with the curated candidates.csv from the chat (139 questions) and run the command again.
+20:33:57 KYBELE D10.3 evaluation runner, output folder: ./kybele_d103
+20:33:57 [1/3] Reusing 859 sampled treatments from kybele_d103/treatments.jsonl
+20:33:57 [2/3] STOP: kybele_d103/candidates.csv is the uncurated version. Replace it with the curated candidates.csv from the chat (139 questions) and run the command again.
+20:35:20 KYBELE D10.3 evaluation runner, output folder: ./kybele_d103
+20:35:20 [1/3] Reusing 859 sampled treatments from kybele_d103/treatments.jsonl
+20:35:20 [2/3] Reusing 139 candidate questions from kybele_d103/candidates.csv
+20:35:20 [3/3] Querying the QA system ...
+20:35:20       QA service found at https://qa.sibils.org/api (ready=True, config={'generative_model': 'Qwen/Qwen3-8B-FP8', 'extractive_model': 'ktrapeznikov/biobert_v1.1_pubmed_squad_v2', 'inference_mode': 'gpu', 'use_vllm': True})
+20:35:20       0 of 556 runs already done; 556 to go (roughly 27 min)
+20:35:23       K001 doc_extractive         gold 2.92
+20:35:24       K001 doc_generative         gold 0.69
+20:35:24       K001 e2e_sparse_extractive  ok 4.15s
+20:35:26       K002 doc_extractive         gold 1.61
+20:35:26       K001 e2e_dense_generative   ok 2.66s
+20:35:27       K002 doc_generative         gold 1.02
+20:35:29       K002 e2e_dense_generative   ok 2.56s
+20:35:29       K002 e2e_sparse_extractive  ok 3.11s
+20:35:31       K003 doc_extractive         gold 1.43
+20:35:32       K003 doc_generative         gold 0.93
+20:35:34       K003 e2e_dense_generative   ok 2.15s
+20:35:34       K003 e2e_sparse_extractive  ok 5.01s
+20:35:35       K004 doc_extractive         gold 1.43
+20:35:36       K004 doc_generative         gold 0.71
+20:35:36       K004 e2e_sparse_extractive  ok 1.63s
+20:35:38       K005 doc_extractive         gold 2.04
+20:35:39       K004 e2e_dense_generative   ok 2.65s
+20:35:39       K005 doc_generative         gold 0.6
+20:35:45       K005 e2e_sparse_extractive  ok 6.62s
+20:35:46       K005 e2e_dense_generative   ok 7.06s
+20:35:47       K006 doc_extractive         gold 1.39
+20:35:47       K006 doc_generative         gold 0.8
+20:35:51       K006 e2e_dense_generative   ok 3.7s
+20:35:53       K006 e2e_sparse_extractive  ok 7.06s
+20:35:53       K007 doc_extractive         gold 1.69
+20:35:54       K007 doc_generative         gold 0.77
+20:35:55       K007 e2e_sparse_extractive  ok 1.9s
+20:35:55       progress: 20/417 tasks, 0.6 min elapsed
+20:35:56       K009 doc_extractive         gold 1.48
+20:35:56       K007 e2e_dense_generative   ok 2.81s
+20:35:57       K009 doc_generative         gold 1.02
+20:35:59       K009 e2e_sparse_extractive  ok 2.31s
+20:35:59       K009 e2e_dense_generative   ok 2.25s
+20:36:00       K010 doc_extractive         gold 1.43
+20:36:01       K010 doc_generative         gold 1.02
+20:36:03       K010 e2e_dense_generative   ok 2.19s
+20:36:04       K010 e2e_sparse_extractive  ok 4.41s
+20:36:05       K011 doc_extractive         gold 1.36
+20:36:06       K011 doc_generative         gold 0.85
+20:36:10       K011 e2e_dense_generative   ok 4.5s
+20:36:11       K011 e2e_sparse_extractive  ok 7.2s
+20:36:11       K012 doc_extractive         gold 1.4
+20:36:12       K012 doc_generative         gold 0.58
+20:36:16       K012 e2e_dense_generative   ok 4.37s
+20:36:17       K012 e2e_sparse_extractive  ok 6.13s
+20:36:18       K013 doc_extractive         gold 1.33
+20:36:18       K013 doc_generative         gold 0.72
+20:36:25       K013 e2e_dense_generative   ok 6.59s
+20:36:25       K013 e2e_sparse_extractive  ok 7.9s
+20:36:27       K014 doc_extractive         gold 1.72
+20:36:27       K014 doc_generative         gold 0.44
+20:36:28       K014 e2e_sparse_extractive  ok 2.51s
+20:36:29       K015 doc_extractive         gold 1.95
+20:36:30       K014 e2e_dense_generative   ok 2.58s
+20:36:30       K015 doc_generative         gold 0.8
+20:36:30       progress: 40/417 tasks, 1.2 min elapsed
+20:36:33       K015 e2e_dense_generative   ok 3.14s
+20:36:35       K016 doc_extractive         gold 1.65
+20:36:35       K015 e2e_sparse_extractive  ok 5.46s
+20:36:36       K016 doc_generative         gold 0.55
+20:36:40       K016 e2e_dense_generative   ok 3.99s
+20:36:41       K017 doc_extractive         gold 1.84
+20:36:42       K016 e2e_sparse_extractive  ok 6.75s
+20:36:42       K017 doc_generative         gold 0.55
+20:36:45       K017 e2e_sparse_extractive  ok 2.66s
+20:36:46       K017 e2e_dense_generative   ok 3.54s
+20:36:46       K018 doc_extractive         gold 1.43
+20:36:47       K018 doc_generative         gold 0.92
+20:36:51       K018 e2e_dense_generative   ok 3.58s
+20:36:52       K018 e2e_sparse_extractive  ok 6.14s
+20:36:52       K019 doc_extractive         gold 1.43
+20:36:53       K019 doc_generative         gold 0.61
+20:36:53       K019 e2e_sparse_extractive  ok 1.13s
+20:36:55       K020 doc_extractive         gold 2.66
+20:36:55       K019 e2e_dense_generative   ok 2.87s
+20:36:56       K020 doc_generative         gold 0.61
+20:37:00       K020 e2e_dense_generative   ok 3.89s
+20:37:02       K021 doc_extractive         gold 1.82
+20:37:02       K020 e2e_sparse_extractive  ok 6.76s
+20:37:03       K021 doc_generative         gold 0.95
+20:37:07       K021 e2e_dense_generative   ok 4.2s
+20:37:09       K022 doc_extractive         gold 1.98
+20:37:09       K021 e2e_sparse_extractive  ok 7.07s
+20:37:09       progress: 60/417 tasks, 1.8 min elapsed
+20:37:10       K022 doc_generative         gold 0.78
+20:37:13       K022 e2e_sparse_extractive  ok 3.57s
+20:37:13       K022 e2e_dense_generative   ok 3.79s
+20:37:14       K023 doc_extractive         gold 1.34
+20:37:15       K023 doc_generative         gold 0.61
+20:37:21       K023 e2e_dense_generative   ok 6.15s
+20:37:21       K023 e2e_sparse_extractive  ok 7.89s
+20:37:22       K024 doc_extractive         gold 1.43
+20:37:23       K024 doc_generative         gold 0.82
+20:37:28       K024 e2e_dense_generative   ok 5.02s
+20:37:28       K024 e2e_sparse_extractive  ok 6.89s
+20:37:29       K025 e2e_sparse_extractive  ok 0.99s
+20:37:30       K025 doc_extractive         gold 1.43
+20:37:30       K025 doc_generative         gold 0.62
+20:37:32       K025 e2e_dense_generative   ok 3.07s
+20:37:32       K026 doc_extractive         gold 2.17
+20:37:33       K026 doc_generative         gold 0.8
+20:37:38       K026 e2e_dense_generative   ok 4.4s
+20:37:40       K027 doc_extractive         gold 2.19
+20:37:40       K027 doc_generative         gold 0.58
+20:37:41       K026 e2e_sparse_extractive  ok 8.28s
+20:37:45       K027 e2e_dense_generative   ok 4.01s
+20:37:46       K028 doc_extractive         gold 1.84
+20:37:47       K027 e2e_sparse_extractive  ok 6.57s
+20:37:47       K028 doc_generative         gold 0.58
+20:37:52       K028 e2e_dense_generative   ok 5.05s
+20:37:52       progress: 80/417 tasks, 2.5 min elapsed
+20:37:54       K029 doc_extractive         gold 1.95
+20:37:54       K028 e2e_sparse_extractive  ok 7.04s
+20:37:55       K029 doc_generative         gold 0.51
+20:38:01       K029 e2e_sparse_extractive  ok 6.65s
+20:38:01       K029 e2e_dense_generative   ok 6.22s
+20:38:02       K030 doc_extractive         gold 1.53
+20:38:03       K030 doc_generative         gold 1.13
+20:38:08       K030 e2e_sparse_extractive  ok 7.17s
+20:38:09       K031 doc_extractive         gold 1.46
+20:38:10       K030 e2e_dense_generative   ok 6.66s
+20:38:11       K031 doc_generative         gold 1.64
+20:38:15       K031 e2e_dense_generative   ok 3.58s
+20:38:16       K033 doc_extractive         gold 1.64
+20:38:17       K031 e2e_sparse_extractive  ok 6.65s
+20:38:17       K033 doc_generative         gold 1.02
+20:38:23       K033 e2e_dense_generative   ok 6.04s
+20:38:23       K033 e2e_sparse_extractive  ok 6.66s
+20:38:25       K034 doc_extractive         gold 1.38
+20:38:25       K034 doc_generative         gold 0.72
+20:38:29       K034 e2e_dense_generative   ok 3.73s
+20:38:30       K034 e2e_sparse_extractive  ok 6.64s
+20:38:31       K035 doc_extractive         gold 1.43
+20:38:32       K035 doc_generative         gold 0.92
+20:38:32       K035 e2e_sparse_extractive  ok 1.55s
+20:38:34       K036 doc_extractive         gold 2.71
+20:38:34       K035 e2e_dense_generative   ok 2.84s
+20:38:35       K036 doc_generative         gold 0.53
+20:38:35       progress: 100/417 tasks, 3.2 min elapsed
+20:38:38       K036 e2e_dense_generative   ok 3.11s
+20:38:39       K036 e2e_sparse_extractive  ok 4.63s
+20:38:39       K037 doc_extractive         gold 1.43
+20:38:40       K037 doc_generative         gold 0.83
+20:38:42       K037 e2e_sparse_extractive  ok 2.87s
+20:38:43       K037 e2e_dense_generative   ok 2.49s
+20:38:43       K038 doc_extractive         gold 1.33
+20:38:44       K038 e2e_sparse_extractive  ok 1.49s
+20:38:44       K038 doc_generative         gold 0.92
+20:38:47       K039 doc_extractive         gold 2.56
+20:38:47       K038 e2e_dense_generative   ok 2.88s
+20:38:48       K039 doc_generative         gold 1.13
+20:38:52       K039 e2e_dense_generative   ok 4.05s
+20:38:54       K040 doc_extractive         gold 1.89
+20:38:54       K039 e2e_sparse_extractive  ok 6.91s
+20:38:55       K040 doc_generative         gold 1.13
+20:38:59       K040 e2e_dense_generative   ok 3.69s
+20:39:00       K043 doc_extractive         gold 1.77
+20:39:00       K040 e2e_sparse_extractive  ok 6.54s
+20:39:02       K043 doc_generative         gold 1.35
+20:39:08       K043 e2e_sparse_extractive  ok 7.57s
+20:39:09       K044 doc_extractive         gold 1.39
+20:39:09       K043 e2e_dense_generative   ok 7.8s
+20:39:10       K044 doc_generative         gold 0.92
+20:39:11       K044 e2e_sparse_extractive  ok 1.83s
+20:39:13       K045 doc_extractive         gold 1.37
+20:39:13       K044 e2e_dense_generative   ok 2.45s
+20:39:13       progress: 120/417 tasks, 3.9 min elapsed
+20:39:14       K045 doc_generative         gold 0.88
+20:39:18       K045 e2e_dense_generative   ok 4.24s
+20:39:19       K045 e2e_sparse_extractive  ok 6.13s
+20:39:19       K046 doc_extractive         gold 1.43
+20:39:20       K046 doc_generative         gold 0.66
+20:39:26       K046 e2e_dense_generative   ok 6.02s
+20:39:27       K046 e2e_sparse_extractive  ok 7.7s
+20:39:27       K047 doc_extractive         gold 1.37
+20:39:28       K047 doc_generative         gold 0.55
+20:39:28       K047 e2e_sparse_extractive  ok 1.84s
+20:39:30       K048 doc_extractive         gold 1.96
+20:39:31       K047 e2e_dense_generative   ok 2.83s
+20:39:31       K048 doc_generative         gold 0.71
+20:39:32       K048 e2e_sparse_extractive  ok 1.68s
+20:39:34       K048 e2e_dense_generative   ok 2.66s
+20:39:34       K049 doc_extractive         gold 1.66
+20:39:35       K049 doc_generative         gold 0.8
+20:39:39       K049 e2e_dense_generative   ok 4.51s
+20:39:40       K049 e2e_sparse_extractive  ok 5.79s
+20:39:41       K050 doc_extractive         gold 1.33
+20:39:41       K050 doc_generative         gold 0.51
+20:39:45       K050 e2e_dense_generative   ok 4.3s
+20:39:46       K050 e2e_sparse_extractive  ok 6.49s
+20:39:47       K051 doc_extractive         gold 1.33
+20:39:47       K051 doc_generative         gold 0.62
+20:39:47       K051 e2e_sparse_extractive  ok 1.42s
+20:39:47       progress: 140/417 tasks, 4.5 min elapsed
+20:39:50       K052 doc_extractive         gold 2.16
+20:39:50       K051 e2e_dense_generative   ok 2.39s
+20:39:50       K052 doc_generative         gold 0.72
+20:39:54       K052 e2e_dense_generative   ok 4.09s
+20:39:56       K053 doc_extractive         gold 1.74
+20:39:57       K052 e2e_sparse_extractive  ok 6.83s
+20:39:57       K053 doc_generative         gold 0.82
+20:40:01       K053 e2e_dense_generative   ok 4.3s
+20:40:03       K054 doc_extractive         gold 1.89
+20:40:03       K053 e2e_sparse_extractive  ok 6.73s
+20:40:04       K054 doc_generative         gold 0.57
+20:40:07       K054 e2e_dense_generative   ok 3.42s
+20:40:07       K054 e2e_sparse_extractive  ok 3.91s
+20:40:09       K055 doc_extractive         gold 1.33
+20:40:09       K055 doc_generative         gold 0.65
+20:40:15       K055 e2e_dense_generative   ok 6.2s
+20:40:16       K055 e2e_sparse_extractive  ok 9.03s
+20:40:17       K056 doc_extractive         gold 1.34
+20:40:17       K056 doc_generative         gold 0.71
+20:40:21       K056 e2e_dense_generative   ok 3.97s
+20:40:22       K056 e2e_sparse_extractive  ok 6.14s
+20:40:23       K057 doc_extractive         gold 1.43
+20:40:24       K057 doc_generative         gold 0.82
+20:40:28       K057 e2e_dense_generative   ok 3.89s
+20:40:29       K058 doc_extractive         gold 1.85
+20:40:30       K057 e2e_sparse_extractive  ok 7.27s
+20:40:30       K058 doc_generative         gold 1.01
+20:40:30       progress: 160/417 tasks, 5.2 min elapsed
+20:40:32       K058 e2e_sparse_extractive  ok 1.94s
+20:40:33       K059 doc_extractive         gold 1.8
+20:40:34       K058 e2e_dense_generative   ok 3.44s
+20:40:34       K059 doc_generative         gold 0.86
+20:40:35       K059 e2e_sparse_extractive  ok 0.96s
+20:40:38       K060 doc_extractive         gold 2.76
+20:40:38       K059 e2e_dense_generative   ok 3.68s
+20:40:38       K060 doc_generative         gold 0.5
+20:40:42       K060 e2e_dense_generative   ok 4.1s
+20:40:44       K061 doc_extractive         gold 1.84
+20:40:45       K061 doc_generative         gold 0.72
+20:40:45       K060 e2e_sparse_extractive  ok 6.77s
+20:40:48       K061 e2e_sparse_extractive  ok 2.87s
+20:40:49       K061 e2e_dense_generative   ok 3.88s
+20:40:49       K062 doc_extractive         gold 1.37
+20:40:50       K062 doc_generative         gold 0.95
+20:40:54       K062 e2e_dense_generative   ok 3.72s
+20:40:55       K063 doc_extractive         gold 1.84
+20:40:56       K062 e2e_sparse_extractive  ok 6.92s
+20:40:56       K063 doc_generative         gold 0.72
+20:41:00       K063 e2e_dense_generative   ok 3.58s
+20:41:01       K063 e2e_sparse_extractive  ok 5.47s
+20:41:01       K064 doc_extractive         gold 1.45
+20:41:02       K064 doc_generative         gold 1.21
+20:41:07       K064 e2e_dense_generative   ok 4.79s
+20:41:08       K064 e2e_sparse_extractive  ok 7.06s
+20:41:08       progress: 180/417 tasks, 5.8 min elapsed
+20:41:09       K066 doc_extractive         gold 1.36
+20:41:10       K066 doc_generative         gold 1.21
+20:41:14       K066 e2e_dense_generative   ok 4.4s
+20:41:14       K066 e2e_sparse_extractive  ok 6.14s
+20:41:16       K067 doc_extractive         gold 1.43
+20:41:17       K067 doc_generative         gold 1.02
+20:41:21       K067 e2e_sparse_extractive  ok 6.37s
+20:41:21       K067 e2e_dense_generative   ok 4.61s
+20:41:22       K068 doc_extractive         gold 1.2
+20:41:22       K068 doc_generative         gold 0.61
+20:41:23       K068 e2e_sparse_extractive  ok 2.15s
+20:41:25       K068 e2e_dense_generative   ok 2.46s
+20:41:25       K069 doc_extractive         gold 1.57
+20:41:26       K069 doc_generative         gold 0.88
+20:41:30       K069 e2e_dense_generative   ok 3.84s
+20:41:32       K070 doc_extractive         gold 2.08
+20:41:32       K069 e2e_sparse_extractive  ok 7.24s
+20:41:33       K070 doc_generative         gold 0.74
+20:41:39       K070 e2e_sparse_extractive  ok 7.09s
+20:41:41       K071 doc_extractive         gold 1.43
+20:41:41       K070 e2e_dense_generative   ok 8.81s
+20:41:42       K071 doc_generative         gold 1.43
+20:41:47       K071 e2e_sparse_extractive  ok 5.91s
+20:41:48       K071 e2e_dense_generative   ok 5.73s
+20:41:49       K072 doc_extractive         gold 1.46
+20:41:50       K072 e2e_sparse_extractive  ok 1.84s
+20:41:50       K072 doc_generative         gold 0.97
+20:41:50       progress: 200/417 tasks, 6.5 min elapsed
+20:41:52       K073 doc_extractive         gold 2.0
+20:41:52       K072 e2e_dense_generative   ok 2.68s
+20:41:53       K073 doc_generative         gold 1.33
+20:41:58       K073 e2e_sparse_extractive  ok 5.76s
+20:41:59       K074 doc_extractive         gold 1.38
+20:42:00       K074 doc_generative         gold 0.62
+20:42:01       K073 e2e_dense_generative   ok 7.78s
+20:42:03       K074 e2e_sparse_extractive  ok 3.38s
+20:42:05       K075 doc_extractive         gold 1.43
+20:42:05       K074 e2e_dense_generative   ok 4.61s
+20:42:06       K075 doc_generative         gold 1.03
+20:42:10       K075 e2e_dense_generative   ok 3.92s
+20:42:12       K076 doc_extractive         gold 1.92
+20:42:12       K075 e2e_sparse_extractive  ok 6.45s
+20:42:13       K076 doc_generative         gold 0.82
+20:42:20       K076 e2e_sparse_extractive  ok 7.82s
+20:42:20       K076 e2e_dense_generative   ok 7.68s
+20:42:21       K077 doc_extractive         gold 1.4
+20:42:22       K077 e2e_sparse_extractive  ok 1.39s
+20:42:22       K077 doc_generative         gold 0.62
+20:42:24       K078 doc_extractive         gold 2.3
+20:42:24       K077 e2e_dense_generative   ok 2.49s
+20:42:25       K078 doc_generative         gold 0.75
+20:42:29       K078 e2e_dense_generative   ok 4.0s
+20:42:31       K079 doc_extractive         gold 1.84
+20:42:31       K078 e2e_sparse_extractive  ok 6.54s
+20:42:32       K079 doc_generative         gold 1.02
+20:42:32       progress: 220/417 tasks, 7.2 min elapsed
+20:42:37       K079 e2e_dense_generative   ok 4.91s
+20:42:38       K079 e2e_sparse_extractive  ok 7.21s
+20:42:38       K080 doc_extractive         gold 1.49
+20:42:39       K080 doc_generative         gold 0.66
+20:42:43       K080 e2e_dense_generative   ok 4.2s
+20:42:45       K082 doc_extractive         gold 2.05
+20:42:45       K080 e2e_sparse_extractive  ok 7.29s
+20:42:46       K082 doc_generative         gold 0.61
+20:42:53       K082 e2e_sparse_extractive  ok 7.74s
+20:42:54       K082 e2e_dense_generative   ok 7.99s
+20:42:54       K083 doc_extractive         gold 1.31
+20:42:55       K083 doc_generative         gold 1.15
+20:43:00       K083 e2e_sparse_extractive  ok 6.66s
+20:43:01       K083 e2e_dense_generative   ok 5.11s
+20:43:02       K084 doc_extractive         gold 1.43
+20:43:02       K084 doc_generative         gold 0.61
+20:43:07       K084 e2e_dense_generative   ok 5.17s
+20:43:08       K084 e2e_sparse_extractive  ok 7.28s
+20:43:09       K085 doc_extractive         gold 1.15
+20:43:09       K085 e2e_sparse_extractive  ok 0.93s
+20:43:09       K085 doc_generative         gold 0.84
+20:43:12       K085 e2e_dense_generative   ok 3.06s
+20:43:12       K086 doc_extractive         gold 2.41
+20:43:13       K086 doc_generative         gold 1.17
+20:43:19       K086 e2e_sparse_extractive  ok 7.52s
+20:43:21       K086 e2e_dense_generative   ok 7.58s
+20:43:21       progress: 240/417 tasks, 8.0 min elapsed
+20:43:21       K087 doc_extractive         gold 1.34
+20:43:21       K087 doc_generative         gold 0.76
+20:43:24       K087 e2e_sparse_extractive  ok 3.24s
+20:43:24       K087 e2e_dense_generative   ok 2.76s
+20:43:25       K088 doc_extractive         gold 1.36
+20:43:26       K088 doc_generative         gold 0.51
+20:43:31       K088 e2e_dense_generative   ok 5.43s
+20:43:32       K088 e2e_sparse_extractive  ok 7.48s
+20:43:32       K089 doc_extractive         gold 1.33
+20:43:33       K089 doc_generative         gold 0.51
+20:43:37       K089 e2e_dense_generative   ok 4.13s
+20:43:39       K090 doc_extractive         gold 1.91
+20:43:39       K089 e2e_sparse_extractive  ok 7.63s
+20:43:40       K090 doc_generative         gold 0.61
+20:43:44       K090 e2e_dense_generative   ok 4.4s
+20:43:46       K091 doc_extractive         gold 1.74
+20:43:46       K090 e2e_sparse_extractive  ok 7.11s
+20:43:47       K091 doc_generative         gold 1.29
+20:43:50       K091 e2e_dense_generative   ok 2.49s
+20:43:50       K091 e2e_sparse_extractive  ok 3.23s
+20:43:51       K092 doc_extractive         gold 1.43
+20:43:51       K092 e2e_sparse_extractive  ok 1.54s
+20:43:52       K092 doc_generative         gold 0.85
+20:43:53       K092 e2e_dense_generative   ok 1.97s
+20:43:53       K093 doc_extractive         gold 1.61
+20:43:55       K093 doc_generative         gold 1.38
+20:44:00       K093 e2e_sparse_extractive  ok 7.19s
+20:44:00       progress: 260/417 tasks, 8.7 min elapsed
+20:44:01       K093 e2e_dense_generative   ok 5.89s
+20:44:02       K094 doc_extractive         gold 1.33
+20:44:02       K094 doc_generative         gold 0.72
+20:44:06       K094 e2e_dense_generative   ok 3.31s
+20:44:07       K094 e2e_sparse_extractive  ok 6.45s
+20:44:07       K095 doc_extractive         gold 1.62
+20:44:08       K095 doc_generative         gold 0.79
+20:44:12       K095 e2e_dense_generative   ok 3.91s
+20:44:14       K095 e2e_sparse_extractive  ok 6.45s
+20:44:14       K096 doc_extractive         gold 1.64
+20:44:14       K096 doc_generative         gold 0.71
+20:44:19       K096 e2e_sparse_extractive  ok 5.01s
+20:44:19       K096 e2e_dense_generative   ok 4.91s
+20:44:20       K097 doc_extractive         gold 1.33
+20:44:21       K097 doc_generative         gold 0.72
+20:44:24       K097 e2e_dense_generative   ok 3.7s
+20:44:26       K097 e2e_sparse_extractive  ok 6.35s
+20:44:26       K098 doc_extractive         gold 1.46
+20:44:27       K098 doc_generative         gold 0.69
+20:44:32       K098 e2e_dense_generative   ok 5.84s
+20:44:33       K098 e2e_sparse_extractive  ok 7.77s
+20:44:34       K099 doc_extractive         gold 1.43
+20:44:34       K099 doc_generative         gold 0.61
+20:44:38       K099 e2e_dense_generative   ok 3.99s
+20:44:40       K100 doc_extractive         gold 1.86
+20:44:40       K099 e2e_sparse_extractive  ok 6.92s
+20:44:41       K100 doc_generative         gold 0.76
+20:44:41       progress: 280/417 tasks, 9.4 min elapsed
+20:44:46       K100 e2e_sparse_extractive  ok 6.08s
+20:44:48       K100 e2e_dense_generative   ok 6.71s
+20:44:48       K101 doc_extractive         gold 1.38
+20:44:48       K101 doc_generative         gold 0.47
+20:44:55       K101 e2e_sparse_extractive  ok 7.06s
+20:44:55       K101 e2e_dense_generative   ok 6.61s
+20:44:56       K102 doc_extractive         gold 1.64
+20:44:57       K102 doc_generative         gold 0.48
+20:44:57       K102 e2e_sparse_extractive  ok 2.3s
+20:44:59       K103 doc_extractive         gold 2.14
+20:45:00       K102 e2e_dense_generative   ok 2.88s
+20:45:00       K103 doc_generative         gold 1.05
+20:45:05       K103 e2e_dense_generative   ok 4.17s
+20:45:06       K104 doc_extractive         gold 1.89
+20:45:06       K103 e2e_sparse_extractive  ok 6.68s
+20:45:07       K104 doc_generative         gold 0.87
+20:45:10       K104 e2e_dense_generative   ok 3.11s
+20:45:12       K105 doc_extractive         gold 1.7
+20:45:12       K104 e2e_sparse_extractive  ok 5.73s
+20:45:13       K105 doc_generative         gold 0.82
+20:45:17       K105 e2e_dense_generative   ok 3.64s
+20:45:18       K105 e2e_sparse_extractive  ok 5.39s
+20:45:18       K106 doc_extractive         gold 1.49
+20:45:19       K106 doc_generative         gold 0.64
+20:45:22       K106 e2e_dense_generative   ok 3.65s
+20:45:24       K109 doc_extractive         gold 1.78
+20:45:24       K106 e2e_sparse_extractive  ok 6.78s
+20:45:24       progress: 300/417 tasks, 10.1 min elapsed
+20:45:25       K109 doc_generative         gold 0.98
+20:45:25       K109 e2e_sparse_extractive  ok 0.93s
+20:45:28       K110 doc_extractive         gold 2.54
+20:45:28       K109 e2e_dense_generative   ok 3.07s
+20:45:28       K110 doc_generative         gold 0.59
+20:45:33       K110 e2e_dense_generative   ok 4.1s
+20:45:35       K111 doc_extractive         gold 1.97
+20:45:35       K110 e2e_sparse_extractive  ok 6.76s
+20:45:36       K111 doc_generative         gold 1.33
+20:45:43       K111 e2e_sparse_extractive  ok 7.68s
+20:45:43       K111 e2e_dense_generative   ok 7.06s
+20:45:44       K112 doc_extractive         gold 1.34
+20:45:45       K112 doc_generative         gold 0.91
+20:45:47       K112 e2e_sparse_extractive  ok 3.99s
+20:45:48       K112 e2e_dense_generative   ok 2.76s
+20:45:48       K113 doc_extractive         gold 1.43
+20:45:49       K113 doc_generative         gold 0.65
+20:45:53       K113 e2e_dense_generative   ok 4.16s
+20:45:55       K113 e2e_sparse_extractive  ok 6.96s
+20:45:55       K114 doc_extractive         gold 1.47
+20:45:55       K114 doc_generative         gold 0.79
+20:45:59       K114 e2e_sparse_extractive  ok 4.03s
+20:45:59       K114 e2e_dense_generative   ok 3.99s
+20:46:00       K116 doc_extractive         gold 1.4
+20:46:01       K116 doc_generative         gold 1.33
+20:46:06       K116 e2e_sparse_extractive  ok 6.76s
+20:46:06       progress: 320/417 tasks, 10.8 min elapsed
+20:46:07       K116 e2e_dense_generative   ok 5.83s
+20:46:08       K117 doc_extractive         gold 1.43
+20:46:08       K117 doc_generative         gold 0.42
+20:46:13       K117 e2e_dense_generative   ok 5.32s
+20:46:14       K117 e2e_sparse_extractive  ok 7.07s
+20:46:15       K118 doc_extractive         gold 1.33
+20:46:15       K118 doc_generative         gold 0.72
+20:46:16       K118 e2e_sparse_extractive  ok 1.84s
+20:46:18       K119 doc_extractive         gold 1.94
+20:46:18       K118 e2e_dense_generative   ok 2.9s
+20:46:19       K119 doc_generative         gold 0.75
+20:46:24       K119 e2e_dense_generative   ok 4.69s
+20:46:25       K119 e2e_sparse_extractive  ok 6.72s
+20:46:25       K120 doc_extractive         gold 1.66
+20:46:26       K120 doc_generative         gold 1.29
+20:46:29       K120 e2e_sparse_extractive  ok 4.2s
+20:46:29       K120 e2e_dense_generative   ok 2.9s
+20:46:31       K121 doc_extractive         gold 1.74
+20:46:31       K121 doc_generative         gold 0.51
+20:46:35       K121 e2e_sparse_extractive  ok 5.6s
+20:46:36       K121 e2e_dense_generative   ok 4.05s
+20:46:36       K122 doc_extractive         gold 1.43
+20:46:37       K122 doc_generative         gold 0.72
+20:46:41       K122 e2e_dense_generative   ok 3.58s
+20:46:43       K123 doc_extractive         gold 1.84
+20:46:43       K122 e2e_sparse_extractive  ok 7.0s
+20:46:43       K123 doc_generative         gold 0.71
+20:46:43       progress: 340/417 tasks, 11.4 min elapsed
+20:46:46       K123 e2e_dense_generative   ok 3.17s
+20:46:47       K123 e2e_sparse_extractive  ok 4.71s
+20:46:48       K124 doc_extractive         gold 1.44
+20:46:49       K124 doc_generative         gold 0.81
+20:46:53       K124 e2e_dense_generative   ok 3.89s
+20:46:54       K124 e2e_sparse_extractive  ok 6.66s
+20:46:54       K125 doc_extractive         gold 1.55
+20:46:55       K125 doc_generative         gold 0.8
+20:46:59       K125 e2e_dense_generative   ok 4.1s
+20:47:01       K126 doc_extractive         gold 1.95
+20:47:01       K125 e2e_sparse_extractive  ok 7.06s
+20:47:02       K126 doc_generative         gold 0.72
+20:47:06       K126 e2e_dense_generative   ok 4.34s
+20:47:08       K126 e2e_sparse_extractive  ok 7.06s
+20:47:08       K127 doc_extractive         gold 2.01
+20:47:09       K127 doc_generative         gold 0.61
+20:47:10       K127 e2e_sparse_extractive  ok 2.05s
+20:47:11       K127 e2e_dense_generative   ok 2.56s
+20:47:11       K128 doc_extractive         gold 1.39
+20:47:12       K128 e2e_sparse_extractive  ok 1.02s
+20:47:12       K128 doc_generative         gold 0.93
+20:47:15       K129 doc_extractive         gold 2.76
+20:47:15       K128 e2e_dense_generative   ok 3.05s
+20:47:16       K129 doc_generative         gold 0.55
+20:47:19       K129 e2e_dense_generative   ok 3.44s
+20:47:20       K129 e2e_sparse_extractive  ok 5.04s
+20:47:20       progress: 360/417 tasks, 12.0 min elapsed
+20:47:21       K130 doc_extractive         gold 1.42
+20:47:21       K130 doc_generative         gold 0.87
+20:47:23       K130 e2e_sparse_extractive  ok 2.97s
+20:47:24       K130 e2e_dense_generative   ok 2.87s
+20:47:25       K131 doc_extractive         gold 1.43
+20:47:26       K131 doc_generative         gold 1.05
+20:47:28       K131 e2e_dense_generative   ok 2.71s
+20:47:29       K131 e2e_sparse_extractive  ok 4.5s
+20:47:30       K132 doc_extractive         gold 1.36
+20:47:31       K132 doc_generative         gold 1.31
+20:47:36       K132 e2e_sparse_extractive  ok 7.67s
+20:47:38       K133 doc_extractive         gold 1.37
+20:47:39       K132 e2e_dense_generative   ok 7.5s
+20:47:40       K133 doc_generative         gold 2.02
+20:47:40       K133 e2e_sparse_extractive  ok 1.38s
+20:47:43       K134 doc_extractive         gold 2.81
+20:47:43       K133 e2e_dense_generative   ok 3.08s
+20:47:44       K134 doc_generative         gold 0.87
+20:47:48       K134 e2e_dense_generative   ok 4.25s
+20:47:50       K135 doc_extractive         gold 1.59
+20:47:50       K134 e2e_sparse_extractive  ok 6.91s
+20:47:50       K135 doc_generative         gold 0.44
+20:47:57       K135 e2e_dense_generative   ok 7.08s
+20:47:57       K135 e2e_sparse_extractive  ok 7.26s
+20:47:59       K136 doc_extractive         gold 1.64
+20:47:59       K136 doc_generative         gold 0.51
+20:48:05       K136 e2e_sparse_extractive  ok 7.74s
+20:48:05       progress: 380/417 tasks, 12.7 min elapsed
+20:48:06       K136 e2e_dense_generative   ok 6.96s
+20:48:06       K137 doc_extractive         gold 1.36
+20:48:07       K137 doc_generative         gold 0.64
+20:48:12       K137 e2e_dense_generative   ok 5.44s
+20:48:13       K137 e2e_sparse_extractive  ok 7.17s
+20:48:14       K138 doc_extractive         gold 1.47
+20:48:15       K138 doc_generative         gold 1.02
+20:48:19       K138 e2e_sparse_extractive  ok 5.38s
+20:48:20       K140 doc_extractive         gold 1.37
+20:48:22       K138 e2e_dense_generative   ok 6.76s
+20:48:22       K140 doc_generative         gold 1.88
+20:48:24       K140 e2e_sparse_extractive  ok 1.94s
+20:48:24       K140 e2e_dense_generative   ok 1.98s
+20:48:25       K141 doc_extractive         gold 1.33
+20:48:25       K141 doc_generative         gold 0.62
+20:48:29       K141 e2e_dense_generative   ok 3.79s
+20:48:30       K141 e2e_sparse_extractive  ok 6.27s
+20:48:31       K142 doc_extractive         gold 1.43
+20:48:31       K142 doc_generative         gold 0.72
+20:48:35       K142 e2e_dense_generative   ok 3.89s
+20:48:37       K143 doc_extractive         gold 1.94
+20:48:37       K142 e2e_sparse_extractive  ok 6.99s
+20:48:39       K143 doc_generative         gold 1.43
+20:48:43       K143 e2e_dense_generative   ok 4.2s
+20:48:44       K143 e2e_sparse_extractive  ok 6.83s
+20:48:44       K145 doc_extractive         gold 1.45
+20:48:45       K145 doc_generative         gold 1.17
+20:48:45       progress: 400/417 tasks, 13.4 min elapsed
+20:48:50       K145 e2e_sparse_extractive  ok 6.4s
+20:48:52       K145 e2e_dense_generative   ok 6.37s
+20:48:52       K146 doc_extractive         gold 1.37
+20:48:53       K146 doc_generative         gold 0.93
+20:48:58       K146 e2e_dense_generative   ok 5.43s
+20:48:58       K146 e2e_sparse_extractive  ok 6.62s
+20:48:59       K147 e2e_sparse_extractive  ok 0.97s
+20:49:00       K147 doc_extractive         gold 1.33
+20:49:00       K147 doc_generative         gold 0.72
+20:49:03       K147 e2e_dense_generative   ok 3.28s
+20:49:03       K148 doc_extractive         gold 2.48
+20:49:04       K148 doc_generative         gold 1.0
+20:49:08       K148 e2e_dense_generative   ok 3.93s
+20:49:10       K149 doc_extractive         gold 2.01
+20:49:10       K148 e2e_sparse_extractive  ok 7.07s
+20:49:10       K149 doc_generative         gold 0.72
+20:49:15       K149 e2e_dense_generative   ok 4.29s
+20:49:16       K149 e2e_sparse_extractive  ok 6.65s
+20:49:16       K150 doc_extractive         gold 1.77
+20:49:17       K150 doc_generative         gold 0.79
+20:49:18       K150 e2e_sparse_extractive  ok 1.74s
+20:49:20       K150 e2e_dense_generative   ok 2.97s
+20:49:20       finished: 556 successful runs, 0 error lines (re-run the command to retry errors)
+20:49:21 Done. Upload this file to the chat: ./kybele_d103_results.zip (1.9 MB)
+20:54:37 KYBELE D10.3 evaluation runner, output folder: ./kybele_d103
+20:54:37 [1/3] Reusing 859 sampled treatments from kybele_d103/treatments.jsonl
+20:54:37 [2/3] Reusing 126 candidate questions from kybele_d103/candidates.csv
+20:54:37 [3/3] Querying the QA system ...
+20:54:38       QA service found at https://qa.sibils.org/api (ready=True, config={'generative_model': 'Qwen/Qwen3-8B-FP8', 'extractive_model': 'ktrapeznikov/biobert_v1.1_pubmed_squad_v2', 'inference_mode': 'gpu', 'use_vllm': True})
+20:54:38       556 of 504 runs already done; -52 to go (roughly 1 min)
+20:54:38       progress: 20/276 tasks, 0.0 min elapsed
+20:54:38       progress: 40/276 tasks, 0.0 min elapsed
+20:54:40       K151 doc_extractive         gold 2.65
+20:54:40       K151 e2e_sparse_extractive  ok 2.66s
+20:54:41       K151 doc_generative         gold 0.65
+20:54:44       K152 doc_extractive         gold 2.66
+20:54:44       K151 e2e_dense_generative   ok 3.31s
+20:54:44       K152 doc_generative         gold 0.51
+20:54:48       K152 e2e_dense_generative   ok 4.08s
+20:54:49       K152 e2e_sparse_extractive  ok 4.91s
+20:54:49       K153 doc_extractive         gold 1.29
+20:54:50       K153 doc_generative         gold 0.57
+20:54:57       K153 e2e_sparse_extractive  ok 8.09s
+20:54:57       K153 e2e_dense_generative   ok 6.76s
+20:54:57       progress: 60/276 tasks, 0.3 min elapsed
+20:54:58       K154 doc_extractive         gold 1.53
+20:54:59       K154 doc_generative         gold 0.51
+20:55:00       K154 e2e_sparse_extractive  ok 2.97s
+20:55:01       K155 doc_extractive         gold 1.38
+20:55:01       K154 e2e_dense_generative   ok 2.66s
+20:55:02       K155 doc_generative         gold 0.95
+20:55:06       K155 e2e_dense_generative   ok 4.33s
+20:55:07       K155 e2e_sparse_extractive  ok 5.53s
+20:55:08       K156 doc_extractive         gold 1.32
+20:55:08       K156 e2e_sparse_extractive  ok 1.43s
+20:55:09       K156 doc_generative         gold 1.03
+20:55:11       K156 e2e_dense_generative   ok 2.94s
+20:55:11       K157 doc_extractive         gold 2.46
+20:55:12       K157 doc_generative         gold 0.48
+20:55:15       K157 e2e_dense_generative   ok 3.71s
+20:55:16       K157 e2e_sparse_extractive  ok 4.74s
+20:55:17       K158 doc_extractive         gold 1.33
+20:55:17       K158 doc_generative         gold 0.46
+20:55:23       K158 e2e_sparse_extractive  ok 6.61s
+20:55:24       K158 e2e_dense_generative   ok 6.5s
+20:55:24       K160 doc_extractive         gold 1.37
+20:55:25       K160 doc_generative         gold 0.55
+20:55:28       K160 e2e_dense_generative   ok 3.86s
+20:55:30       K161 doc_extractive         gold 1.84
+20:55:31       K160 e2e_sparse_extractive  ok 6.81s
+20:55:31       K161 doc_generative         gold 0.39
+20:55:34       K161 e2e_dense_generative   ok 3.88s
+20:55:34       progress: 80/276 tasks, 0.9 min elapsed
+20:55:36       K162 doc_extractive         gold 1.97
+20:55:37       K161 e2e_sparse_extractive  ok 6.61s
+20:55:37       K162 doc_generative         gold 0.76
+20:55:44       K162 e2e_dense_generative   ok 6.29s
+20:55:44       K162 e2e_sparse_extractive  ok 7.07s
+20:55:45       K163 doc_extractive         gold 1.33
+20:55:46       K163 doc_generative         gold 0.83
+20:55:47       K163 e2e_sparse_extractive  ok 2.86s
+20:55:49       K164 doc_extractive         gold 1.43
+20:55:49       K163 e2e_dense_generative   ok 2.9s
+20:55:49       K164 doc_generative         gold 0.51
+20:55:53       K164 e2e_dense_generative   ok 4.09s
+20:55:54       K164 e2e_sparse_extractive  ok 5.33s
+20:55:54       K165 doc_extractive         gold 1.32
+20:55:55       K165 doc_generative         gold 0.74
+20:55:56       K165 e2e_sparse_extractive  ok 2.51s
+20:55:58       K165 e2e_dense_generative   ok 2.34s
+20:55:58       K166 doc_extractive         gold 1.43
+20:55:58       K166 doc_generative         gold 0.51
+20:56:01       K166 e2e_sparse_extractive  ok 3.93s
+20:56:03       K167 doc_extractive         gold 1.19
+20:56:03       K166 e2e_dense_generative   ok 4.3s
+20:56:03       K167 doc_generative         gold 0.61
+20:56:08       K167 e2e_dense_generative   ok 4.79s
+20:56:09       K167 e2e_sparse_extractive  ok 6.74s
+20:56:10       K168 doc_extractive         gold 1.55
+20:56:10       K168 doc_generative         gold 0.42
+20:56:10       progress: 100/276 tasks, 1.5 min elapsed
+20:56:15       K168 e2e_dense_generative   ok 4.6s
+20:56:17       K169 doc_extractive         gold 2.05
+20:56:17       K168 e2e_sparse_extractive  ok 7.69s
+20:56:17       K169 doc_generative         gold 0.5
+20:56:24       K169 e2e_sparse_extractive  ok 6.91s
+20:56:24       K169 e2e_dense_generative   ok 7.22s
+20:56:25       K170 doc_extractive         gold 1.28
+20:56:26       K170 doc_generative         gold 0.89
+20:56:31       K170 e2e_dense_generative   ok 4.84s
+20:56:33       K171 doc_extractive         gold 1.64
+20:56:33       K170 e2e_sparse_extractive  ok 8.25s
+20:56:33       K171 doc_generative         gold 0.51
+20:56:38       K171 e2e_dense_generative   ok 4.49s
+20:56:40       K174 doc_extractive         gold 2.16
+20:56:40       K174 doc_generative         gold 0.54
+20:56:41       K171 e2e_sparse_extractive  ok 7.83s
+20:56:44       K174 e2e_dense_generative   ok 3.43s
+20:56:45       K174 e2e_sparse_extractive  ok 4.58s
+20:56:45       K175 doc_extractive         gold 1.43
+20:56:46       K175 doc_generative         gold 0.51
+20:56:48       K175 e2e_sparse_extractive  ok 3.17s
+20:56:49       K175 e2e_dense_generative   ok 3.13s
+20:56:50       K176 doc_extractive         gold 1.54
+20:56:50       K176 doc_generative         gold 0.61
+20:56:57       K176 e2e_sparse_extractive  ok 7.66s
+20:56:57       K176 e2e_dense_generative   ok 6.43s
+20:56:57       progress: 120/276 tasks, 2.3 min elapsed
+20:56:58       K177 doc_extractive         gold 1.58
+20:56:59       K177 doc_generative         gold 0.53
+20:56:59       K177 e2e_sparse_extractive  ok 2.58s
+20:57:02       K177 e2e_dense_generative   ok 3.17s
+20:57:02       K178 doc_extractive         gold 2.66
+20:57:03       K178 doc_generative         gold 0.61
+20:57:05       K178 e2e_sparse_extractive  ok 3.06s
+20:57:06       K178 e2e_dense_generative   ok 3.07s
+20:57:06       K179 doc_extractive         gold 1.34
+20:57:07       K179 doc_generative         gold 1.12
+20:57:13       K179 e2e_sparse_extractive  ok 7.27s
+20:57:14       K180 doc_extractive         gold 1.43
+20:57:15       K179 e2e_dense_generative   ok 7.88s
+20:57:16       K180 doc_generative         gold 1.53
+20:57:17       K180 e2e_sparse_extractive  ok 2.05s
+20:57:19       K180 e2e_dense_generative   ok 2.87s
+20:57:19       K181 doc_extractive         gold 1.56
+20:57:20       K181 doc_generative         gold 0.89
+20:57:25       K181 e2e_dense_generative   ok 4.93s
+20:57:25       K181 e2e_sparse_extractive  ok 6.55s
+20:57:26       K182 doc_extractive         gold 1.28
+20:57:27       K182 doc_generative         gold 0.85
+20:57:32       K182 e2e_sparse_extractive  ok 7.06s
+20:57:34       K182 e2e_dense_generative   ok 6.76s
+20:57:34       K183 doc_extractive         gold 1.33
+20:57:34       K183 doc_generative         gold 0.77
+20:57:37       K183 e2e_dense_generative   ok 2.97s
+20:57:37       progress: 140/276 tasks, 3.0 min elapsed
+20:57:38       K183 e2e_sparse_extractive  ok 4.2s
+20:57:39       K184 doc_extractive         gold 1.31
+20:57:39       K184 doc_generative         gold 0.44
+20:57:43       K184 e2e_dense_generative   ok 4.14s
+20:57:45       K188 doc_extractive         gold 2.15
+20:57:46       K188 doc_generative         gold 0.61
+20:57:46       K184 e2e_sparse_extractive  ok 8.27s
+20:57:50       K188 e2e_dense_generative   ok 3.71s
+20:57:50       K188 e2e_sparse_extractive  ok 3.93s
+20:57:51       K190 doc_extractive         gold 1.33
+20:57:52       K190 doc_generative         gold 0.61
+20:57:56       K190 e2e_dense_generative   ok 3.99s
+20:57:58       K191 doc_extractive         gold 2.05
+20:57:58       K190 e2e_sparse_extractive  ok 7.86s
+20:57:58       K191 doc_generative         gold 0.61
+20:58:03       K191 e2e_dense_generative   ok 4.2s
+20:58:05       K192 doc_extractive         gold 2.08
+20:58:05       K191 e2e_sparse_extractive  ok 7.38s
+20:58:05       K192 doc_generative         gold 0.55
+20:58:13       K192 e2e_sparse_extractive  ok 7.45s
+20:58:13       K192 e2e_dense_generative   ok 7.98s
+20:58:14       K193 doc_extractive         gold 1.33
+20:58:15       K193 doc_generative         gold 0.61
+20:58:15       K193 e2e_sparse_extractive  ok 1.44s
+20:58:17       K194 doc_extractive         gold 2.39
+20:58:17       K193 e2e_dense_generative   ok 2.47s
+20:58:18       K194 doc_generative         gold 0.92
+20:58:18       progress: 160/276 tasks, 3.7 min elapsed
+20:58:19       K194 e2e_sparse_extractive  ok 1.93s
+20:58:21       K194 e2e_dense_generative   ok 2.46s
+20:58:21       K197 doc_extractive         gold 1.43
+20:58:21       K197 doc_generative         gold 0.61
+20:58:25       K197 e2e_dense_generative   ok 3.99s
+20:58:27       K197 e2e_sparse_extractive  ok 6.04s
+20:58:27       K198 doc_extractive         gold 1.54
+20:58:27       K198 doc_generative         gold 0.72
+20:58:33       K198 e2e_sparse_extractive  ok 6.5s
+20:58:35       K199 doc_extractive         gold 1.58
+20:58:35       K198 e2e_dense_generative   ok 7.39s
+20:58:36       K199 doc_generative         gold 0.92
+20:58:36       K199 e2e_sparse_extractive  ok 0.93s
+20:58:39       K199 e2e_dense_generative   ok 2.97s
+20:58:39       K200 doc_extractive         gold 2.84
+20:58:40       K200 doc_generative         gold 1.02
+20:58:42       K200 e2e_dense_generative   ok 2.36s
+20:58:42       K200 e2e_sparse_extractive  ok 3.55s
+20:58:43       K202 doc_extractive         gold 1.54
+20:58:44       K202 doc_generative         gold 0.92
+20:58:45       K202 e2e_sparse_extractive  ok 3.01s
+20:58:46       K202 e2e_dense_generative   ok 1.74s
+20:58:46       K203 doc_extractive         gold 1.33
+20:58:47       K203 doc_generative         gold 0.82
+20:58:54       K203 e2e_sparse_extractive  ok 7.68s
+20:58:55       K204 doc_extractive         gold 1.43
+20:58:57       K203 e2e_dense_generative   ok 9.48s
+20:58:57       progress: 180/276 tasks, 4.3 min elapsed
+20:58:58       K204 doc_generative         gold 2.35
+20:58:59       K204 e2e_sparse_extractive  ok 2.71s
+20:59:00       K204 e2e_dense_generative   ok 2.64s
+20:59:01       K205 doc_extractive         gold 1.12
+20:59:01       K205 doc_generative         gold 0.83
+20:59:06       K205 e2e_dense_generative   ok 4.19s
+20:59:06       K205 e2e_sparse_extractive  ok 5.45s
+20:59:07       K206 doc_extractive         gold 1.41
+20:59:08       K206 doc_generative         gold 0.92
+20:59:13       K206 e2e_sparse_extractive  ok 7.52s
+20:59:15       K207 doc_extractive         gold 1.46
+20:59:17       K207 doc_generative         gold 2.12
+20:59:18       K206 e2e_dense_generative   ok 10.17s
+20:59:22       K207 e2e_dense_generative   ok 4.42s
+20:59:23       K207 e2e_sparse_extractive  ok 5.89s
+20:59:24       K208 doc_extractive         gold 1.67
+20:59:25       K208 doc_generative         gold 1.03
+20:59:28       K208 e2e_sparse_extractive  ok 4.86s
+20:59:28       K208 e2e_dense_generative   ok 2.55s
+20:59:29       K209 doc_extractive         gold 1.38
+20:59:30       K209 doc_generative         gold 0.72
+20:59:34       K209 e2e_dense_generative   ok 4.62s
+20:59:34       K209 e2e_sparse_extractive  ok 6.59s
+20:59:36       K210 doc_extractive         gold 1.44
+20:59:36       K210 doc_generative         gold 0.64
+20:59:41       K210 e2e_sparse_extractive  ok 7.07s
+20:59:41       progress: 200/276 tasks, 5.1 min elapsed
+20:59:43       K211 doc_extractive         gold 1.43
+20:59:43       K210 e2e_dense_generative   ok 6.84s
+20:59:44       K211 doc_generative         gold 0.72
+20:59:50       K211 e2e_sparse_extractive  ok 6.98s
+20:59:51       K211 e2e_dense_generative   ok 7.93s
+20:59:52       K212 doc_extractive         gold 1.4
+20:59:52       K212 doc_generative         gold 0.94
+20:59:56       K212 e2e_dense_generative   ok 3.69s
+20:59:57       K212 e2e_sparse_extractive  ok 5.69s
+20:59:58       K214 doc_extractive         gold 1.38
+20:59:58       K214 doc_generative         gold 0.7
+21:00:00       K214 e2e_sparse_extractive  ok 3.08s
+21:00:01       K214 e2e_dense_generative   ok 2.94s
+21:00:02       K215 doc_extractive         gold 1.44
+21:00:02       K215 doc_generative         gold 0.71
+21:00:06       K215 e2e_dense_generative   ok 3.38s
+21:00:07       K215 e2e_sparse_extractive  ok 5.51s
+21:00:07       K216 doc_extractive         gold 1.43
+21:00:08       K216 doc_generative         gold 0.76
+21:00:08       K216 e2e_sparse_extractive  ok 1.41s
+21:00:10       K218 doc_extractive         gold 2.2
+21:00:11       K216 e2e_dense_generative   ok 2.88s
+21:00:12       K218 doc_generative         gold 1.34
+21:00:15       K218 e2e_dense_generative   ok 3.58s
+21:00:16       K218 e2e_sparse_extractive  ok 5.37s
+21:00:17       K219 doc_extractive         gold 1.43
+21:00:17       K219 doc_generative         gold 0.61
+21:00:17       progress: 220/276 tasks, 5.7 min elapsed
+21:00:18       K219 e2e_sparse_extractive  ok 1.46s
+21:00:20       K220 doc_extractive         gold 2.02
+21:00:20       K219 e2e_dense_generative   ok 3.03s
+21:00:21       K220 doc_generative         gold 1.52
+21:00:22       K220 e2e_sparse_extractive  ok 1.75s
+21:00:23       K220 e2e_dense_generative   ok 1.98s
+21:00:23       K221 doc_extractive         gold 1.37
+21:00:25       K221 doc_generative         gold 1.35
+21:00:26       K221 e2e_sparse_extractive  ok 2.95s
+21:00:27       K221 e2e_dense_generative   ok 2.55s
+21:00:28       K223 doc_extractive         gold 1.53
+21:00:28       K223 doc_generative         gold 0.62
+21:00:29       K223 e2e_sparse_extractive  ok 1.37s
+21:00:31       K225 doc_extractive         gold 2.31
+21:00:31       K223 e2e_dense_generative   ok 2.93s
+21:00:32       K225 doc_generative         gold 0.82
+21:00:39       K225 e2e_sparse_extractive  ok 7.41s
+21:00:39       K225 e2e_dense_generative   ok 7.27s
+21:00:40       K226 doc_extractive         gold 1.3
+21:00:41       K226 doc_generative         gold 0.81
+21:00:44       K226 e2e_dense_generative   ok 2.81s
+21:00:44       K226 e2e_sparse_extractive  ok 5.23s
+21:00:45       K228 doc_extractive         gold 1.34
+21:00:46       K228 doc_generative         gold 0.71
+21:00:47       K228 e2e_sparse_extractive  ok 2.94s
+21:00:48       K228 e2e_dense_generative   ok 2.82s
+21:00:48       progress: 240/276 tasks, 6.2 min elapsed
+21:00:49       K229 doc_extractive         gold 1.36
+21:00:49       K229 doc_generative         gold 0.81
+21:00:50       K229 e2e_sparse_extractive  ok 1.4s
+21:00:52       K229 e2e_dense_generative   ok 2.32s
+21:00:52       K230 doc_extractive         gold 1.97
+21:00:53       K230 doc_generative         gold 0.92
+21:00:57       K230 e2e_dense_generative   ok 4.55s
+21:00:58       K230 e2e_sparse_extractive  ok 6.48s
+21:00:59       K231 doc_extractive         gold 1.43
+21:01:00       K231 doc_generative         gold 0.99
+21:01:05       K231 e2e_sparse_extractive  ok 7.06s
+21:01:06       K231 e2e_dense_generative   ok 6.74s
+21:01:07       K232 doc_extractive         gold 1.36
+21:01:07       K232 doc_generative         gold 0.81
+21:01:08       K232 e2e_sparse_extractive  ok 1.44s
+21:01:10       K233 doc_extractive         gold 2.04
+21:01:11       K232 e2e_dense_generative   ok 3.45s
+21:01:12       K233 doc_generative         gold 1.57
+21:01:12       K233 e2e_sparse_extractive  ok 0.96s
+21:01:14       K235 doc_extractive         gold 2.31
+21:01:15       K235 doc_generative         gold 0.58
+21:01:15       K233 e2e_dense_generative   ok 3.5s
+21:01:18       K235 e2e_dense_generative   ok 2.55s
+21:01:19       K235 e2e_sparse_extractive  ok 4.02s
+21:01:19       K236 doc_extractive         gold 1.47
+21:01:20       K236 doc_generative         gold 0.64
+21:01:22       K236 e2e_sparse_extractive  ok 2.87s
+21:01:22       progress: 260/276 tasks, 6.7 min elapsed
+21:01:23       K236 e2e_dense_generative   ok 3.12s
+21:01:23       K237 doc_extractive         gold 1.33
+21:01:24       K237 doc_generative         gold 0.72
+21:01:24       K237 e2e_sparse_extractive  ok 1.43s
+21:01:26       K237 e2e_dense_generative   ok 2.39s
+21:01:26       K238 doc_extractive         gold 1.94
+21:01:27       K238 doc_generative         gold 0.52
+21:01:29       K238 e2e_dense_generative   ok 2.67s
+21:01:30       K238 e2e_sparse_extractive  ok 4.27s
+21:01:31       K244 doc_extractive         gold 1.35
+21:01:31       K244 doc_generative         gold 0.7
+21:01:38       K244 e2e_sparse_extractive  ok 7.6s
+21:01:39       K244 e2e_dense_generative   ok 7.48s
+21:01:39       K247 doc_extractive         gold 1.4
+21:01:40       K247 doc_generative         gold 0.72
+21:01:41       K247 e2e_sparse_extractive  ok 1.86s
+21:01:42       K247 e2e_dense_generative   ok 1.59s
+21:01:42       K248 doc_extractive         gold 1.41
+21:01:43       K248 doc_generative         gold 0.93
+21:01:48       K248 e2e_dense_generative   ok 5.23s
+21:01:49       K248 e2e_sparse_extractive  ok 6.91s
+21:01:49       finished: 856 successful runs, 0 error lines (re-run the command to retry errors)
+21:01:49 Done. Upload this file to the chat: ./kybele_d103_results.zip (2.1 MB)
+21:05:51 KYBELE D10.3 evaluation runner v4, output folder: ./kybele_d103
+21:05:51 [1/3] Reusing 859 sampled treatments from kybele_d103/treatments.jsonl
+21:05:51 [2/3] Reusing 126 candidate questions from kybele_d103/candidates.csv
+21:05:51 [3/3] Querying the QA system ...
+21:05:51       QA service found at https://qa.sibils.org/api (ready=True, config={'generative_model': 'Qwen/Qwen3-8B-FP8', 'extractive_model': 'ktrapeznikov/biobert_v1.1_pubmed_squad_v2', 'inference_mode': 'gpu', 'use_vllm': True})
+21:05:51       402 of 630 runs already done; 228 to go (roughly 15 min)
+21:05:51       progress: 20/354 tasks, 0.0 min elapsed
+21:05:51       progress: 40/354 tasks, 0.0 min elapsed
+21:05:51       progress: 60/354 tasks, 0.0 min elapsed
+21:05:51       progress: 80/354 tasks, 0.0 min elapsed
+21:05:51       progress: 100/354 tasks, 0.0 min elapsed
+21:05:51       progress: 120/354 tasks, 0.0 min elapsed
+21:05:54       K001 e2e_sparse_generative  ok 2.34s
+21:05:56       K003 e2e_sparse_generative  ok 2.41s
+21:05:59       K005 e2e_sparse_generative  ok 3.04s
+21:06:01       K007 e2e_sparse_generative  ok 1.9s
+21:06:05       K011 e2e_sparse_generative  ok 3.47s
+21:06:07       K012 e2e_sparse_generative  ok 2.51s
+21:06:09       K014 e2e_sparse_generative  ok 1.79s
+21:06:10       K019 e2e_sparse_generative  ok 1.41s
+21:06:14       K021 e2e_sparse_generative  ok 3.42s
+21:06:16       K025 e2e_sparse_generative  ok 1.91s
+21:06:20       K026 e2e_sparse_generative  ok 4.32s
+21:06:23       K029 e2e_sparse_generative  ok 2.97s
+21:06:26       K030 e2e_sparse_generative  ok 2.97s
+21:06:28       K037 e2e_sparse_generative  ok 2.08s
+21:06:28       progress: 140/354 tasks, 0.6 min elapsed
+21:06:30       K044 e2e_sparse_generative  ok 2.32s
+21:06:32       K047 e2e_sparse_generative  ok 1.64s
+21:06:35       K049 e2e_sparse_generative  ok 2.77s
+21:06:36       K051 e2e_sparse_generative  ok 1.64s
+21:06:38       K053 e2e_sparse_generative  ok 2.08s
+21:06:42       K058 e2e_sparse_generative  ok 3.45s
+21:06:43       K059 e2e_sparse_generative  ok 0.88s
+21:06:45       K064 e2e_sparse_generative  ok 2.24s
+21:06:46       K068 e2e_sparse_generative  ok 1.36s
+21:06:49       K069 e2e_sparse_generative  ok 2.9s
+21:06:53       K070 e2e_sparse_generative  ok 3.38s
+21:06:55       K072 e2e_sparse_generative  ok 2.25s
+21:06:58       K074 e2e_sparse_generative  ok 2.64s
+21:06:59       K077 e2e_sparse_generative  ok 1.3s
+21:07:03       K082 e2e_sparse_generative  ok 3.74s
+21:07:04       K085 e2e_sparse_generative  ok 1.02s
+21:07:05       K087 e2e_sparse_generative  ok 1.64s
+21:07:08       K091 e2e_sparse_generative  ok 2.66s
+21:07:13       K093 e2e_sparse_generative  ok 4.71s
+21:07:16       K094 e2e_sparse_generative  ok 3.27s
+21:07:16       progress: 160/354 tasks, 1.4 min elapsed
+21:07:19       K101 e2e_sparse_generative  ok 3.27s
+21:07:22       K105 e2e_sparse_generative  ok 2.56s
+21:07:23       K112 e2e_sparse_generative  ok 1.51s
+21:07:26       K113 e2e_sparse_generative  ok 2.84s
+21:07:29       K117 e2e_sparse_generative  ok 2.42s
+21:07:30       K119 e2e_sparse_generative  ok 1.84s
+21:07:34       K121 e2e_sparse_generative  ok 3.25s
+21:07:35       K123 e2e_sparse_generative  ok 1.84s
+21:07:39       K124 e2e_sparse_generative  ok 3.18s
+21:07:41       K129 e2e_sparse_generative  ok 2.45s
+21:07:45       K135 e2e_sparse_generative  ok 3.66s
+21:07:50       K136 e2e_sparse_generative  ok 4.83s
+21:07:53       K137 e2e_sparse_generative  ok 3.68s
+21:07:57       K138 e2e_sparse_generative  ok 3.79s
+21:07:58       K147 e2e_sparse_generative  ok 0.92s
+21:08:02       K149 e2e_sparse_generative  ok 3.69s
+21:08:03       K150 e2e_sparse_generative  ok 1.33s
+21:08:04       K151 e2e_sparse_generative  ok 0.51s
+21:08:05       K152 e2e_sparse_generative  ok 1.28s
+21:08:07       K153 e2e_sparse_generative  ok 2.4s
+21:08:07       progress: 180/354 tasks, 2.3 min elapsed
+21:08:09       K154 e2e_sparse_generative  ok 1.74s
+21:08:11       K155 e2e_sparse_generative  ok 1.81s
+21:08:12       K156 e2e_sparse_generative  ok 0.77s
+21:08:12       K157 e2e_sparse_generative  ok 0.69s
+21:08:16       K158 e2e_sparse_generative  ok 3.48s
+21:08:18       K160 e2e_sparse_generative  ok 2.65s
+21:08:21       K161 e2e_sparse_generative  ok 2.98s
+21:08:25       K162 e2e_sparse_generative  ok 3.68s
+21:08:27       K163 e2e_sparse_generative  ok 1.64s
+21:08:28       K164 e2e_sparse_generative  ok 1.12s
+21:08:30       K165 e2e_sparse_generative  ok 1.74s
+21:08:31       K166 e2e_sparse_generative  ok 1.84s
+21:08:35       K167 e2e_sparse_generative  ok 4.09s
+21:08:38       K168 e2e_sparse_generative  ok 2.34s
+21:08:40       K169 e2e_sparse_generative  ok 2.38s
+21:08:44       K170 e2e_sparse_generative  ok 3.58s
+21:08:47       K171 e2e_sparse_generative  ok 3.06s
+21:08:49       K174 e2e_sparse_generative  ok 2.15s
+21:08:50       K175 e2e_sparse_generative  ok 0.61s
+21:08:53       K176 e2e_sparse_generative  ok 3.07s
+21:08:53       progress: 200/354 tasks, 3.0 min elapsed
+21:08:54       K177 e2e_sparse_generative  ok 1.38s
+21:08:55       K178 e2e_sparse_generative  ok 1.08s
+21:08:59       K179 e2e_sparse_generative  ok 3.54s
+21:09:00       K180 e2e_sparse_generative  ok 1.23s
+21:09:03       K181 e2e_sparse_generative  ok 3.53s
+21:09:07       K182 e2e_sparse_generative  ok 3.6s
+21:09:09       K183 e2e_sparse_generative  ok 1.82s
+21:09:12       K184 e2e_sparse_generative  ok 3.28s
+21:09:14       K188 e2e_sparse_generative  ok 1.64s
+21:09:18       K190 e2e_sparse_generative  ok 3.89s
+21:09:20       K191 e2e_sparse_generative  ok 1.94s
+21:09:23       K192 e2e_sparse_generative  ok 3.48s
+21:09:24       K193 e2e_sparse_generative  ok 0.93s
+21:09:25       K194 e2e_sparse_generative  ok 1.21s
+21:09:27       K197 e2e_sparse_generative  ok 2.05s
+21:09:31       K198 e2e_sparse_generative  ok 3.34s
+21:09:31       K199 e2e_sparse_generative  ok 0.18s
+21:09:32       K200 e2e_sparse_generative  ok 1.71s
+21:09:34       K202 e2e_sparse_generative  ok 1.64s
+21:09:38       K203 e2e_sparse_generative  ok 3.58s
+21:09:38       progress: 220/354 tasks, 3.8 min elapsed
+21:09:39       K204 e2e_sparse_generative  ok 1.74s
+21:09:43       K205 e2e_sparse_generative  ok 3.69s
+21:09:47       K206 e2e_sparse_generative  ok 4.1s
+21:09:51       K207 e2e_sparse_generative  ok 3.39s
+21:09:52       K208 e2e_sparse_generative  ok 1.52s
+21:09:57       K209 e2e_sparse_generative  ok 4.71s
+21:09:59       K210 e2e_sparse_generative  ok 2.56s
+21:10:03       K211 e2e_sparse_generative  ok 3.14s
+21:10:05       K212 e2e_sparse_generative  ok 2.08s
+21:10:06       K214 e2e_sparse_generative  ok 1.12s
+21:10:08       K215 e2e_sparse_generative  ok 2.01s
+21:10:09       K216 e2e_sparse_generative  ok 0.86s
+21:10:11       K218 e2e_sparse_generative  ok 2.76s
+21:10:12       K219 e2e_sparse_generative  ok 1.08s
+21:10:14       K220 e2e_sparse_generative  ok 1.04s
+21:10:16       K221 e2e_sparse_generative  ok 2.08s
+21:10:16       K223 e2e_sparse_generative  ok 0.51s
+21:10:20       K225 e2e_sparse_generative  ok 3.69s
+21:10:22       K226 e2e_sparse_generative  ok 2.15s
+21:10:24       K228 e2e_sparse_generative  ok 1.75s
+21:10:24       progress: 240/354 tasks, 4.5 min elapsed
+21:10:25       K229 e2e_sparse_generative  ok 1.42s
+21:10:27       K230 e2e_sparse_generative  ok 2.18s
+21:10:32       K231 e2e_sparse_generative  ok 4.34s
+21:10:33       K232 e2e_sparse_generative  ok 1.03s
+21:10:33       K233 e2e_sparse_generative  ok 0.18s
+21:10:34       K235 e2e_sparse_generative  ok 1.58s
+21:10:37       K236 e2e_sparse_generative  ok 2.71s
+21:10:38       K237 e2e_sparse_generative  ok 0.66s
+21:10:39       K238 e2e_sparse_generative  ok 1.23s
+21:10:42       K244 e2e_sparse_generative  ok 2.46s
+21:10:43       K247 e2e_sparse_generative  ok 1.54s
+21:10:45       K248 e2e_sparse_generative  ok 2.15s
+21:11:00       K001 e2e_dense_generative   ERROR service returned an empty result with no model (internal error on the server)
+21:11:13       K003 e2e_dense_generative   ERROR service returned an empty result with no model (internal error on the server)
+21:11:27       K007 e2e_dense_generative   ERROR service returned an empty result with no model (internal error on the server)
+21:11:42       K011 e2e_dense_generative   ERROR service returned an empty result with no model (internal error on the server)
+21:11:59       K012 e2e_dense_generative   ERROR service returned an empty result with no model (internal error on the server)
+21:12:14       K014 e2e_dense_generative   ERROR service returned an empty result with no model (internal error on the server)
+21:12:30       K019 e2e_dense_generative   ERROR service returned an empty result with no model (internal error on the server)
+21:12:45       K021 e2e_dense_generative   ERROR service returned an empty result with no model (internal error on the server)
+21:12:45       progress: 260/354 tasks, 6.9 min elapsed
+21:13:01       K025 e2e_dense_generative   ERROR service returned an empty result with no model (internal error on the server)
+21:13:17       K026 e2e_dense_generative   ERROR service returned an empty result with no model (internal error on the server)
+21:13:34       K029 e2e_dense_generative   ERROR service returned an empty result with no model (internal error on the server)
+21:13:48       K037 e2e_dense_generative   ERROR service returned an empty result with no model (internal error on the server)
+21:14:02       K044 e2e_dense_generative   ERROR service returned an empty result with no model (internal error on the server)
+21:14:18       K047 e2e_dense_generative   ERROR service returned an empty result with no model (internal error on the server)
+21:14:35       K049 e2e_dense_generative   ERROR service returned an empty result with no model (internal error on the server)
+21:14:49       K051 e2e_dense_generative   ERROR service returned an empty result with no model (internal error on the server)
+21:15:05       K053 e2e_dense_generative   ERROR service returned an empty result with no model (internal error on the server)
+21:15:21       K058 e2e_dense_generative   ERROR service returned an empty result with no model (internal error on the server)
+21:15:37       K059 e2e_dense_generative   ERROR service returned an empty result with no model (internal error on the server)
+21:15:53       K064 e2e_dense_generative   ERROR service returned an empty result with no model (internal error on the server)
+21:16:07       K068 e2e_dense_generative   ERROR service returned an empty result with no model (internal error on the server)
+21:16:23       K069 e2e_dense_generative   ERROR service returned an empty result with no model (internal error on the server)
+21:16:38       K072 e2e_dense_generative   ERROR service returned an empty result with no model (internal error on the server)
+21:16:55       K074 e2e_dense_generative   ERROR service returned an empty result with no model (internal error on the server)
+21:17:09       K077 e2e_dense_generative   ERROR service returned an empty result with no model (internal error on the server)
+21:17:25       K085 e2e_dense_generative   ERROR service returned an empty result with no model (internal error on the server)
+21:17:39       K087 e2e_dense_generative   ERROR service returned an empty result with no model (internal error on the server)
+21:17:52       K091 e2e_dense_generative   ERROR service returned an empty result with no model (internal error on the server)
+21:17:52       progress: 280/354 tasks, 12.0 min elapsed
+21:18:12       K093 e2e_dense_generative   ERROR service returned an empty result with no model (internal error on the server)
+21:18:27       K094 e2e_dense_generative   ERROR service returned an empty result with no model (internal error on the server)
+21:18:42       K105 e2e_dense_generative   ERROR service returned an empty result with no model (internal error on the server)
+21:18:56       K112 e2e_dense_generative   ERROR service returned an empty result with no model (internal error on the server)
+21:19:11       K113 e2e_dense_generative   ERROR service returned an empty result with no model (internal error on the server)
+21:19:27       K119 e2e_dense_generative   ERROR service returned an empty result with no model (internal error on the server)
+21:19:42       K121 e2e_dense_generative   ERROR service returned an empty result with no model (internal error on the server)
+21:19:57       K123 e2e_dense_generative   ERROR service returned an empty result with no model (internal error on the server)
+21:20:12       K124 e2e_dense_generative   ERROR service returned an empty result with no model (internal error on the server)
+21:20:26       K129 e2e_dense_generative   ERROR service returned an empty result with no model (internal error on the server)
+21:20:44       K137 e2e_dense_generative   ERROR service returned an empty result with no model (internal error on the server)
+21:21:00       K147 e2e_dense_generative   ERROR service returned an empty result with no model (internal error on the server)
+21:21:15       K149 e2e_dense_generative   ERROR service returned an empty result with no model (internal error on the server)
+21:21:31       K150 e2e_dense_generative   ERROR service returned an empty result with no model (internal error on the server)
+21:21:47       K151 e2e_dense_generative   ERROR service returned an empty result with no model (internal error on the server)
+21:22:02       K152 e2e_dense_generative   ERROR service returned an empty result with no model (internal error on the server)
+21:22:16       K154 e2e_dense_generative   ERROR service returned an empty result with no model (internal error on the server)
+21:22:33       K155 e2e_dense_generative   ERROR service returned an empty result with no model (internal error on the server)
+21:22:48       K156 e2e_dense_generative   ERROR service returned an empty result with no model (internal error on the server)
+21:23:04       K157 e2e_dense_generative   ERROR service returned an empty result with no model (internal error on the server)
+21:23:04       progress: 300/354 tasks, 17.2 min elapsed
+21:23:20       K160 e2e_dense_generative   ERROR service returned an empty result with no model (internal error on the server)
+21:23:34       K161 e2e_dense_generative   ERROR service returned an empty result with no model (internal error on the server)
+21:23:53       K162 e2e_dense_generative   ERROR service returned an empty result with no model (internal error on the server)
+21:24:08       K163 e2e_dense_generative   ERROR service returned an empty result with no model (internal error on the server)
+21:24:24       K164 e2e_dense_generative   ERROR service returned an empty result with no model (internal error on the server)
+21:24:39       K165 e2e_dense_generative   ERROR service returned an empty result with no model (internal error on the server)
+21:24:55       K166 e2e_dense_generative   ERROR service returned an empty result with no model (internal error on the server)
+21:25:11       K167 e2e_dense_generative   ERROR service returned an empty result with no model (internal error on the server)
+21:25:27       K168 e2e_dense_generative   ERROR service returned an empty result with no model (internal error on the server)
+21:25:45       K170 e2e_dense_generative   ERROR service returned an empty result with no model (internal error on the server)
+21:26:01       K171 e2e_dense_generative   ERROR service returned an empty result with no model (internal error on the server)
+21:26:15       K174 e2e_dense_generative   ERROR service returned an empty result with no model (internal error on the server)
+21:26:31       K175 e2e_dense_generative   ERROR service returned an empty result with no model (internal error on the server)
+21:26:47       K177 e2e_dense_generative   ERROR service returned an empty result with no model (internal error on the server)
+21:27:02       K178 e2e_dense_generative   ERROR service returned an empty result with no model (internal error on the server)
+21:27:16       K180 e2e_dense_generative   ERROR service returned an empty result with no model (internal error on the server)
+21:27:34       K181 e2e_dense_generative   ERROR service returned an empty result with no model (internal error on the server)
+21:27:48       K183 e2e_dense_generative   ERROR service returned an empty result with no model (internal error on the server)
+21:28:03       K184 e2e_dense_generative   ERROR service returned an empty result with no model (internal error on the server)
+21:28:18       K188 e2e_dense_generative   ERROR service returned an empty result with no model (internal error on the server)
+21:28:18       progress: 320/354 tasks, 22.4 min elapsed
+21:28:33       K190 e2e_dense_generative   ERROR service returned an empty result with no model (internal error on the server)
+21:28:48       K191 e2e_dense_generative   ERROR service returned an empty result with no model (internal error on the server)
+21:29:03       K193 e2e_dense_generative   ERROR service returned an empty result with no model (internal error on the server)
+21:29:18       K194 e2e_dense_generative   ERROR service returned an empty result with no model (internal error on the server)
+21:29:33       K197 e2e_dense_generative   ERROR service returned an empty result with no model (internal error on the server)
+21:29:49       K199 e2e_dense_generative   ERROR service returned an empty result with no model (internal error on the server)
+21:30:03       K200 e2e_dense_generative   ERROR service returned an empty result with no model (internal error on the server)
+21:30:17       K202 e2e_dense_generative   ERROR service returned an empty result with no model (internal error on the server)
+21:30:32       K204 e2e_dense_generative   ERROR service returned an empty result with no model (internal error on the server)
+21:30:49       K205 e2e_dense_generative   ERROR service returned an empty result with no model (internal error on the server)
+21:31:06       K207 e2e_dense_generative   ERROR service returned an empty result with no model (internal error on the server)
+21:31:21       K208 e2e_dense_generative   ERROR service returned an empty result with no model (internal error on the server)
+21:31:38       K209 e2e_dense_generative   ERROR service returned an empty result with no model (internal error on the server)
+21:31:54       K212 e2e_dense_generative   ERROR service returned an empty result with no model (internal error on the server)
+21:32:09       K214 e2e_dense_generative   ERROR service returned an empty result with no model (internal error on the server)
+21:32:25       K215 e2e_dense_generative   ERROR service returned an empty result with no model (internal error on the server)
+21:32:40       K216 e2e_dense_generative   ERROR service returned an empty result with no model (internal error on the server)
+21:32:55       K218 e2e_dense_generative   ERROR service returned an empty result with no model (internal error on the server)
+21:33:11       K219 e2e_dense_generative   ERROR service returned an empty result with no model (internal error on the server)
+21:33:25       K220 e2e_dense_generative   ERROR service returned an empty result with no model (internal error on the server)
+21:33:25       progress: 340/354 tasks, 27.6 min elapsed
+21:33:39       K221 e2e_dense_generative   ERROR service returned an empty result with no model (internal error on the server)
+21:33:55       K223 e2e_dense_generative   ERROR service returned an empty result with no model (internal error on the server)
+21:34:09       K226 e2e_dense_generative   ERROR service returned an empty result with no model (internal error on the server)
+21:34:24       K228 e2e_dense_generative   ERROR service returned an empty result with no model (internal error on the server)
+21:34:39       K229 e2e_dense_generative   ERROR service returned an empty result with no model (internal error on the server)
+21:34:56       K230 e2e_dense_generative   ERROR service returned an empty result with no model (internal error on the server)
+21:35:12       K232 e2e_dense_generative   ERROR service returned an empty result with no model (internal error on the server)
+21:35:29       K233 e2e_dense_generative   ERROR service returned an empty result with no model (internal error on the server)
+21:35:42       K235 e2e_dense_generative   ERROR service returned an empty result with no model (internal error on the server)
+21:35:57       K236 e2e_dense_generative   ERROR service returned an empty result with no model (internal error on the server)
+21:36:12       K237 e2e_dense_generative   ERROR service returned an empty result with no model (internal error on the server)
+21:36:26       K238 e2e_dense_generative   ERROR service returned an empty result with no model (internal error on the server)
+21:36:39       K247 e2e_dense_generative   ERROR service returned an empty result with no model (internal error on the server)
+21:36:57       K248 e2e_dense_generative   ERROR service returned an empty result with no model (internal error on the server)
+21:36:58       finished: 528 of 630 runs have a valid answer; 102 still failing (re-run the same command to retry them)

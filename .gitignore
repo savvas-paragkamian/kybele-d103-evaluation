@@ -1,0 +1,14 @@
+# Third-party dependency of scripts/score_traits.py (licence unknown; fetch it, do not commit it)
+trait_extraction_v3.py
+
+# Python
+__pycache__/
+*.pyc
+
+# Result archives written by the runner and the harvester
+*.zip
+
+# Local run folders (default --out of the runner and the harvester)
+kybele_d103/
+kybele_trophic/
+kybele_trophic_qa/

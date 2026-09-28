@@ -1,0 +1,16 @@
+Data licence
+
+The benchmark, curation records and results in this repository (data/, results/ and
+spotcheck/) are licensed under the Creative Commons Attribution 4.0 International
+licence (CC BY 4.0):
+
+  https://creativecommons.org/licenses/by/4.0/
+
+Copyright (c) 2026 KYBELE project contributors
+
+Text excerpts quoted from Plazi treatments, Medline abstracts and PMC articles (for example
+the gold_context column and the sentences in data/curation/trophic/*.json) remain subject
+to the terms of their original sources.
+
+The source code in scripts/ and the Python files in data/curation/ are licensed separately
+under the MIT licence (see LICENSE).

@@ -1,0 +1,26 @@
+n,qid,question_type,taxon,question,gold_answer,treatment_uri
+1,K007,habitat,Plutomurus ruseki,What is the habitat of Plutomurus ruseki?,entrance and twilight zone of caves || caves || troglophilous,http://treatment.plazi.org/id/03FF1701192EFF8F95AAFF229FB420E1
+2,K011,body_size,Metacoelura majeri,What is the body length of Metacoelura majeri?,2.3 mm || up to 2.3 mm,http://treatment.plazi.org/id/3D404F72FFDBFFD85E8FFB3CDC0BF977
+3,K019,habitat,Cyphoderus khaochakanus,What is the habitat of Cyphoderus khaochakanus?,on guano in the dark zone of a karstic cave || guano in the dark zone of a karstic cave || guano,http://treatment.plazi.org/id/6CB1AEDA09E85EB254C928B8B074EDF1
+4,K029,body_size,Friesea najtae,What is the body length of Friesea najtae?,1.0- 1.7mm || 1.0-1.7 mm || 1.0–1.7 mm,http://treatment.plazi.org/id/5306878ECC17FFF2DE73F911FD9A6996
+5,K072,habitat,Szeptyckitheca cyanea,What is the habitat of Szeptyckitheca cyanea?,forest litter covering sandy soils in shady areas || forest litter || Atlantic Forest,http://treatment.plazi.org/id/5C078AB1E856532EB5F209F69958BDB8
+6,K074,body_size,Dicranocentrus icelosmarias,What is the body length of Dicranocentrus icelosmarias?,2.6 mm,http://treatment.plazi.org/id/03DF87B4E03A5D4CFF58FD2F3DDDFD26
+7,K091,habitat,Metaphorura riozoi,What is the habitat of Metaphorura riozoi?,the soil of a meadow in Hungary || soil of a meadow || leaf litter under oak trees,http://treatment.plazi.org/id/877F1C3EFFC46F4F227E598BFDCDFA0E
+8,K113,body_size,Neorganella rotundatae,What is the body length of Neorganella rotundatae?,0.88 mm || 0.47-1.20 mm,http://treatment.plazi.org/id/E75F96C1532AAEE2F42F5D9D8A0E5B3A
+9,K124,habitat,Mexicaphorura guerrerensis,What is the habitat of Mexicaphorura guerrerensis?,marine littoral sand,http://treatment.plazi.org/id/462C4399517288EDC0A8EF3142DDD8B8
+10,K135,body_size,Arrhopalites harveyi,What is the body length of Arrhopalites harveyi?,1.2 mm,http://treatment.plazi.org/id/03C387C2FFE2FFC3FE9C471BAF0133BB
+11,K154,body_size,Arrhopalites colchicus,What is the body length of Arrhopalites colchicus?,0.9 mm,http://treatment.plazi.org/id/1E61975CFFE80A6FFF0EFF5AD8922839
+12,K162,body_size,Megalothorax sanctistephani,What is the body length of Megalothorax sanctistephani?,0.2–0.34 mm || 0.2-0.34 mm || 0.26 mm,http://treatment.plazi.org/id/752287812A4CF97B2EFB8CFAFEE9AF77
+13,K170,body_size,Heteraphorura iranica,What is the body length of Heteraphorura iranica?,1.2–1.7 mm || 1.5–2.3 mm || 1.2 mm,http://treatment.plazi.org/id/03FDDD4A654DFF84CDBAF98939EB308C
+14,K171,body_size,Salina zhangi,What is the body length of Salina zhangi?,1.57 mm,http://treatment.plazi.org/id/6F20573334283A06CC8AFD3F44F3FC5B
+15,K177,body_size,Isotomurus jharkhandensis,What is the body length of Isotomurus jharkhandensis?,1.93 mm,http://treatment.plazi.org/id/0D38B345FFB81D01DA8BFB7E3666742A
+16,K179,body_size,Ceratophysella macrocantha,What is the body length of Ceratophysella macrocantha?,2.4 mm,http://treatment.plazi.org/id/F13187C5FF93FFF904DDFB25FE4AFE28
+17,K190,body_size,Cylindropygus ferox,What is the body length of Cylindropygus ferox?,0.65–0.80 mm || 0.65-0.80 mm,http://treatment.plazi.org/id/03E2878A790BFFCE10E0FDB5FE26FA24
+18,K198,habitat,Hypogastrura quadritenenta,What is the habitat of Hypogastrura quadritenenta?,soil under decaying leaves and sticks in deciduous forest,http://treatment.plazi.org/id/033487C7DA4EFFA9FF07697BDBDB7F96
+19,K202,habitat,Sensiphorura oligoseta,What is the habitat of Sensiphorura oligoseta?,the dunes of the beach and tropical forest || dunes of the beach,http://treatment.plazi.org/id/6B02879DB90E664DF4B5FF61FCD9F827
+20,K209,habitat,Pseudachorutes cheni,What is the habitat of Pseudachorutes cheni?,soil under a stack of decayed grass in the orange grove,http://treatment.plazi.org/id/038A87DEFFAAFFEBFF6CFBF511C8B2F1
+21,K212,habitat,Cyphoderus mucrominimus,What is the habitat of Cyphoderus mucrominimus?,iron caves,http://treatment.plazi.org/id/55468786AC05FFB75C85C610B95A07EC
+22,K216,habitat,Pseudanurophorus barathrum,What is the habitat of Pseudanurophorus barathrum?,littoral zone of the shore of Lake Baikal || shingly beaches || littoral zone,http://treatment.plazi.org/id/4AF91ACA36555987BAA839FB791F4D4C
+23,K226,habitat,Szeptyckitheca mucroserrata,What is the habitat of Szeptyckitheca mucroserrata?,"Australian pine needles, leaf mold, and forest debris || forest litter || sand dunes",http://treatment.plazi.org/id/E0B3CA88DEBA599198C83E45A881594C
+24,K233,habitat,Cryptopygus bulbus,What is the habitat of Cryptopygus bulbus?,leaf litter in indigenous vegetation || leaf litter,http://treatment.plazi.org/id/6A1D4C35081655CEBE5B441E88A98731
+25,K247,trophic_guild,Paratullbergia chuana,What does Paratullbergia chuana feed on?,fungivorous || spores and mycelium fragments of soil fungi || soil fungi,http://treatment.plazi.org/id/F614CE575378FFC9FF39DB82FD6CFB3B
