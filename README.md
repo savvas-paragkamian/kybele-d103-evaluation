@@ -33,6 +33,7 @@ answering configurations.
 | `spotcheck/` | Spot-check sample (25 questions) and reviewer workbook |
 | `results/traits_main/` | Main run: raw responses (`runs.jsonl`), log, `scored.csv`, `summary.json`, `scored_traits.csv`, `summary_traits.json` |
 | `results/traits_repeat/` | Repeat run of the same 126 questions, same files |
+| `results/trophic/` | Trophic-guild run: raw responses, log, `scored.csv`, `summary.json`, `scored_trophic.csv`, `summary_trophic.json` |
 | `LICENSE`, `LICENSE-DATA`, `CITATION.cff` | Licences and citation metadata |
 
 ## Trait benchmark
@@ -236,6 +237,30 @@ dense retrieval. `*_extractive` use the extractive reader, `*_generative` the ge
   `e2e_sparse_generative` 44.3 (n = 122), `e2e_dense_generative` 36.4 (n = 22).
 - String metrics (exact match, F1, ROUGE-L and others) are in `summary.json` in each results
   folder.
+
+### Trophic-guild benchmark results
+
+Run of 29 September 2026 (`results/trophic/summary_trophic.json`); 22 of the 102
+`e2e_dense_generative` requests returned the server error, so that row has n = 80.
+
+| Configuration | n | Food named % | Guild of the answer % | Wrong guild % | Guild recorded by the pipeline % | Gold document retrieved % |
+|---|--:|--:|--:|--:|--:|--:|
+| `doc_extractive` | 102 | 66 | 77 | 4 | – | 100 |
+| `doc_generative` | 102 | 69 | 85 | 6 | 61 | 100 |
+| `e2e_sparse_extractive` | 102 | 16 | 31 | 8 | – | 55 |
+| `e2e_sparse_generative` | 102 | 44 | 88 | 8 | 73 | 55 |
+| `e2e_dense_generative` | 80 | 41 | 88 | 5 | 71 | 48 |
+
+- *Food named*: a gold food item appears verbatim in the answer (strict).
+- *Guild of the answer*: guilds the answer states, read sentence by sentence with the extended
+  vocabulary; end-to-end answers are scored against all gold guilds of the taxon.
+- *Guild recorded by the pipeline*: `trait_extraction_v3` primary guild (species) or the genus
+  classifier of `collembola_trophic_batch.py` (genera); generative configurations only, since the
+  pipeline runs in generative mode.
+- Most springtails are fungivores: a constant answer "fungi" scores 63 % (per-question gold guilds)
+  and 75 % (taxon gold guilds) on guild. On the questions whose gold guilds include no fungal
+  feeding, the generative answer is right in 82 % (`doc_generative`, n = 38) and 81 %
+  (`e2e_sparse_generative`, n = 26).
 
 ## Licences
 

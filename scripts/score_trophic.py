@@ -4,16 +4,22 @@ Trophic-guild scoring for the KYBELE D10.3 trophic benchmark.
 Reads each QA response the way the KYBELE trait pipeline does (the answer with the highest
 answer_score across collections, as in collembola_trophic_batch.py) and scores it three ways:
 
-  guild (pipeline)   guilds found by trait_extraction_v3 with its own keyword vocabulary
-                     overlap the gold guilds (Potapov et al. 2022 scheme)
-  guild (extended)   the same extractor, with its vocabulary extended by terms it misses
-                     (litter, roots, fungal and bacterial genus names, invertebrates ...);
-                     this separates the QA service's answers from the extractor's vocabulary
-  food match         a gold food item (any alternative) appears verbatim in the answer
+  pipeline   what the trait pipeline would record. Species questions: the PRIMARY guilds of
+             trait_extraction_v3.extract_trophic (its own vocabulary). The extractor demotes every
+             guild to 'indirect' when any sentence of the answer says something is not stated
+             (e.g. "no mention of other food sources"), so correct answers with such a closing
+             caveat get no primary guild. Genus questions: infer_guilds() of
+             collembola_trophic_batch.py (keyword match over the whole answer), reproduced below.
+  answer     how right the QA answer itself is: guilds read sentence by sentence (sentences that
+             say the diet is not stated are skipped; predator is dropped when the taxon is the
+             prey), with the extractor's vocabulary extended by terms it misses (litter, roots,
+             fungal and bacterial genus names, invertebrates ...)
+  food match a gold food item (any alternative) appears verbatim in the answer (strict)
 
-Outcomes: correct, wrong (guilds found but none matches), no_answer (no guild found, or the
-answer says the diet is not stated). Gold guilds are per question for the gold-document
-configurations and the union over the taxon's questions for end-to-end configurations.
+Outcomes: correct (guilds overlap the gold guilds), wrong (guilds found, none matches), no_answer.
+Gold guilds are per question for the gold-document configurations and the union over the
+taxon's questions for end-to-end configurations. Because most springtails are fungivores, the
+script also scores two constant answers ("fungi"; "fungi and decaying plant litter") as baselines.
 
 Usage: python3 score_trophic.py benchmark_trophic.csv runs.jsonl out_dir
 """
@@ -34,7 +40,7 @@ except ImportError:
 
 # Terms trait_extraction_v3 misses (found by running it on the gold answers). Scorer-side only.
 EXTRA = {
-    "detritivore": [r"\blitter\b", r"\bdebris\b", r"scaveng", r"\bdung\b", r"faec", r"\bfeces\b", r"fertili[sz]er",
+    "detritivore": [r"\blitter\b", r"\bdebris\b", r"scaveng", r"carcass", r"\bdung\b", r"faec", r"\bfeces\b", r"fertili[sz]er",
                     r"compost", r"saprophag", r"dead organic"],
     "herbivore": [r"\broots?\b", r"\bseedlings?\b", r"macrophyte", r"\bplant (?:particles|material|tissue|sap|matter)",
                   r"\bleaves\b", r"\b(?:wheat|maize|crop) plants?\b", r"\bpepino\b", r"\bSolanum\b", r"\bherbivor", r"phytophag"],
@@ -77,13 +83,73 @@ def expand(gold):
     return gold | {"fungivore", "bacterivore"} if "microbivore" in gold else gold
 
 
-def outcome(answer, taxon, gold, extended):
-    """An answer that says the diet is not stated counts as no_answer unless it still states a guild
-    directly (the extractor's primary guilds); guilds it only infers (indirect) are not enough."""
+# Genus-level classifier of the trait pipeline (collembola_trophic_batch.py, GUILD_KEYWORDS + infer_guilds).
+GENUS_KEYWORDS = {
+    "fungivore": ["fung", "hyphae", "hypha", "mycelium", "mycorrhiz", "spore", "yeast", "mold", "mould", "mushroom",
+                  "oomycete", "ergosterol"],
+    "bacterivore": ["bacteri", "microorganism", "microbe", "microbial community", "prokaryote", "archaea"],
+    "algivore": ["alga", "algae", "diatom", "cyanobacteri", "microalga", "biofilm", "green alga", "lichen photobiont"],
+    "herbivore": ["plant root", "root hair", "pollen", "seed", "leaf litter fungi", "moss", "lichen", "liverwort",
+                  "bryophyte", "epiphyte", "plant tissue", "vascular plant"],
+    "predator": ["prey", "predat", "hunt", "capture", "nematode", "mite", "collembola", "arthropod", "protozoa",
+                 "tardigrade", "enchytraeid", "parasite"],
+    "detritivore": ["detritus", "decompos", "organic matter", "litter", "humus", "soil organic", "carrion", "dead plant",
+                    "dead wood"],
+    "omnivore": ["omnivore", "generalist", "opportunistic", "various food", "mixed diet", "multiple food source"],
+}
+
+
+def infer_guilds_genus(text):
+    low = (text or "").lower()
+    matched = [g for g, kws in GENUS_KEYWORDS.items() if any(re.search(k, low, re.I) for k in kws)]
+    if len(matched) >= 3 and "omnivore" not in matched:
+        matched = ["omnivore"] + matched
+    return set(matched)
+
+
+def pipeline_guilds(answer, taxon, rank):
+    if rank == "genus":
+        return infer_guilds_genus(answer)
+    prim, _ = guilds(answer, taxon, False, split=True)
+    return prim
+
+
+def pipeline_outcome(answer, taxon, gold, rank="species"):
+    """What the trait pipeline records (see the module docstring)."""
     if not (answer or "").strip():
         return "no_answer"
-    prim, ind = guilds(answer, taxon, extended, split=True)
-    got = prim if DENIAL.search(answer) else prim | ind
+    got = pipeline_guilds(answer, taxon, rank)
+    if "microbivore" in got:
+        got = got | {"fungivore", "bacterivore"}
+    if not got:
+        return "no_answer"
+    return "correct" if got & expand(gold) else "wrong"
+
+
+def answer_guilds(answer, taxon):
+    """Guilds stated in the answer, read sentence by sentence with the extended vocabulary."""
+    got = set()
+    tx._GUILD_PAT = _EXT
+    try:
+        for sent in tx.sentences(answer or ""):
+            c = tx.classify(sent, taxon)
+            if c.get("absence") and not re.search(r"\bfeed|\bfed\b|consum|diet consists|graz", sent, re.I):
+                continue
+            g = set(tx._guilds_in(sent))
+            if c.get("prey_of"):
+                g.discard("predator")
+            got |= g
+    finally:
+        tx._GUILD_PAT = _BASE
+    if "microbivore" in got:
+        got |= {"fungivore", "bacterivore"}
+    return got
+
+
+def answer_outcome(answer, taxon, gold):
+    if not (answer or "").strip():
+        return "no_answer"
+    got = answer_guilds(answer, taxon)
     if not got:
         return "no_answer"
     return "correct" if got & expand(gold) else "wrong"
@@ -127,7 +193,7 @@ def wilson(k, n, z=1.96):
     d = 1 + z * z / n
     c = (p + z * z / (2 * n)) / d
     h = z * math.sqrt(p * (1 - p) / n + z * z / (4 * n * n)) / d
-    return (round(c - h, 3), round(c + h, 3))
+    return (round(max(0.0, c - h), 3), round(min(1.0, c + h), 3))
 
 
 def main(bench_path, runs_path, out_dir="."):
@@ -152,13 +218,14 @@ def main(bench_path, runs_path, out_dir="."):
         ans, col, ids = pipeline_answer(run["response"])
         gold_g = item_g[qid] if cfg.startswith("doc") else taxon_g[b["taxon"]]
         rows.append({"qid": qid, "config": cfg, "taxon": b["taxon"], "rank": b.get("taxon_rank", "species"),
+                     "nonfungal": int(not (gold_g & {"fungivore", "microbivore"})),
                      "evidence": b["evidence"], "hedged": int(b["hedged"]), "collection": b["collection"],
                      "gold_guilds": "|".join(sorted(gold_g)), "gold_answer": b["gold_answer"],
-                     "answer": ans, "answer_collection": col,
-                     "guilds_pipeline": "|".join(sorted(guilds(ans, b["taxon"], False))),
-                     "guilds_extended": "|".join(sorted(guilds(ans, b["taxon"], True))),
-                     "pipeline": outcome(ans, b["taxon"], gold_g, False),
-                     "extended": outcome(ans, b["taxon"], gold_g, True),
+                     "answer_text": ans, "answer_collection": col,
+                     "guilds_pipeline": "|".join(sorted(pipeline_guilds(ans, b["taxon"], b.get("taxon_rank", "species")))),
+                     "guilds_answer": "|".join(sorted(answer_guilds(ans, b["taxon"]))),
+                     "pipeline": pipeline_outcome(ans, b["taxon"], gold_g, b.get("taxon_rank", "species")),
+                     "answer": answer_outcome(ans, b["taxon"], gold_g),
                      "food_match": food_match(ans, b["gold_answer"]),
                      "gold_retrieved": int(str(b["docid"]) in ids),
                      "doc_ref_hit_gold": run.get("doc_ref_hit_gold"), "wall_s": run.get("wall_s")})
@@ -173,7 +240,7 @@ def main(bench_path, runs_path, out_dir="."):
     def summarise(rs):
         n = len(rs)
         s = {"n": n}
-        for mode in ("pipeline", "extended"):
+        for mode in ("pipeline", "answer"):
             c = Counter(r[mode] for r in rs)
             s[mode] = {k: round(c[k] / n, 3) for k in ("correct", "wrong", "no_answer")}
             s[mode]["correct_ci95"] = wilson(c["correct"], n)
@@ -183,22 +250,33 @@ def main(bench_path, runs_path, out_dir="."):
         return s
 
     summ = {}
+    for base in ("fungi", "fungi and decaying plant litter"):
+        for kind in ("doc", "e2e"):
+            k = sum(answer_outcome(f"{b['taxon']} feeds on {base}.", b["taxon"],
+                                   item_g[q] if kind == "doc" else taxon_g[b["taxon"]]) == "correct"
+                    for q, b in bench.items())
+            summ.setdefault("baselines", {})[f"constant '{base}' ({kind} gold)"] = round(k / len(bench), 3)
     for cfg in sorted({r["config"] for r in rows}):
         rs = [r for r in rows if r["config"] == cfg]
         summ[cfg] = {"all": summarise(rs)}
         for key, vals in (("rank", ("species", "genus")), ("hedged", (0, 1)),
                           ("evidence", ("lab", "literature", "isotope", "gut", "field")),
-                          ("collection", ("pmc", "medline", "plazi"))):
+                          ("collection", ("pmc", "medline", "plazi")), ("nonfungal", (1,))):
             for v in vals:
                 sub = [r for r in rs if r[key] == v]
                 if sub:
                     summ[cfg][f"{key}={v}"] = summarise(sub)
     json.dump(summ, open(out / "summary_trophic.json", "w"), indent=2)
+    print("baselines:", summ["baselines"])
     for cfg, d in summ.items():
+        if cfg == "baselines":
+            continue
         s = d["all"]
-        print(f"{cfg:22} n={s['n']:3}  pipeline correct={s['pipeline']['correct']:.2f} wrong={s['pipeline']['wrong']:.2f}  "
-              f"extended correct={s['extended']['correct']:.2f} {s['extended']['correct_ci95']} wrong={s['extended']['wrong']:.2f} "
-              f"no_answer={s['extended']['no_answer']:.2f}  food={s['food_match']:.2f}  gold_ret={s['gold_retrieved']:.2f}")
+        nf = d.get("nonfungal=1", {})
+        print(f"{cfg:22} n={s['n']:3}  pipeline correct={s['pipeline']['correct']:.2f} no_ans={s['pipeline']['no_answer']:.2f} | "
+              f"answer correct={s['answer']['correct']:.2f} {s['answer']['correct_ci95']} wrong={s['answer']['wrong']:.2f} "
+              f"no_answer={s['answer']['no_answer']:.2f} | food={s['food_match']:.2f} | gold_ret={s['gold_retrieved']:.2f}"
+              + (f" | non-fungal n={nf['n']} answer correct={nf['answer']['correct']:.2f}" if nf else ""))
 
 
 if __name__ == "__main__":
