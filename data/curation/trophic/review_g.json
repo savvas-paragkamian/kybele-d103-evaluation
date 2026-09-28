@@ -1,0 +1,842 @@
+[
+{
+"tid": "G001",
+"genus": "Agrenia",
+"doc_id": "PMC3788365",
+"collection": "pmc",
+"title": "Ancient carbon from a melting glacier gives high 14C age in living pioneer invertebrates",
+"year": 2013,
+"sentences": [
+"We assume that Agrenia and Desoria Collembola have eaten this biofilm, which is rich in proteins and carbohydrates, explaining the occurrence of transparent gut content with diatoms."
+],
+"contexts": [
+"In this “microbial mat”, they live together with other one-celled organisms and perform photosynthesis262728. We assume that Agrenia and Desoria Collembola have eaten this biofilm, which is rich in proteins and carbohydrates, explaining the occurrence of transparent gut content with diatoms. When eating the biofilm, it is probably unavoidable to ingest tiny mineral particles at the same time."
+]
+},
+{
+"tid": "G002",
+"genus": "Allacma",
+"doc_id": "PMC7934680",
+"collection": "pmc",
+"title": "Trophic niche differentiation and utilisation of food resources in Collembola is altered by rainforest conversion to plantation systems",
+"year": 2021,
+"sentences": [
+"In rainforest, Pseudosinella sp.1 occupied the highest trophic position, followed by Isotomiella cf . minor, whereas Allacma sp.1 occupied the lowest trophic position."
+],
+"contexts": [
+"In rainforest, Δ13C values of Pseudosinella sp.1 were highest and differed significantly from those of Lepidocyrtus sp.1 and Pararrhopalites sp.1, whereas in jungle rubber they were highest in Homidia cingula and differed significantly from Callyntrura sp.1. Δ15N values across abundant species varied significantly in rainforest (F4,14 = 5.00, p = 0.010), jungle rubber (F5,18 = 4.70, p = 0.006) and oil palm plantations (F2,9 = 23.59, p = 0.001), but not in rubber plantations ( F5,19 = 2.43, p = 0.072) (Fig. 3; for details see Tables S10–S13). In rainforest, Pseudosinella sp.1 occupied the highest trophic position, followed by Isotomiella cf . minor, whereas Allacma sp.1 occupied the lowest trophic position. Similar to rainforest, in jungle rubber, Pseudosinella sp.1 also occupied the highest trophic position, but Δ15N values were lowest in Callyntrura sp.1."
+]
+},
+{
+"tid": "G003",
+"genus": "Archisotoma",
+"doc_id": "504F2D6CFFC9FF9A97BEF759FB271BDF",
+"collection": "plazi",
+"title": "Mucronia enigmatica Fjellberg, 2010, sp. n.",
+"year": "",
+"sentences": [
+"Similarly transformed palps and maxillae are commonly seen in several genera of Isotomidae ( Archisotoma , Parisotoma , Desoria ) and probably reflects a specialisation to particular food or feeding habits."
+],
+"contexts": [
+"The remarkably transformed maxillae and the modified labial palps may actually not be significant on generic level. Similarly transformed palps and maxillae are commonly seen in several genera of Isotomidae ( Archisotoma , Parisotoma , Desoria ) and probably reflects a specialisation to particular food or feeding habits. The simply lobed PAO and the bisetose mucro however, appears unique in the family."
+]
+},
+{
+"tid": "G004",
+"genus": "Arrhopalites",
+"doc_id": "PMC11942825",
+"collection": "pmc",
+"title": "The First Cavernicolous Species of Arrhopalites (Collembola, Symphypleona, Arrhopalitidae) from China and Its Phylogenetic Position †",
+"year": 2025,
+"sentences": [
+"Concerning the genus Arrhopalites [2] (Arrhopalitidae), only two species were recorded: A. brevicornis Godeiro, Zhang & Bellini, 2022, collected at Jilin Province in a transitional zone of cropping and grazing [3], and A. pukouensis Wu & Christiansen, 1997, collected at Jiangsu Province in the first layer of litter from an urban mountain [4]."
+],
+"contexts": [
+"Most of the descriptions are outdated, from more than 20 years ago, and with the decreasing number of taxonomists, the morphological study of the group is threatened. Concerning the genus Arrhopalites [2] (Arrhopalitidae), only two species were recorded: A. brevicornis Godeiro, Zhang & Bellini, 2022, collected at Jilin Province in a transitional zone of cropping and grazing [3], and A. pukouensis Wu & Christiansen, 1997, collected at Jiangsu Province in the first layer of litter from an urban mountain [4]. The knowledge about the phylogenetic position of Arrhopalitidae is still incipient."
+]
+},
+{
+"tid": "G005",
+"genus": "Bourletiella",
+"doc_id": "PMC10048822",
+"collection": "pmc",
+"title": "Responses of Soil Collembolans to Land Degradation in a Black Soil Region in China",
+"year": 2023,
+"sentences": [
+"Bourletiella, which belongs to the order Symphypleona, are typical herbivorous and epedaphic Collembolans [46]."
+],
+"contexts": [
+"In addition, Bourletiella sp.1 was the only unique species found in the NLD. Bourletiella, which belongs to the order Symphypleona, are typical herbivorous and epedaphic Collembolans [46]. Herbivorous Collembolans take fresh organic matter as their main food."
+]
+},
+{
+"tid": "G006",
+"genus": "Ceratophysella",
+"doc_id": "40020342",
+"collection": "medline",
+"title": "Assessing the potential for predator-prey interactions in mesofaunal arthropod communities through temperature dependence of locomotion.",
+"year": "2025",
+"sentences": [
+"Acari (predators) generally exhibited broader thermal tolerances compared to Collembola (prey), with overlapping thermal optima observed for some species, such as Parasitus sp. and Ceratophysella cf. gibbosa."
+],
+"contexts": [
+"Locomotion-based thermal performance curves of four species of Acari and three species of Collembola were estimated across seven test temperatures through automated tracking of individuals. Acari (predators) generally exhibited broader thermal tolerances compared to Collembola (prey), with overlapping thermal optima observed for some species, such as Parasitus sp. and Ceratophysella cf. gibbosa. However, differences in maximum thermal limits could influence predator-prey dynamics under warmer conditions."
+]
+},
+{
+"tid": "G007",
+"genus": "Ceratophysella",
+"doc_id": "PMC8093729",
+"collection": "pmc",
+"title": "Incorporation of mineral nitrogen into the soil food web as affected by plant community composition",
+"year": 2021,
+"sentences": [
+"Based on biomass estimates, the following mesofauna species were used for stable isotope analyses: Tectocepheus velatus sarekensis (Oribatida, primary decomposer), Lepidocyrtus cyaneus, Isotoma viridis, Parisotoma notabilis, Ceratophysella sp., and Stenaphorura denisi (all Collembola, secondary decomposers), and Lasioseius berlesei (Gamasina, predator).",
+"Tectocepheus velatus sarekensis Parisotoma notabilis Stenaphorura denisi Estimate df t‐value p‐value Estimate df t‐value p‐value Estimate df t‐value p‐value Estimate df t‐value p‐value Estimate df t‐value p‐value (Intercept) 2.711 75.00 71.27 <0.0001 2.620 10.68 24.12 <0.0001 1.792 52.00 20.69 <0.0001 2.462 16.41 22.30 <0.0001 2.449 22.00 46.25 <0.0001 SR −0.262 64.82 −2.20 0.032 −0.261 52.00 −2.28 0.026 0.219 24.76 1.92 0.070 FGR LEG GR 0.460 10.65 3.72 0.004 Time −0.005 75.00 −8.91 <0.0001 SR × Time 0.007 52.00 2.25 0.028 −0.005 24.36 −6.67 <0.0001 −0.007 22.00 −2.55 0.018 FGR × Time 0.003 52.00 2.63 0.011 0.002 22.00 2.48 0.021 LEG × Time −0.005 22.00 −1.99 0.060 GR × Time −0.004 68.99 −4.58 <0.0001 −0.010 52.00 −3.80 0.0004 0.003 22.00 1.42 0.171 AIC full mod. −14.10 35.47 30.72 5.15 79.979 AIC red. mod. −25.38 31.46 −1.03 −4.84 3.35 Changes in the incorporation of 15N into Lasioseius berlesei (Δ15N values) with time; means ± 1 SE Δ15N values of Ceratophysella sp. significantly varied with plant species richness being high in plots with two and eight species but low in those with four and 16 species (Figure 4).",
+"By contrast, the presence of grasses significantly affected Δ15N values in Ceratophysella sp. and T. velatus sarekensis, but the effect varied with time (Figure 7a,b).",
+"In Ceratophysella sp., Δ15N values strongly increased in the presence of grasses, in particular at days 5 and 15.",
+"Changes in the incorporation of 15N into (a) Tectocepheus velatus sarekensis and (b) Ceratophysella sp. with time and presence of grasses (Δ15N values); means ± 1 SE DISCUSSION Soil microorganisms are one of the main food resources of soil animals, thereby channeling microbial N to higher trophic levels of the soil food web.",
+"High Δ15N values in Ceratophysella sp. suggest that this species predominantly acquires its N by feeding on microorganisms, which were heavily labeled with 15N.",
+"This is supported by other studies reporting Ceratophysella sp. and other species of Poduromorpha to predominantly feed on fungi (Chahartaghi et al., 2005; Maraun et al., 2003).",
+"However, there is evidence that Poduromorpha species also feed on plants (Sechi et al., 2014); thus, combined feeding on fungi and plant roots may have been responsible for the high Δ15N values in Ceratophysella sp.",
+"The Collembola species L. cyaneus incorporated less 15N than Ceratophysella sp., but still incorporation was high 5 days after labeling, which also suggests that this species acquired much of its N from feeding on microorganisms.",
+"However, as these species have been assumed to be predominantly microbivorous (Berg et al., 2004; Chahartaghi et al., 2005; Ngosong et al., 2011), slow tissue turnover rate may also have contributed to the lower 15N incorporation as compared to the microbivorous Ceratophysella sp. and L. cyaneus.",
+"Also in line with Hypothesis 2, plant species richness as a main factor significantly decreased Δ15N values in C eratophysella sp., likely because Ceratophysella sp. fed on microorganisms that were also reduced in 15N due to limited N supply in high diverse plant communities (see above).",
+"Although the presence of grasses did not change microbial 15N APE, they affected Δ15N values in Ceratophysella sp. and in T. velatus sarekensis.",
+"In Ceratophysella sp., the presence of grasses increased Δ15N values with the effect being strongest at days 5 and 15.",
+"The positive effect of grasses on the Δ15N values of Ceratophysella sp. not only supports the view that the diet of this species is not restricted to microorganisms but also includes plants (Sechi et al., 2014) in particular roots highly labeled with 15N (Jesch et al., 2018).",
+"LM table of t‐ and p‐values for the effects of species richness (SR), plant functional group richness (FGR), legumes (LEG), grasses (GR), time, block (1–4), mesofauna species (Isotoma viridis, Lasioseius berlesei, Lepidocyrtus cyaneus, Ceratophysella sp., Parisotoma notabilis, Stenaphorura denisi, Tectocepheus velatus sarekensis), and the respective interactions of plant community properties and time on the incorporation of mineral N (Δ15N values) of the studied mesofauna species Note Significant effects (p ≤ 0.05) are given in bold."
+],
+"contexts": [
+"For the analysis of the natural abundance of 15N, reference soil cores for microorganisms and mesofauna were taken 10 cm adjacent to the sampling area within each plot 5 days before labeling as described above. Based on biomass estimates, the following mesofauna species were used for stable isotope analyses: Tectocepheus velatus sarekensis (Oribatida, primary decomposer), Lepidocyrtus cyaneus, Isotoma viridis, Parisotoma notabilis, Ceratophysella sp., and Stenaphorura denisi (all Collembola, secondary decomposers), and Lasioseius berlesei (Gamasina, predator). All of these species are abundant and widespread in grasslands and other ecosystems in Central Europe including the field site of the Jena Experiment (González‐Macé & Scheu, 2018; Sabais et al., 2011).",
+"Lasioseius berlesei Ceratophysella sp. Tectocepheus velatus sarekensis Parisotoma notabilis Stenaphorura denisi Estimate df t‐value p‐value Estimate df t‐value p‐value Estimate df t‐value p‐value Estimate df t‐value p‐value Estimate df t‐value p‐value (Intercept) 2.711 75.00 71.27 <0.0001 2.620 10.68 24.12 <0.0001 1.792 52.00 20.69 <0.0001 2.462 16.41 22.30 <0.0001 2.449 22.00 46.25 <0.0001 SR −0.262 64.82 −2.20 0.032 −0.261 52.00 −2.28 0.026 0.219 24.76 1.92 0.070 FGR LEG GR 0.460 10.65 3.72 0.004 Time −0.005 75.00 −8.91 <0.0001 SR × Time 0.007 52.00 2.25 0.028 −0.005 24.36 −6.67 <0.0001 −0.007 22.00 −2.55 0.018 FGR × Time 0.003 52.00 2.63 0.011 0.002 22.00 2.48 0.021 LEG × Time −0.005 22.00 −1.99 0.060 GR × Time −0.004 68.99 −4.58 <0.0001 −0.010 52.00 −3.80 0.0004 0.003 22.00 1.42 0.171 AIC full mod. −14.10 35.47 30.72 5.15 79.979 AIC red. mod. −25.38 31.46 −1.03 −4.84 3.35 Changes in the incorporation of 15N into Lasioseius berlesei (Δ15N values) with time; means ± 1 SE Δ15N values of Ceratophysella sp. significantly varied with plant species richness being high in plots with two and eight species but low in those with four and 16 species (Figure 4). In T. velatus sarekensis, Δ15N values also varied with plant species richness, but the effect depended on time.",
+"(Δ15N values) with plant species richness; means ± 1 SE Changes in the incorporation of 15N into (a) Tectocepheus velatus sarekensis, (b) Parisotoma notabilis, and (c) Stenaphorura denisi with time and plant species richness (Δ15N values); means ± 1 SE Changes in the incorporation of 15N into (a) Tectocepheus velatus sarekensis, (b) Stenaphorura denisi, (c) Lepidocyrtus cyaneus, and (d) Isotoma viridis with time plant functional group richness (Δ15N values); means ± 1 SE The presence of legumes generally did not affect Δ15N values of any of the studied mesofauna species. By contrast, the presence of grasses significantly affected Δ15N values in Ceratophysella sp. and T. velatus sarekensis, but the effect varied with time (Figure 7a,b). In Ceratophysella sp., Δ15N values strongly increased in the presence of grasses, in particular at days 5 and 15.",
+"By contrast, the presence of grasses significantly affected Δ15N values in Ceratophysella sp. and T. velatus sarekensis, but the effect varied with time (Figure 7a,b). In Ceratophysella sp., Δ15N values strongly increased in the presence of grasses, in particular at days 5 and 15. By contrast, in T. velatus sarekensis, Δ15N values decreased in the presence of grasses, with the effect being most pronounced at days 15 and 30.",
+"By contrast, in T. velatus sarekensis, Δ15N values decreased in the presence of grasses, with the effect being most pronounced at days 15 and 30. Changes in the incorporation of 15N into (a) Tectocepheus velatus sarekensis and (b) Ceratophysella sp. with time and presence of grasses (Δ15N values); means ± 1 SE DISCUSSION Soil microorganisms are one of the main food resources of soil animals, thereby channeling microbial N to higher trophic levels of the soil food web. Nevertheless, until today it is unclear which soil animals rely predominantly on N derived from microorganisms and which predominantly rely on N from dead organic matter.",
+"At the first sampling date, incorporation of mineral‐derived N was highest in the Collembola species Ceratophysella sp., followed by the Gamasina L. berlesei and the Collembola L. cyaneus, I. viridis, P. notabilis, S. denisi, and the primary decomposer Oribatida T. velatus sarekensis. High Δ15N values in Ceratophysella sp. suggest that this species predominantly acquires its N by feeding on microorganisms, which were heavily labeled with 15N. This is supported by other studies reporting Ceratophysella sp. and other species of Poduromorpha to predominantly feed on fungi (Chahartaghi et al., 2005; Maraun et al., 2003).",
+"High Δ15N values in Ceratophysella sp. suggest that this species predominantly acquires its N by feeding on microorganisms, which were heavily labeled with 15N. This is supported by other studies reporting Ceratophysella sp. and other species of Poduromorpha to predominantly feed on fungi (Chahartaghi et al., 2005; Maraun et al., 2003). However, there is evidence that Poduromorpha species also feed on plants (Sechi et al., 2014); thus, combined feeding on fungi and plant roots may have been responsible for the high Δ15N values in Ceratophysella sp.",
+"This is supported by other studies reporting Ceratophysella sp. and other species of Poduromorpha to predominantly feed on fungi (Chahartaghi et al., 2005; Maraun et al., 2003). However, there is evidence that Poduromorpha species also feed on plants (Sechi et al., 2014); thus, combined feeding on fungi and plant roots may have been responsible for the high Δ15N values in Ceratophysella sp. Omnivory, that is, feeding on prey from more than one trophic level, may alleviate N limitation by broadening the prey spectrum (Lefcheck et al., 2013; White, 1993).",
+"Omnivory, that is, feeding on prey from more than one trophic level, may alleviate N limitation by broadening the prey spectrum (Lefcheck et al., 2013; White, 1993). The Collembola species L. cyaneus incorporated less 15N than Ceratophysella sp., but still incorporation was high 5 days after labeling, which also suggests that this species acquired much of its N from feeding on microorganisms. This is in line with other studies reporting L. cyaneus to preferentially feed on fungi and to a minor degree on bacteria (Berg et al., 2004; Ferlian et al., 2015).",
+"Intermediate levels of mineral‐derived N incorporated into animals, such as the Collembola I. viridis, P. notabilis, and S. denisi, suggest that these species only in part fed on microorganisms and that their diet includes a substantial amount of dead organic matter. However, as these species have been assumed to be predominantly microbivorous (Berg et al., 2004; Chahartaghi et al., 2005; Ngosong et al., 2011), slow tissue turnover rate may also have contributed to the lower 15N incorporation as compared to the microbivorous Ceratophysella sp. and L. cyaneus. Low incorporation of mineral‐derived 15N in T. velatus sarekensis suggests that this species little relies on microbial N.",
+"Despite stronger competition for soil N under high plant diversity, positive effects of plant diversity on microbial communities may surpass negative ones as soil microbial activity and biomass increase with plant diversity, probably due to increased rhizodeposition that mitigates carbon limitation of microorganisms (Cline et al., 2018; Lange et al., 2015; Strecker et al., 2015, 2016). Also in line with Hypothesis 2, plant species richness as a main factor significantly decreased Δ15N values in C eratophysella sp., likely because Ceratophysella sp. fed on microorganisms that were also reduced in 15N due to limited N supply in high diverse plant communities (see above). Interestingly, plant species richness exerted time‐dependent effects on T. velatus sarekensis, P. notabilis, and S. denisi.",
+"This contradicts earlier findings showing that the presence of grasses enhances the microbial C‐to‐N ratio, that is, decreases the availability of N for soil microorganisms (Strecker et al., 2015). Although the presence of grasses did not change microbial 15N APE, they affected Δ15N values in Ceratophysella sp. and in T. velatus sarekensis. However, the effects differed between species and varied with time.",
+"However, the effects differed between species and varied with time. In Ceratophysella sp., the presence of grasses increased Δ15N values with the effect being strongest at days 5 and 15. The positive effect of grasses on the Δ15N values of Ceratophysella sp. not only supports the view that the diet of this species is not restricted to microorganisms but also includes plants (Sechi et al., 2014) in particular roots highly labeled with 15N (Jesch et al., 2018).",
+"In Ceratophysella sp., the presence of grasses increased Δ15N values with the effect being strongest at days 5 and 15. The positive effect of grasses on the Δ15N values of Ceratophysella sp. not only supports the view that the diet of this species is not restricted to microorganisms but also includes plants (Sechi et al., 2014) in particular roots highly labeled with 15N (Jesch et al., 2018). Conform to Hypothesis 4, grasses decreased Δ15N values in T. velatus sarekensis, and this effect was strongest at days 30 and 60.",
+"DATA AVAILABILITY STATEMENT Data used in this manuscript have been submitted to Pangaea and are preliminary available at https://issues.pangaea.de/browse/PDI‐26860. LM table of t‐ and p‐values for the effects of species richness (SR), plant functional group richness (FGR), legumes (LEG), grasses (GR), time, block (1–4), mesofauna species (Isotoma viridis, Lasioseius berlesei, Lepidocyrtus cyaneus, Ceratophysella sp., Parisotoma notabilis, Stenaphorura denisi, Tectocepheus velatus sarekensis), and the respective interactions of plant community properties and time on the incorporation of mineral N (Δ15N values) of the studied mesofauna species Note Significant effects (p ≤ 0.05) are given in bold. Asterisks indicate levels of significance (*p ≤ 0.05, **p ≤ 0.01, ***p ≤ 0.001)."
+]
+},
+{
+"tid": "G008",
+"genus": "Crossodonthina",
+"doc_id": "10.11646/zootaxa.5665.2.2",
+"collection": "pmc",
+"title": "A new species of Crossodonthina Yosii (Collembola, Neanuridae) from Central-South China, with the redescription of C. hainana Xiong, Chen & Yin, 2005",
+"year": 2025,
+"sentences": [
+"Till now, the feeding behavior and feeding mode of Crossodonthina have hardly been studied."
+],
+"contexts": [
+"Only the description of C. koreana Yosii & Lee, 1963 did not provide any habitat information.As said before, Crossodonthina hainana Xiong, Chen & Yin, 2005 may be the single known species of the genus well adapted to different ecological environments, both salty wetland (Xiong, Chen & Yin 2005) and non-salinized inland mountainous area. Till now, the feeding behavior and feeding mode of Crossodonthina have hardly been studied. A new species of Crossodonthina Yosii (Collembola, Neanuridae) from Central-South China, with the redescription of C. hainana Xiong, Chen & Yin, 2005 10.11646/zootaxa.5665.2.2 http://treatment.plazi.org/id/B2564E1BA65A1725FFBAFFADF24C5918 https://doi.org/10.11646/zootaxa.5665.2.2 Crossodonthina 1 Eyes 2+2, the montana species group..................................................................... 2 - Eyes 3+3, the nipponica species group.................................................................... 6 2 Tubercle Oc with 2 chaetae, Fu with 6 chaetae..........................."
+]
+},
+{
+"tid": "G009",
+"genus": "Crossodonthina",
+"doc_id": "PMC12284588",
+"collection": "pmc",
+"title": "﻿A new arboreal species of Vitronura Yosii, 1969 and a new record of Yuukianura Yosii, 1955 ( Collembola , Neanuridae ) from China, with notes on the feeding behavior of Neanurinae",
+"year": 2025,
+"sentences": [
+"Crossodonthina sp. feeding on slime mold.",
+"We also compared the feeding action of Y.szeptyckii with that of Crossodonthina sp. and Orthonychiurus sp.",
+"In summary, the feeding preference and action of Y.szeptyckii differ significantly from Crossodonthina sp., while resembling those of non-neanurid Collembola, such as Orthonychiurus.",
+"Intriguingly, both groups we have observed, namely Yuukianura and Crossodonthina, have more complicated mouthparts among Neanurinae, but only the former showed different feeding behavior from others (sensu Hoskins et al. 2015), suggesting a potential mismatch between morphology and function.",
+"Supplementary materials AA74774D-7F1E-5837-8C0F-C21A923D4B3A Data type mp4 Explanation note Supplementary videos on YouTube (https://youtu.be/_SVKQAGRTvw): A Yuukianura feeding on yeast B Orthonychiurus feeding on yeast C Crossodonthina feeding on slime mold. https://binary.pensoft.net/file/1374374 This dataset is made available under the Open Database License (http://opendatacommons.org/licenses/odbl/1.0/)."
+],
+"contexts": [
+"This feeding preference differs from that of other reported neanurids consuming slime molds (Fig. 19, also see Hoskins et al. 2015). Crossodonthina sp. feeding on slime mold. We also compared the feeding action of Y.szeptyckii with that of Crossodonthina sp. and Orthonychiurus sp.",
+"Crossodonthina sp. feeding on slime mold. We also compared the feeding action of Y.szeptyckii with that of Crossodonthina sp. and Orthonychiurus sp. (Suppl. material 1).",
+"Mouthpart movements are detectable only by subtle head tremors (Suppl. material 1: Video Part C). In summary, the feeding preference and action of Y.szeptyckii differ significantly from Crossodonthina sp., while resembling those of non-neanurid Collembola, such as Orthonychiurus. This suggests that this group (Yuukianura) may occupy a unique position within the family Neanuridae.",
+"This suggests that this group (Yuukianura) may occupy a unique position within the family Neanuridae. Intriguingly, both groups we have observed, namely Yuukianura and Crossodonthina, have more complicated mouthparts among Neanurinae, but only the former showed different feeding behavior from others (sensu Hoskins et al. 2015), suggesting a potential mismatch between morphology and function. Future research should focus on observing the feeding behavior of other Yuukianura species and other genera of Neanuridae, in combination with molecular analyses, to determine the phylogenetic position of this genus, evaluate the relatedness of feeding behavior to phylogeny, and reveal the exact correlation between the morphologies of mouthparts and their functions.",
+"Author ORCIDs Ji-Gang Jiang https://orcid.org/0000-0002-4484-3312 Daoyuan Yu https://orcid.org/0000-0003-2984-0540 Data availability All of the data that support the findings of this study are available in the main text or Supplementary Information. Supplementary materials AA74774D-7F1E-5837-8C0F-C21A923D4B3A Data type mp4 Explanation note Supplementary videos on YouTube (https://youtu.be/_SVKQAGRTvw): A Yuukianura feeding on yeast B Orthonychiurus feeding on yeast C Crossodonthina feeding on slime mold. https://binary.pensoft.net/file/1374374 This dataset is made available under the Open Database License (http://opendatacommons.org/licenses/odbl/1.0/). The Open Database License (ODbL) is a license agreement intended to allow users to freely share, modify, and use this Dataset while maintaining this same freedom for others, provided that the original source and author(s) are credited."
+]
+},
+{
+"tid": "G010",
+"genus": "Cyphoderus",
+"doc_id": "10.3897/afrinvertebr.65.139404",
+"collection": "pmc",
+"title": "﻿Small-scale variations in spider and springtail assemblages between termite mounds and the surrounding grassland matrix",
+"year": 2024,
+"sentences": [
+"These chemicals evidently have no effect on particular nest associates such as Cyphoderus sp. and specialist mammalian predators such as the aardwolf and aardvark (Richardson 1987; Richardson and Levitan 1994; Taylor and Skinner 2000; De Vries et al. 2011), but our results suggest that they may effectively deter spiders inside active mounds."
+],
+"contexts": [
+"This is most likely related to the chemical defence exhibited by Trinervitermes species, whose soldiers have a nasutiform head and release repellent terpene compounds when disturbed (Nel 1968; Prestwich et al. 1976a, b; Prestwich 1977). These chemicals evidently have no effect on particular nest associates such as Cyphoderus sp. and specialist mammalian predators such as the aardwolf and aardvark (Richardson 1987; Richardson and Levitan 1994; Taylor and Skinner 2000; De Vries et al. 2011), but our results suggest that they may effectively deter spiders inside active mounds. This may also explain why the mound specialist jumping spider, H. termitophagus, is only found associated with abandoned and not active mounds (Wesołowska and Haddad 2002) and likely displays euryphagous specialist habits rather than stenophagy on the host termites (Michálek et al. 2021)."
+]
+},
+{
+"tid": "G011",
+"genus": "Desoria",
+"doc_id": "504F2D6CFFC9FF9A97BEF759FB271BDF",
+"collection": "plazi",
+"title": "Mucronia enigmatica Fjellberg, 2010, sp. n.",
+"year": "",
+"sentences": [
+"Similarly transformed palps and maxillae are commonly seen in several genera of Isotomidae ( Archisotoma , Parisotoma , Desoria ) and probably reflects a specialisation to particular food or feeding habits."
+],
+"contexts": [
+"The remarkably transformed maxillae and the modified labial palps may actually not be significant on generic level. Similarly transformed palps and maxillae are commonly seen in several genera of Isotomidae ( Archisotoma , Parisotoma , Desoria ) and probably reflects a specialisation to particular food or feeding habits. The simply lobed PAO and the bisetose mucro however, appears unique in the family."
+]
+},
+{
+"tid": "G012",
+"genus": "Desoria",
+"doc_id": "PMC3788365",
+"collection": "pmc",
+"title": "Ancient carbon from a melting glacier gives high 14C age in living pioneer invertebrates",
+"year": 2013,
+"sentences": [
+"We assume that Agrenia and Desoria Collembola have eaten this biofilm, which is rich in proteins and carbohydrates, explaining the occurrence of transparent gut content with diatoms."
+],
+"contexts": [
+"In this “microbial mat”, they live together with other one-celled organisms and perform photosynthesis262728. We assume that Agrenia and Desoria Collembola have eaten this biofilm, which is rich in proteins and carbohydrates, explaining the occurrence of transparent gut content with diatoms. When eating the biofilm, it is probably unavoidable to ingest tiny mineral particles at the same time."
+]
+},
+{
+"tid": "G013",
+"genus": "Entomobrya",
+"doc_id": "9E2F3563490FC003A33A02D30A001A06",
+"collection": "plazi",
+"title": "Thaumatomyrmex atrox Weber, 1939, sp. nov.",
+"year": "",
+"sentences": [
+"Similar bizarre mandibles are common in Strumigenys and I have found a Strumigenys worker carrying a collembolan ( Entomobrya sp.), controvening a theory that the ants of this genus fed on fungi."
+],
+"contexts": [
+"Mann (Wheeler and Mann, 1914). Similar bizarre mandibles are common in Strumigenys and I have found a Strumigenys worker carrying a collembolan ( Entomobrya sp.), controvening a theory that the ants of this genus fed on fungi. Of the previously known three species this new species is closest to T. ferox discovered by Dr."
+]
+},
+{
+"tid": "G014",
+"genus": "Entomobrya",
+"doc_id": "PMC4511865",
+"collection": "pmc",
+"title": "Spider foraging strategy affects trophic cascades under natural and drought conditions",
+"year": 2015,
+"sentences": [
+"Entomobrya are relative large, surface-dwelling Collembola acting as primary decomposers by feeding directly on litter and its associated fungi and bacteria, thus playing essential roles in litter decomposition1638."
+],
+"contexts": [
+"Compared to control, SW + AH, SW and AH spider treatments significantly decreased densities of Entomobrya, and thus slowed litter decomposition. Entomobrya are relative large, surface-dwelling Collembola acting as primary decomposers by feeding directly on litter and its associated fungi and bacteria, thus playing essential roles in litter decomposition1638. Meanwhile, SW + AH had lower densities of Total Collembola compared with control under drought conditions, and Collembola in general are major drivers of litter decomposition in tropical forests39."
+]
+},
+{
+"tid": "G015",
+"genus": "Entomobrya",
+"doc_id": "PMC5802828",
+"collection": "pmc",
+"title": "Diversity and metabolic potential of the microbiota associated with a soil arthropod",
+"year": 2018,
+"sentences": [
+"Species belonging to the genera of Entomobrya, Folsomia, Orchesella, and Tomecerus have been classified as primary decomposers, feeding on litter material and the adhering fungi and bacteria."
+],
+"contexts": [
+"Several studies have highlighted the role of springtails as detritivores and they have been shown to stimulate microbial decomposition through soil mixing and indirect catalytic effects on energy flow and nutrient turnover. Species belonging to the genera of Entomobrya, Folsomia, Orchesella, and Tomecerus have been classified as primary decomposers, feeding on litter material and the adhering fungi and bacteria. Traditional cultivation studies have previously recovered a number of bacteria from the springtail Folsomia candida including members of the phyla Proteobacteria (Alphaproteobacteria and Gammaproteobacteria) and Firmicutes."
+]
+},
+{
+"tid": "G016",
+"genus": "Folsomia",
+"doc_id": "29681070",
+"collection": "medline",
+"title": "Effects of a mycophagous Collembola on the symbioses between Trifolium subterraneum and three arbuscular mycorrhizal fungi.",
+"year": "1996",
+"sentences": [
+"We examined the effect of the mycophagous Collembola Folsomia Candida Willem on the symbioses between Trifolium subterraneum L. and three arbuscular mycorrhizal (AM) fungi."
+],
+"contexts": [
+"Effects of a mycophagous Collembola on the symbioses between Trifolium subterraneum and three arbuscular mycorrhizal fungi. We examined the effect of the mycophagous Collembola Folsomia Candida Willem on the symbioses between Trifolium subterraneum L. and three arbuscular mycorrhizal (AM) fungi. Mycorrhizal and non-mycorrhizal plants were grown in pots with a central mesh bag which constituted a root-free soil compartment (RFSC) where the soil was labelled with 32 P."
+]
+},
+{
+"tid": "G017",
+"genus": "Folsomia",
+"doc_id": "PMC10087712",
+"collection": "pmc",
+"title": "High‐quality genomes reveal significant genetic divergence and cryptic speciation in the model organism Folsomia candida (collembola)",
+"year": 2022,
+"sentences": [
+"Comparison of detoxification‐related gene families among the three Folsomia candida strains and Drosophila melanogaster (Dmel) Family Clan FCSH FCDK FCBL Dmel ABC 118 132 122 56 ABCA 2 2 2 10 ABCB 7 10 7 8 ABCC 15 25 21 14 ABCD 3 3 3 2 ABCE 1 1 1 1 ABCF 3 3 3 3 ABCG 9 10 9 15 ABCH 77 78 76 3 CCE 117 120 118 35 Dietary/detoxification 79 80 76 13 Hormone/semiochemical 0 0 0 8 Neuro‐developmental 38 40 42 14 CYP 183 203 181 87 Mitochondrial 4 6 6 12 CYP2 100 104 94 7 CYP3 56 59 53 36 CYP4 23 34 28 32 GST 70 79 80 38 Microsomal 5 5 4 3 Delta 4 4 4 11 Epsilon 0 0 0 14 Mu 13 13 13 0 Omega 5 4 3 3 Sigma 39 48 49 1 Theta 2 3 3 4 Zeta 2 2 2 2 unclassified 0 0 2 0 UGT 48 48 46 35 Massive expansion of Folsomia ABC gene families."
+],
+"contexts": [
+"FCDK/FCBL showed greater expansion of the ABC and GST families than FCSH, consistent with the wider distribution of the parthenogenetic strain. Comparison of detoxification‐related gene families among the three Folsomia candida strains and Drosophila melanogaster (Dmel) Family Clan FCSH FCDK FCBL Dmel ABC 118 132 122 56 ABCA 2 2 2 10 ABCB 7 10 7 8 ABCC 15 25 21 14 ABCD 3 3 3 2 ABCE 1 1 1 1 ABCF 3 3 3 3 ABCG 9 10 9 15 ABCH 77 78 76 3 CCE 117 120 118 35 Dietary/detoxification 79 80 76 13 Hormone/semiochemical 0 0 0 8 Neuro‐developmental 38 40 42 14 CYP 183 203 181 87 Mitochondrial 4 6 6 12 CYP2 100 104 94 7 CYP3 56 59 53 36 CYP4 23 34 28 32 GST 70 79 80 38 Microsomal 5 5 4 3 Delta 4 4 4 11 Epsilon 0 0 0 14 Mu 13 13 13 0 Omega 5 4 3 3 Sigma 39 48 49 1 Theta 2 3 3 4 Zeta 2 2 2 2 unclassified 0 0 2 0 UGT 48 48 46 35 Massive expansion of Folsomia ABC gene families. Ultrafast bootstrap values are indicated at the nodes."
+]
+},
+{
+"tid": "G018",
+"genus": "Folsomia",
+"doc_id": "PMC12480435",
+"collection": "pmc",
+"title": "Soil Allies: Exploring the Combined Potential of Folsomia candida and Trichoderma spp. Against Fusarium oxysporum",
+"year": 2025,
+"sentences": [
+"Fungal area consumption by Folsomia Candida ."
+],
+"contexts": [
+"However, the mycelia of Trichoderma spp. remained unconsumed (Figure 3B). Fungal area consumption by Folsomia Candida . (A) Pictures showing fungal area consumption of Fusarium oxysporum by the springtail F. candida."
+]
+},
+{
+"tid": "G019",
+"genus": "Folsomia",
+"doc_id": "PMC4977627",
+"collection": "pmc",
+"title": "Impact of Grassland Reseeding, Herbicide Spraying and Ploughing on Diversity and Abundance of Soil Arthropods",
+"year": 2016,
+"sentences": [
+"The Collembolan fauna was comprised of the T0 Herbivores Symphypleona (Arrhopalitidae, Bourletiellidae, Dicyrtomidae, Mackenziellidae, Sminthuridae, Sminthurididae, Sphyrothecinae, and Sturmiidae); Primary decomposers (T1) Folsomia and Neelipleona (Neelidae); Secondary decomposers (T2) contained Actaletidae, Entomobryomorpha (Entomobryidae and Isotomidae), Poduromorpha (Brachystomellidae, Hypo gastruridae, Onychiuridae, Poduridae, and Tullbergiidae)."
+],
+"contexts": [
+"In this study, for the Acari, the primary decomposers (T1) comprised Ixodida (Ixodes) and Oribatida (Astigmata); Secondary decomposers (T2) contained Oribatida (Brachypyline and Macropyline), Prostigmata (Anystina, Hetero-stigmata, Parasitengonina, and Raphignathina); Micro-predators (T3) included the Mesostigmata (Gamasina, Uropodidae). The Collembolan fauna was comprised of the T0 Herbivores Symphypleona (Arrhopalitidae, Bourletiellidae, Dicyrtomidae, Mackenziellidae, Sminthuridae, Sminthurididae, Sphyrothecinae, and Sturmiidae); Primary decomposers (T1) Folsomia and Neelipleona (Neelidae); Secondary decomposers (T2) contained Actaletidae, Entomobryomorpha (Entomobryidae and Isotomidae), Poduromorpha (Brachystomellidae, Hypo gastruridae, Onychiuridae, Poduridae, and Tullbergiidae). Data Analysis Soil faunal taxonomic richness (S) was represented by the number of taxonomic groups at each sampling occasion."
+]
+},
+{
+"tid": "G020",
+"genus": "Folsomia",
+"doc_id": "PMC5390908",
+"collection": "pmc",
+"title": "Plant community composition determines the strength of top-down control in a soil food web motif",
+"year": 2015,
+"sentences": [
+"Further, we also found no interactive effects of predator density and plant monocultures on Collembola species (Proisotoma: F = 0.10, P = 0.90; Folsomia: F = 0.32, P = 0.72; Sinella: F = 0.16, P = 0.84) (Supplementary Figure S1)."
+],
+"contexts": [
+"By contrast, S. curviseta showed no response to the interaction between predator density and plant community composition (GLMM, F = 0.008 and P = 0.9; Figure 2d). Further, we also found no interactive effects of predator density and plant monocultures on Collembola species (Proisotoma: F = 0.10, P = 0.90; Folsomia: F = 0.32, P = 0.72; Sinella: F = 0.16, P = 0.84) (Supplementary Figure S1). In line with our expectations, soil microbial biomass C was significantly higher in the mixed plant community compared to monoculture plant communities (+30%; LMM, F = 8.13, P <0.01; Figure 3a), but did not vary significantly among the different monocultures (LMM, F = 2.12, p = 0.11, Supplementary Figure S2)."
+]
+},
+{
+"tid": "G021",
+"genus": "Folsomia",
+"doc_id": "PMC5802828",
+"collection": "pmc",
+"title": "Diversity and metabolic potential of the microbiota associated with a soil arthropod",
+"year": 2018,
+"sentences": [
+"Species belonging to the genera of Entomobrya, Folsomia, Orchesella, and Tomecerus have been classified as primary decomposers, feeding on litter material and the adhering fungi and bacteria."
+],
+"contexts": [
+"Several studies have highlighted the role of springtails as detritivores and they have been shown to stimulate microbial decomposition through soil mixing and indirect catalytic effects on energy flow and nutrient turnover. Species belonging to the genera of Entomobrya, Folsomia, Orchesella, and Tomecerus have been classified as primary decomposers, feeding on litter material and the adhering fungi and bacteria. Traditional cultivation studies have previously recovered a number of bacteria from the springtail Folsomia candida including members of the phyla Proteobacteria (Alphaproteobacteria and Gammaproteobacteria) and Firmicutes."
+]
+},
+{
+"tid": "G022",
+"genus": "Heteromurus",
+"doc_id": "PMC3187823",
+"collection": "pmc",
+"title": "The Allometry of Prey Preferences",
+"year": 2011,
+"sentences": [
+"Single prey functional responses as a function of predator-prey body mass ratios from previous study[18] for the following predator-prey combinations: a) wolf spiders – Drosophila, b) ground beetles – Alphitobius, c) wolf – spiders – Heteromurus and, d) ground beetles – Drosophila.",
+"Models and statistical analyses Figure 3 shows the single-prey functional response curves (from [18]) of the twelve predator-prey combinations that we tested within the present study: Fig. 3a shows the results for wolf spiders preying on the large prey species Drosophila and Fig. 3b shows the results for the small prey species Heteromurus.",
+"Two-prey consumption experiments for (a,c,e) spiders with Drosophila as large prey and Heteromurus as small prey, and (b,d,f) beetles with Drosophila as small and Alphitobius larvae as large prey."
+],
+"contexts": [
+"Conceptual graphic showing allometric relationships in the single-prey functional response parameters capture rate, handling time and the scaling exponent q as revealed by the previous study of Vucic-Pestic and colleagues [18]. Single prey functional responses as a function of predator-prey body mass ratios from previous study[18] for the following predator-prey combinations: a) wolf spiders – Drosophila, b) ground beetles – Alphitobius, c) wolf – spiders – Heteromurus and, d) ground beetles – Drosophila. Parameters applied for these models are given in Table 1.",
+"Individual predator weights before and after the experiments were then used to calculate individual average body weight. Models and statistical analyses Figure 3 shows the single-prey functional response curves (from [18]) of the twelve predator-prey combinations that we tested within the present study: Fig. 3a shows the results for wolf spiders preying on the large prey species Drosophila and Fig. 3b shows the results for the small prey species Heteromurus. Fig. 3d and 3e show the single-prey functional response curves for three ground beetles preying on Alphitobius and Drosophila as large and small prey, respectively.",
+"Interestingly, the novel null model based on allometric two-prey functional responses (coloured lines in Fig. 4) differs in all experiments from the traditional null model of strictly density-dependent consumption (diagonals in Fig. 4). Two-prey consumption experiments for (a,c,e) spiders with Drosophila as large prey and Heteromurus as small prey, and (b,d,f) beetles with Drosophila as small and Alphitobius larvae as large prey. Solid black line indicates traditional null model of strictly density-dependent consumption, coloured lines show predictions of the allometric two-prey functional response model (see Fig. 3)."
+]
+},
+{
+"tid": "G023",
+"genus": "Hypogastrura",
+"doc_id": "PMC5602048",
+"collection": "pmc",
+"title": "Gut contents, digestive half-lives and feeding state prediction in the soil predatory mite Pergamasus longicornis (Mesostigmata: Parasitidae)",
+"year": 2017,
+"sentences": [
+"Unless P. longicornis specialised just in feeding upon say purple coloured springtails like Hypogastrura sp. or Tetrodontophora sp."
+],
+"contexts": [
+"A pale replete gut should thus infer ingestion/digestion. Unless P. longicornis specialised just in feeding upon say purple coloured springtails like Hypogastrura sp. or Tetrodontophora sp. (and there is no evidence that they do), the bulk of prey material imbibed should be colourless."
+]
+},
+{
+"tid": "G024",
+"genus": "Isotomiella",
+"doc_id": "PMC10993886",
+"collection": "pmc",
+"title": "Seasonal fluctuations of litter and soil Collembola and their drivers in rainforest and plantation systems",
+"year": 2024,
+"sentences": [
+"Dominant genera/species at our study sites, i.e., Pseudosinella sp., Folsomides centralis and Isotomiella spp., have been assumed to predominantly live as fungivores (Susanti et al., 2021) and fungivory was suggested to generally dominate in Collembola communities of tropical ecosystems (Takeda, 1996)."
+],
+"contexts": [
+"A’Bear, Boddy & Hefin (2012) reported arbuscular mycorrhizal fungi to potentially serve as a food resource for springtails under favorable conditions. Dominant genera/species at our study sites, i.e., Pseudosinella sp., Folsomides centralis and Isotomiella spp., have been assumed to predominantly live as fungivores (Susanti et al., 2021) and fungivory was suggested to generally dominate in Collembola communities of tropical ecosystems (Takeda, 1996). Supporting this assumption, results of our CCA indicated that Isotomiella cf. minor and Folsomides centralis in plantation systems have the same direction with saprotrophic as well as arbuscular mycorrhizal fungi in litter."
+]
+},
+{
+"tid": "G025",
+"genus": "Isotomiella",
+"doc_id": "PMC7934680",
+"collection": "pmc",
+"title": "Trophic niche differentiation and utilisation of food resources in Collembola is altered by rainforest conversion to plantation systems",
+"year": 2021,
+"sentences": [
+"All δ13C values of Collembola species exceeded those of leaf litter except for one individual of Isotomiella cf. minor in oil palm plantations (Fig. 2; for details see Tables S6–S9).",
+"In rainforest, Pseudosinella sp.1 occupied the highest trophic position, followed by Isotomiella cf . minor, whereas Allacma sp.1 occupied the lowest trophic position.",
+"In rainforest, Pseudosinella sp.1 had the highest δ15N values followed by Isotomiella cf. minor and Acrocyrtus sp. suggesting that these species are as microbivores in undisturbed ecosystems."
+],
+"contexts": [
+"Mean Δ13C values in rainforest were significantly higher than in plantation systems (F3,146 = 9.90, p = 0.001; Fig. 1A, Tables S2, S3). All δ13C values of Collembola species exceeded those of leaf litter except for one individual of Isotomiella cf. minor in oil palm plantations (Fig. 2; for details see Tables S6–S9). Variations in Δ13C and Δ15N values of Collembola among the studied land-use systems (rainforest, jungle rubber, rubber and oil palm plantations).",
+"In rainforest, Δ13C values of Pseudosinella sp.1 were highest and differed significantly from those of Lepidocyrtus sp.1 and Pararrhopalites sp.1, whereas in jungle rubber they were highest in Homidia cingula and differed significantly from Callyntrura sp.1. Δ15N values across abundant species varied significantly in rainforest (F4,14 = 5.00, p = 0.010), jungle rubber (F5,18 = 4.70, p = 0.006) and oil palm plantations (F2,9 = 23.59, p = 0.001), but not in rubber plantations ( F5,19 = 2.43, p = 0.072) (Fig. 3; for details see Tables S10–S13). In rainforest, Pseudosinella sp.1 occupied the highest trophic position, followed by Isotomiella cf . minor, whereas Allacma sp.1 occupied the lowest trophic position. Similar to rainforest, in jungle rubber, Pseudosinella sp.1 also occupied the highest trophic position, but Δ15N values were lowest in Callyntrura sp.1.",
+"In jungle rubber, Callyntrura sp.1 was most depleted in δ15N among the studied Collembola species indicating that this species occupied the lowest trophic position pointing to phycophagy (Potapov Korotkevich & Tiunov, 2018). In rainforest, Pseudosinella sp.1 had the highest δ15N values followed by Isotomiella cf. minor and Acrocyrtus sp. suggesting that these species are as microbivores in undisturbed ecosystems. Overall, based on Δ13C and Δ15N values, trophic niche differentiation among species was most pronounced in rainforest, presumably due to the availability of a wider spectrum of food resources and more stable environmental conditions than in plantations."
+]
+},
+{
+"tid": "G026",
+"genus": "Lepidocyrtus",
+"doc_id": "30790864",
+"collection": "medline",
+"title": "New European Lepidocyrtus Bourlet, 1839 (Collembola, Entomobryidae) with the first description of feeding-related dancing behaviour in Collembola.",
+"year": "2019",
+"sentences": [
+"New European Lepidocyrtus Bourlet, 1839 (Collembola, Entomobryidae) with the first description of feeding-related dancing behaviour in Collembola."
+],
+"contexts": [
+"New European Lepidocyrtus Bourlet, 1839 (Collembola, Entomobryidae) with the first description of feeding-related dancing behaviour in Collembola. The study of a springtail population from Krka National Park (Croatia) has allowed us to describe the new species Lepidocyrtus chorus sp. nov. and its dance-like behaviour."
+]
+},
+{
+"tid": "G027",
+"genus": "Lepidocyrtus",
+"doc_id": "A2620B55FFE2FFF9FF6CFF19FD5A8723",
+"collection": "plazi",
+"title": "Lepidocyrtus chorus Mateos & Lukić 2019, sp. nov.",
+"year": "",
+"sentences": [
+"In the detailed overview of Collembola as pollen feeders, Kevan & Kevan (1970) gave several dozen of Collembola species, among them at least three Lepidocyrtus species, that have been recorded ingesting pollen either directly by visiting flowers or probably feeding on wind-borne pollen."
+],
+"contexts": [
+"Unfortunately, filmed specimens on 07.x.2016 are not available for the study of gut content. In the detailed overview of Collembola as pollen feeders, Kevan & Kevan (1970) gave several dozen of Collembola species, among them at least three Lepidocyrtus species, that have been recorded ingesting pollen either directly by visiting flowers or probably feeding on wind-borne pollen. Pollen wall characteristics (porosity, thickness, and composition) are responsible for differences in digestibility among pollen types by animals (Roulston & Cane 2000)."
+]
+},
+{
+"tid": "G028",
+"genus": "Lepidocyrtus",
+"doc_id": "PMC6568236",
+"collection": "pmc",
+"title": "Competition and Predation in Soil Fungivorous Microarthropods Using Stable Isotope Ratio Mass Spectrometry",
+"year": 2019,
+"sentences": [
+"In preliminary trials to determine optimal experimental conditions, we established that 20 mg of mycelium in the Petri dish area (approximately a quarter of the nitrocellulose disk) could maintain a stable environment for about 20 Lepidocyrtus or Tyrophagus, with up to 10 Oribatula; more than 10 individuals of the predator Hypoaspis was too crowded in one dish, especially without prey, but 5–10 with prey provided stable microcosms.",
+"The treatments were, four single species monocultures (Lepidocyrtus, Tyrophagus, Oribatula, and Hypoaspis); one with two fungivores in competition (Lepidocyrtus and Oribatula); one with a fungivore and a predator (Lepidocyrtus and Hypoaspis); one with three fungivores (Lepidocyrtus, Tyrophagus, and Oribatula); two microcosm treatments with two fungivores and a predator (either Lepidocyrtus, Oribatula and Hypoaspis or Lepidocyrtus, Tyrophagus, and Hypoaspis); and the final microcosm treatment which had all faunal species in competition / predation with each other (Lepidocyrtus, Tyrophagus, Oribatula, and Hypoaspis) Microcosms were incubated for 7 days, as established above.",
+"There were no significant differences between the consumption rate of Lepidocyrtus, Oribatula, and Tyrophagus (P = 0.352).",
+"There was a significant difference between the fungivorous organisms, with Tyrophagus excreting significantly greater quantities than Lepidocyrtus and Oribatula (P = 0.011).",
+"Hypoaspis Oribatula Tyrophagus Lepidocyrtus Probability (SED) Weight (μg) 18.87 ( ± 1.017)a 1.76 ( ± 0.128)b 1.77 ( ± 0.125)b 3.16 ( ± 0.105)b P < 0.001 (0.734) Ingested (μg day-1) –0.82 ( ± 6.461)a 5.29 ( ± 1.370)b 5.11 ( ± 1.105)b 4.70 ( ± 1.279)b P < 0.013 (3.77) Excreted (μg day-1) 0.00 1.65 ( ± 0.012)a 0.58 ( ± 0.032)b 0.74 ( ± 0.020)b P < 0.011 (0.706) Excreted/ingested % — 31.2% 11.4% 15.8% Body weight ingested (day-1) –0.25 ( ± 0.252)a 3.12 ( ± 7.93)b 3.10 ( ± 9.01)b 1.51 ( ± 4.39)ab P < 0.006 (0.921) The mesostigmatid predator Hypoaspis on its own with mycelium but without prey lost weight and did not excrete fecal pellets.",
+"Analyzing the organisms, their fecal pellets, and the mycelium that remained at the end of the incubations, there were no significant differences between the mycelium 13C and 15N atom% levels and those in the body mass of Lepidocyrtus, Oribatula, or Tyrophagus P > 0.1 for all fungivores.",
+"The collembolan Lepidocyrtus did not ameliorate survival of the predator.",
+"The Oribatula losses were greatest when competing for the mycelium with Lepidocyrtus, with indiscernible predation effect.",
+"Treatment Lepidocyrtus Oribatula Tyrophagus Hypoaspis Monoculture 38 ( ± 9.8)abc 12 ( ± 5.8)a 46 ( ± 11.0) 24 ( ± 2.4)ab Two competitors 28 ( ± 6.2)ab 44 ( ± 6.8)ab – – Three competitors 18 ( ± 8.0)a 18 ( ± 4.9)ab 41 ( ± 6.8) – One fungivore and predator 67 ( ± 7.7)d – – 32 ( ± 8.0)b Two competitors and predator 68 ( ± 10.7)cd – 48 ( ± 14.9) 6 ( ± 6.0)a Two competitors and predator 56 ( ± 9.3)bcd 42 ( ± 8.6)b – 16 ( ± 8.7)ab Three competitors and predator 71 ( ± 5.1)cd 48 ( ± 10.2)b 13 ( ± 6.0) 2 ( ± 2.0)a Probability P < 0.001 P = 0.017 P = 0.183 P = 0.011 SED 11.46 11.51 16.68 8.12 Species Interactions Effect on Consumption The results of the competition-predation microcosm incubation experiments with stable isotope enrichment are summarized in Figure 1.",
+"Isotopic label of microarthropods through consumption of fungal mycelium for (A) Lepidocyrtus (Collembola), (B) Oribatula (Oribatida), (C) Tyrophagus (Astigmata), and (D) Hypoaspis (Mesostigmata) in microcosms with different combination of competitors with/out predators (n = 5).",
+"Lepidocyrtus (Figure 1A) consumption of mycelium differed significantly depending on competition/predation for both isotopes (APE 13C P = 0.010 and APE 15N P = 0.018).",
+"When Lepidocyrtus was incubated solely with the predator Hypoaspis (black triangle, Figure 1A) there was very little change in 13C or 15N value, indicating consumption did not decrease significantly, although survival reduced to 33% (Table 2).",
+"When Lepidocyrtus is incubated with the predator Hypoaspis the 13C value is significantly reduced (less consumption) but not the 15N value (no change in trophic level, and as results above).",
+"In the presence of the predator and Oribatula as the only competitor, Lepidocyrtus (shaded square) values are not statistically different than with Oribatula alone, indicating it is relatively unbothered by predation in this combination.",
+"Curiously, when the predator and both competitors are present with Lepidocyrtus (shaded diamond), the value overlaps that of competition with Oribatula alone (clear circle).",
+"This value is statistically the same as Lepidocyrtus with the predator alone for 15N, and for Lepidocyrtus alone for 13C.",
+"Comparison of enrichment through grazing between Lepidocyrtus and Oribatula across the different treatments showed significant differences in enrichment levels in both 13C and 15N (P < 0.001 for both).",
+"In the presence of a predator and either Lepidocyrtus or Lepidocyrtus and Oribatula as competitors, the amount of grazing significantly decreased and the isotope APE were greatly reduced for both isotopes.",
+"The predator (Table 2 and Figure 1D) far preferred the Astigmata Tyrophagus as prey, compared to the oribatid Oribatula, or the collembolan Lepidocyrtus.",
+"Tyrophagus was an effective competitor for Lepidocyrtus as both consumed the mycelium at the same rate, but it could barely eat (Figure 1C) because of interference from Lepidocyrtus, and preferential predation by Hypoaspis.",
+"In addition, it was in competition with both Lepidocyrtus and Tyrophagus that both preferred the mycelium, which was less palatable to Oribatula.",
+"If all three species had the same diet and consumed the same amount of the mycelium, then Lepidocyrtus, Oribatula and Tyrophagus would show the same isotope ratios, but that is not the case.",
+"The natural abundance δ15N levels were similar between the predatory mite Hypoaspis and two fungivores Lepidocyrtus and Oribatula before commencement of the competition/predation experiment."
+],
+"contexts": [
+"We verified in controls the fungal mycelium transferred to the experiment Petri plate microcosms did not grow, as there was no substrate. In preliminary trials to determine optimal experimental conditions, we established that 20 mg of mycelium in the Petri dish area (approximately a quarter of the nitrocellulose disk) could maintain a stable environment for about 20 Lepidocyrtus or Tyrophagus, with up to 10 Oribatula; more than 10 individuals of the predator Hypoaspis was too crowded in one dish, especially without prey, but 5–10 with prey provided stable microcosms. Oribatula was slow-growing on the cultured fungus, and this species clearly was not a preferred food source.",
+"Stable isotope enriched mycelium was added to ten different treatments (each treatment replicated five times) in microcosms. The treatments were, four single species monocultures (Lepidocyrtus, Tyrophagus, Oribatula, and Hypoaspis); one with two fungivores in competition (Lepidocyrtus and Oribatula); one with a fungivore and a predator (Lepidocyrtus and Hypoaspis); one with three fungivores (Lepidocyrtus, Tyrophagus, and Oribatula); two microcosm treatments with two fungivores and a predator (either Lepidocyrtus, Oribatula and Hypoaspis or Lepidocyrtus, Tyrophagus, and Hypoaspis); and the final microcosm treatment which had all faunal species in competition / predation with each other (Lepidocyrtus, Tyrophagus, Oribatula, and Hypoaspis) Microcosms were incubated for 7 days, as established above. The number of individuals at the end of each treatment were counted.",
+"There were no significant differences in microarthropod weight when comparing unlabelled mycelium with highly enriched mycelium between the two experiments after 21 days (P = 0.073). There were no significant differences between the consumption rate of Lepidocyrtus, Oribatula, and Tyrophagus (P = 0.352). The weight of each fecal pellet produced per organism was: Oribatula (0.04 ± 0.012 μg), Tyrophagus (0.33 ± 0.032 μg), and for Lepidocyrtus (0.10 ± 0.020 μg).",
+"There were no significant differences in the fecal pellet weight excreted per organism per day in the isotopically enriched cultures compared to the natural abundance measurements (P = 0.15). There was a significant difference between the fungivorous organisms, with Tyrophagus excreting significantly greater quantities than Lepidocyrtus and Oribatula (P = 0.011). The feces of both species showed a lower level of enrichment in 13C than the mycelium at the end of the experiment (Lepidocyrtus APE 3.23 ( ± 0.506) P = 0.033; Tyrophagus APE 2.15 ( ± 0.475) P = 0.010) compared to mycelium APE 5.08 ( ± 0.5735), although not in APE 15N [Lepidocyrtus APE 18.54 ( ± 2.780) P = 0.375; Tyrophagus APE 23.99 ( ± 3.054) P = 0.438] compared to mycelium APE 22.15 ( ± 3.449).",
+"General analysis of variance was performed, where fauna were significantly different a Student-Newman-Keuls test was also performed to find significant differences between groups; where there are significant differences between faunal groups along rows, different letters indicate significance. Hypoaspis Oribatula Tyrophagus Lepidocyrtus Probability (SED) Weight (μg) 18.87 ( ± 1.017)a 1.76 ( ± 0.128)b 1.77 ( ± 0.125)b 3.16 ( ± 0.105)b P < 0.001 (0.734) Ingested (μg day-1) –0.82 ( ± 6.461)a 5.29 ( ± 1.370)b 5.11 ( ± 1.105)b 4.70 ( ± 1.279)b P < 0.013 (3.77) Excreted (μg day-1) 0.00 1.65 ( ± 0.012)a 0.58 ( ± 0.032)b 0.74 ( ± 0.020)b P < 0.011 (0.706) Excreted/ingested % — 31.2% 11.4% 15.8% Body weight ingested (day-1) –0.25 ( ± 0.252)a 3.12 ( ± 7.93)b 3.10 ( ± 9.01)b 1.51 ( ± 4.39)ab P < 0.006 (0.921) The mesostigmatid predator Hypoaspis on its own with mycelium but without prey lost weight and did not excrete fecal pellets. The three fungivorous microarthropods consumed mycelium at about the same rate ∼5 μg individual-1 day-1, and the differences were not statistically significant.",
+"Each collembolan exoskeleton weighed 1.10 μg (± 0.244) and equated to each individual collembolan shedding its exoskeleton 1.17 (± 0.096) times within a 21 day period. Analyzing the organisms, their fecal pellets, and the mycelium that remained at the end of the incubations, there were no significant differences between the mycelium 13C and 15N atom% levels and those in the body mass of Lepidocyrtus, Oribatula, or Tyrophagus P > 0.1 for all fungivores. Survival In competition experiments with and without the predator, the number of surviving individuals at the end of the incubation in each microcosm is informative (Table 2).",
+"The highest survival rates of predators was when there were two or more prey species, although only some combinations are statistically significant. The collembolan Lepidocyrtus did not ameliorate survival of the predator. The Oribatula losses were greatest when competing for the mycelium with Lepidocyrtus, with indiscernible predation effect.",
+"The collembolan Lepidocyrtus did not ameliorate survival of the predator. The Oribatula losses were greatest when competing for the mycelium with Lepidocyrtus, with indiscernible predation effect. Tyrophagus losses were least with all three fungivores present and the predator.",
+"Student Newman-Keuls test was also performed to define where the significant differences where between treatments; where there are significant differences between treatments within faunal groups different letters indicate significance. Treatment Lepidocyrtus Oribatula Tyrophagus Hypoaspis Monoculture 38 ( ± 9.8)abc 12 ( ± 5.8)a 46 ( ± 11.0) 24 ( ± 2.4)ab Two competitors 28 ( ± 6.2)ab 44 ( ± 6.8)ab – – Three competitors 18 ( ± 8.0)a 18 ( ± 4.9)ab 41 ( ± 6.8) – One fungivore and predator 67 ( ± 7.7)d – – 32 ( ± 8.0)b Two competitors and predator 68 ( ± 10.7)cd – 48 ( ± 14.9) 6 ( ± 6.0)a Two competitors and predator 56 ( ± 9.3)bcd 42 ( ± 8.6)b – 16 ( ± 8.7)ab Three competitors and predator 71 ( ± 5.1)cd 48 ( ± 10.2)b 13 ( ± 6.0) 2 ( ± 2.0)a Probability P < 0.001 P = 0.017 P = 0.183 P = 0.011 SED 11.46 11.51 16.68 8.12 Species Interactions Effect on Consumption The results of the competition-predation microcosm incubation experiments with stable isotope enrichment are summarized in Figure 1. For all these graphs the microarthropod 13C and 15N value at the beginning of each experiment is at the 0 mark of both axis, and we plot the enrichment transferred to the microarthropods in atom percent enrichment (APE).",
+"It does not represent the natural abundance value in nature, as these organisms were cultivated in the laboratory for about 2 years. Isotopic label of microarthropods through consumption of fungal mycelium for (A) Lepidocyrtus (Collembola), (B) Oribatula (Oribatida), (C) Tyrophagus (Astigmata), and (D) Hypoaspis (Mesostigmata) in microcosms with different combination of competitors with/out predators (n = 5). The Hypoaspis graph (D) is at a different scale from the others.",
+"It does not represent the natural abundance value in nature, as these organisms were cultivated in the laboratory prior to the feeding experiment. Lepidocyrtus (Figure 1A) consumption of mycelium differed significantly depending on competition/predation for both isotopes (APE 13C P = 0.010 and APE 15N P = 0.018). Consumption was numerically greatest when incubated as a single microcosm.",
+"Consumption was numerically greatest when incubated as a single microcosm. When Lepidocyrtus was incubated solely with the predator Hypoaspis (black triangle, Figure 1A) there was very little change in 13C or 15N value, indicating consumption did not decrease significantly, although survival reduced to 33% (Table 2). When in competition with Oribatula (open circle, Figure 1A) or when the microcosms contained two competitors, the value is not statistically different than when it was on its own, indicating that Oribatula (and Tyrophagus) in fact did not pose a competition threat to Lepidocyrtus.",
+"When in competition with Oribatula (open circle, Figure 1A) or when the microcosms contained two competitors, the value is not statistically different than when it was on its own, indicating that Oribatula (and Tyrophagus) in fact did not pose a competition threat to Lepidocyrtus. When Lepidocyrtus is incubated with the predator Hypoaspis the 13C value is significantly reduced (less consumption) but not the 15N value (no change in trophic level, and as results above). When both competitors are present (clear triangle), the three fungivores interfere with each other’s grazing so as to reduce the 15N value and the 13C value compared to Lepidocyrtus alone or with Oribatula.",
+"When both competitors are present (clear triangle), the three fungivores interfere with each other’s grazing so as to reduce the 15N value and the 13C value compared to Lepidocyrtus alone or with Oribatula. In the presence of the predator and Oribatula as the only competitor, Lepidocyrtus (shaded square) values are not statistically different than with Oribatula alone, indicating it is relatively unbothered by predation in this combination. In the absence of the predator but both competitors (clear triangle), there is an intermediate amount of grazing.",
+"Without Oribatula (clear circle), but with competition from Tyrophagus and predation from Hypoaspis (clear square), the 13C value is reduced but not the 15N value when compared to Lepidocyrtus alone, indicating reduced mycelium consumption. Curiously, when the predator and both competitors are present with Lepidocyrtus (shaded diamond), the value overlaps that of competition with Oribatula alone (clear circle). This value is statistically the same as Lepidocyrtus with the predator alone for 15N, and for Lepidocyrtus alone for 13C.",
+"Curiously, when the predator and both competitors are present with Lepidocyrtus (shaded diamond), the value overlaps that of competition with Oribatula alone (clear circle). This value is statistically the same as Lepidocyrtus with the predator alone for 15N, and for Lepidocyrtus alone for 13C. However, when the microcosm included Tyrophagus as a competitor and predators (open square, black diamond, Figure 1A), significantly less consumption occurred.",
+"However, there were no significant differences between treatments in enrichment levels for either 13C or 15N (P = 0.194 and P = 0.276, respectively) for Oribatula. Comparison of enrichment through grazing between Lepidocyrtus and Oribatula across the different treatments showed significant differences in enrichment levels in both 13C and 15N (P < 0.001 for both). Tyrophagus showed a different pattern of response to grazing competition and predation (Figure 1C).",
+"The APE 15N result was significantly highest when two competitors were present (open circle, Figure 1C), this could be through coprophagy on fecal pellets of one or both competitors. In the presence of a predator and either Lepidocyrtus or Lepidocyrtus and Oribatula as competitors, the amount of grazing significantly decreased and the isotope APE were greatly reduced for both isotopes. In this composition of the organisms (Figure 1C, black/open triangle) grazing on the mycelium is interfered with through effective grazing competition, combined with organisms trying to escape predation, and by the predation itself.",
+"Comparing the microcosms with all four organisms together (Figure 1) shows the variety of consumption preferences detected between the predator (Mesostigmata) on each of its prey, and of each of the fungivores (Collembola, Astigmata, Oribatida) on the mycelium. The predator (Table 2 and Figure 1D) far preferred the Astigmata Tyrophagus as prey, compared to the oribatid Oribatula, or the collembolan Lepidocyrtus. This is consistent with our results above, and with our visual observations.",
+"In the combination with all four species present, Lepidocyrtus consumption of mycelium (Figure 1A) was not affected, as the other fungivores were preferred alternative prey for the predator, and Oribatula was not an effective competitor for mycelium consumption. Tyrophagus was an effective competitor for Lepidocyrtus as both consumed the mycelium at the same rate, but it could barely eat (Figure 1C) because of interference from Lepidocyrtus, and preferential predation by Hypoaspis. In this combination, Oribatula was a secondary prey for Hypoaspis but non-etheless preyed upon.",
+"In this combination, Oribatula was a secondary prey for Hypoaspis but non-etheless preyed upon. In addition, it was in competition with both Lepidocyrtus and Tyrophagus that both preferred the mycelium, which was less palatable to Oribatula. Thus, Oribatula and Tyrophagus were less enriched in this four species combination.",
+"The natural abundance ratios of the three fungivores growing on the same mycelium for several months showed variations in isotope levels between the different microarthropods. If all three species had the same diet and consumed the same amount of the mycelium, then Lepidocyrtus, Oribatula and Tyrophagus would show the same isotope ratios, but that is not the case. The differences are due to probably an array of reasons, such as differences in development stage or exoskeleton - coprophagy / fecal pellet consumption, and selective metabolism (Semenina and Tiunov, 2011; Maraun et al., 2011; Hatch, 2012; Potapov et al., 2014).",
+"These experiments provide evidence of differential consumption and differential prey preference, so that in the soil optimal foraging would contribute to the behavior of both the fungivores and predators (Hassall et al., 2006; Schneider and Maraun, 2009). The natural abundance δ15N levels were similar between the predatory mite Hypoaspis and two fungivores Lepidocyrtus and Oribatula before commencement of the competition/predation experiment. However, when Hypoaspis was in microcosms with a prey species, enrichment from fungal mycelium was traceable to a third trophic level."
+]
+},
+{
+"tid": "G029",
+"genus": "Lepidocyrtus",
+"doc_id": "PMC7934680",
+"collection": "pmc",
+"title": "Trophic niche differentiation and utilisation of food resources in Collembola is altered by rainforest conversion to plantation systems",
+"year": 2021,
+"sentences": [
+"In rainforest, Δ13C values of Pseudosinella sp.1 were highest and differed significantly from those of Lepidocyrtus sp.1 and Pararrhopalites sp.1, whereas in jungle rubber they were highest in Homidia cingula and differed significantly from Callyntrura sp.1. Δ15N values across abundant species varied significantly in rainforest (F4,14 = 5.00, p = 0.010), jungle rubber (F5,18 = 4.70, p = 0.006) and oil palm plantations (F2,9 = 23.59, p = 0.001), but not in rubber plantations ( F5,19 = 2.43, p = 0.072) (Fig. 3; for details see Tables S10–S13)."
+],
+"contexts": [
+"Niche differentiation among species Δ13C values across abundant species (represented by at least three measurements, see Methods) varied significantly in rainforest (F4,12 = 6.34, p = 0.005) and jungle rubber (F5,17 = 3.67, p = 0.020), but not in rubber (F5,19 = 1.39, p = 0.270) and oil palm plantations (F2,9 = 1.10, p = 0.370). In rainforest, Δ13C values of Pseudosinella sp.1 were highest and differed significantly from those of Lepidocyrtus sp.1 and Pararrhopalites sp.1, whereas in jungle rubber they were highest in Homidia cingula and differed significantly from Callyntrura sp.1. Δ15N values across abundant species varied significantly in rainforest (F4,14 = 5.00, p = 0.010), jungle rubber (F5,18 = 4.70, p = 0.006) and oil palm plantations (F2,9 = 23.59, p = 0.001), but not in rubber plantations ( F5,19 = 2.43, p = 0.072) (Fig. 3; for details see Tables S10–S13). In rainforest, Pseudosinella sp.1 occupied the highest trophic position, followed by Isotomiella cf . minor, whereas Allacma sp.1 occupied the lowest trophic position."
+]
+},
+{
+"tid": "G030",
+"genus": "Mesaphorura",
+"doc_id": "PMC8761369",
+"collection": "pmc",
+"title": "Trophic niche but not abundance of Collembola and Oribatida changes with drought and farming system",
+"year": 2022,
+"sentences": [
+"Stable isotope analysis The four most abundant Collembola taxa (I. caerulea, I. maculatus, O. villosa and Mesaphorura sp.) and the two most abundant oribatid mite species (Scheloribates laevigatus and Tectocepheus sarekensis) were chosen for stable isotope analysis.",
+"Scheloribates laevigatus Tectocepheus sarekensis Isotoma caerulea Isotomurus maculatus Orchesella villosa Mesaphorura sp. df F P df F P df F P df F P df F P df F P Abundance Drought (D) 1,6 0.01 0.943 1,6 2.68 0.153 1,6 0.88 0.384 1,6 3.06 0.131 1,6 1.05 0.344 1,6 0.53 0.495 Farming system (F) 1,6 1.80 0.228 1,6 0.01 0.910 1,6 0.83 0.396 1,6 0.13 0.728 1,6 1.63 0.249 1,6 1.79 0.229 D x F 1,6 0.84 0.394 1,6 0.42 0.540 1,6 1.51 0.266 1,6 0.49 0.510 1,6 0.09 0.779 1,6 4.56 0.077 d13C Drought (D) 1,6 17.08 0.001 1,6 1.16 0.310 1,6 0.54 0.485 1,6 2.51 0.157 1,6 0.01 0.922 1,6 0.10 0.766 Farming system (F) 1,6 <0.01 0.960 1,6 14.11 0.005 1,6 1.16 0.312 1,6 0.88 0.379 1,6 0.36 0.562 1,6 0.43 0.536 D x F 1,6 0.07 0.798 1,6 0.04 0.851 1,6 0.19 0.676 1,6 2.68 0.145 1,6 0.13 0.726 1,6 0.75 0.419 d15N Drought (D) 1,6 0.03 0.867 1,6 0.04 0.845 1,6 0.10 0.759 1,6 0.21 0.663 1,6 1.44 0.261 – – – Farming system (F) 1,6 4.30 0.062 1,6 2.82 0.132 1,6 15.47 0.008 1,6 2.69 0.145 1,6 15.90 0.003 – – – D x F 1,6 0.09 0.771 1,6 0.22 0.649 1,6 3.92 0.095 1,6 2.22 0.180 1,6 0.04 0.855 – – – Stable isotope values of Collembola and Oribatida.",
+"Mean (±95% confidence interval) Δ13C values in control and drought treatments (roof) for two species of Oribatida (Scheloribates laevigatus, Tectocepheus sarekensis) and four Collembola taxa (Isotoma caerulea, Isotomurus maculatus, Orchesella villosa, Mesaphorura sp.); for statistical analysis see Table 3.",
+"Mean (±95% confidence interval) Δ13C (upper panel) and Δ15N values (lower panel) of two oribatid mite (Scheloribates laevigatus, Tectocepheus sarekensis) and four Collembola species (Isotoma caerulea, Isotomurus maculatus, Orchesella villosa, Mesaphorura sp.) in conventional (conv) and organic (org) farming systems; note that for Mesaphorura sp. only Δ13C values are shown."
+],
+"contexts": [
+"We used keys by Hopkin (2007), Fjellberg (1998); Fjellberg (2007) and Weigmann (2006). Stable isotope analysis The four most abundant Collembola taxa (I. caerulea, I. maculatus, O. villosa and Mesaphorura sp.) and the two most abundant oribatid mite species (Scheloribates laevigatus and Tectocepheus sarekensis) were chosen for stable isotope analysis. To achieve at least 10 µg of animal dry weight per sample we used 1–14 individuals per sample.",
+"Significant effects (P < 0.05) are given in bold. Scheloribates laevigatus Tectocepheus sarekensis Isotoma caerulea Isotomurus maculatus Orchesella villosa Mesaphorura sp. df F P df F P df F P df F P df F P df F P Abundance Drought (D) 1,6 0.01 0.943 1,6 2.68 0.153 1,6 0.88 0.384 1,6 3.06 0.131 1,6 1.05 0.344 1,6 0.53 0.495 Farming system (F) 1,6 1.80 0.228 1,6 0.01 0.910 1,6 0.83 0.396 1,6 0.13 0.728 1,6 1.63 0.249 1,6 1.79 0.229 D x F 1,6 0.84 0.394 1,6 0.42 0.540 1,6 1.51 0.266 1,6 0.49 0.510 1,6 0.09 0.779 1,6 4.56 0.077 d13C Drought (D) 1,6 17.08 0.001 1,6 1.16 0.310 1,6 0.54 0.485 1,6 2.51 0.157 1,6 0.01 0.922 1,6 0.10 0.766 Farming system (F) 1,6 <0.01 0.960 1,6 14.11 0.005 1,6 1.16 0.312 1,6 0.88 0.379 1,6 0.36 0.562 1,6 0.43 0.536 D x F 1,6 0.07 0.798 1,6 0.04 0.851 1,6 0.19 0.676 1,6 2.68 0.145 1,6 0.13 0.726 1,6 0.75 0.419 d15N Drought (D) 1,6 0.03 0.867 1,6 0.04 0.845 1,6 0.10 0.759 1,6 0.21 0.663 1,6 1.44 0.261 – – – Farming system (F) 1,6 4.30 0.062 1,6 2.82 0.132 1,6 15.47 0.008 1,6 2.69 0.145 1,6 15.90 0.003 – – – D x F 1,6 0.09 0.771 1,6 0.22 0.649 1,6 3.92 0.095 1,6 2.22 0.180 1,6 0.04 0.855 – – – Stable isotope values of Collembola and Oribatida. Mean (±standard deviation) Δ13C and Δ15N values of two species of Oribatida (Scheloribates laevigatus, Tectocepheus sarekensis) and three species of Collembola (Isotoma viridis, Isotomurus maculatus, Orchesella villosa); data are calibrated against stable isotope values of wheat in the respective plot.",
+"Stable isotope values of Collembola and Oribatida in drought and control treatment. Mean (±95% confidence interval) Δ13C values in control and drought treatments (roof) for two species of Oribatida (Scheloribates laevigatus, Tectocepheus sarekensis) and four Collembola taxa (Isotoma caerulea, Isotomurus maculatus, Orchesella villosa, Mesaphorura sp.); for statistical analysis see Table 3. Stable isotope values of Collembola and Oribatida in two farming systems.",
+"Stable isotope values of Collembola and Oribatida in two farming systems. Mean (±95% confidence interval) Δ13C (upper panel) and Δ15N values (lower panel) of two oribatid mite (Scheloribates laevigatus, Tectocepheus sarekensis) and four Collembola species (Isotoma caerulea, Isotomurus maculatus, Orchesella villosa, Mesaphorura sp.) in conventional (conv) and organic (org) farming systems; note that for Mesaphorura sp. only Δ13C values are shown. For statistical analysis see Table 3."
+]
+},
+{
+"tid": "G031",
+"genus": "Onychiurus",
+"doc_id": "PMC2903711",
+"collection": "pmc",
+"title": "Changes in herbivore control in arable fields by detrital subsidies depend on predator species and vary in space",
+"year": 2010,
+"sentences": [
+"The first trophic level comprised decomposers such as the diplopods P. inconstans, B. pusillus and B. guttulatus, as well as the Collembola Onychiurus spp. and sciarid larvae. δ15N signatures of decomposers formed a continuum from 1.0 to 3.1‰.",
+"With similar contents of maize carbon and about 2.5 δ15N units higher than the Collembola Onychiurus spp., Symphyla, L. microps and Pergamasus sp. presumably fed on this species; similarly, Albers et al.",
+"(2006) assumed Symphyla and Gamasina to prey on Onychiurus spp."
+],
+"contexts": [
+"Abundances of E. lanuginosa were significantly higher in field 1 but lower in field 2 at the first sampling date (RM-ANOVA; F 4,36 = 7.86, P < 0.001 for date × field; Fig. 1i). 13C and 15N analysis The δ15N signatures of the 13 soil-dwelling species captured by heat extraction spanned over two trophic levels in the mulch treatment (Fig. 2). The first trophic level comprised decomposers such as the diplopods P. inconstans, B. pusillus and B. guttulatus, as well as the Collembola Onychiurus spp. and sciarid larvae. δ15N signatures of decomposers formed a continuum from 1.0 to 3.1‰. The carabid species T. quadristriatus was also placed in the decomposer trophic level, with similar δ15N signatures to the diplopod B. guttulatus.",
+"Combining the δ15N and δ13C signatures may allow identification of trophic links. With similar contents of maize carbon and about 2.5 δ15N units higher than the Collembola Onychiurus spp., Symphyla, L. microps and Pergamasus sp. presumably fed on this species; similarly, Albers et al. (2006) assumed Symphyla and Gamasina to prey on Onychiurus spp.",
+"With similar contents of maize carbon and about 2.5 δ15N units higher than the Collembola Onychiurus spp., Symphyla, L. microps and Pergamasus sp. presumably fed on this species; similarly, Albers et al. (2006) assumed Symphyla and Gamasina to prey on Onychiurus spp. As the δ15N signature of elaterid larvae was similar to that of the predatory mite Pergamasus sp. and the centipede N. longicornis, they presumably live as predators; recent studies suggest that this is widespread in elaterid larvae (Traugott et al. 2007)."
+]
+},
+{
+"tid": "G032",
+"genus": "Orchesella",
+"doc_id": "PMC3910676",
+"collection": "pmc",
+"title": "The Hox genes Ultrabithorax and abdominal-A specify three different types of abdominal appendage in the springtail Orchesella cincta (Collembola)",
+"year": 2014,
+"sentences": [
+"We show here that Orchesella can be raised on cultured algae and yeast as a food source and that the embryos are accessible for in-situ hybridization, albeit with some difficulty.",
+"In our culturing method we feed Orchesella the alga Pleurococcus (syn.",
+"Desmococcus), because this alga was previously found to be that most consumed by Orchesella in its natural habitat."
+],
+"contexts": [
+"We have generated an embryonic transcriptome. We show here that Orchesella can be raised on cultured algae and yeast as a food source and that the embryos are accessible for in-situ hybridization, albeit with some difficulty. We also show that parental RNAi is simple and effective for gene knockdown in this species.",
+"Because this method does not enable quick and easy inspection of the culture and timed egg collections, we developed a method of culturing on Petri dishes with defined media. In our culturing method we feed Orchesella the alga Pleurococcus (syn. Desmococcus), because this alga was previously found to be that most consumed by Orchesella in its natural habitat.",
+"In our culturing method we feed Orchesella the alga Pleurococcus (syn. Desmococcus), because this alga was previously found to be that most consumed by Orchesella in its natural habitat. Baker’s yeast forms the fungal component in the diet."
+]
+},
+{
+"tid": "G033",
+"genus": "Orchesella",
+"doc_id": "PMC5802828",
+"collection": "pmc",
+"title": "Diversity and metabolic potential of the microbiota associated with a soil arthropod",
+"year": 2018,
+"sentences": [
+"Species belonging to the genera of Entomobrya, Folsomia, Orchesella, and Tomecerus have been classified as primary decomposers, feeding on litter material and the adhering fungi and bacteria."
+],
+"contexts": [
+"Several studies have highlighted the role of springtails as detritivores and they have been shown to stimulate microbial decomposition through soil mixing and indirect catalytic effects on energy flow and nutrient turnover. Species belonging to the genera of Entomobrya, Folsomia, Orchesella, and Tomecerus have been classified as primary decomposers, feeding on litter material and the adhering fungi and bacteria. Traditional cultivation studies have previously recovered a number of bacteria from the springtail Folsomia candida including members of the phyla Proteobacteria (Alphaproteobacteria and Gammaproteobacteria) and Firmicutes."
+]
+},
+{
+"tid": "G034",
+"genus": "Orchesella",
+"doc_id": "PMC7666072",
+"collection": "pmc",
+"title": "The multiformity of antennal chaetae in Troglopedetes Joseph, 1872 ( Collembola , Paronellidae , Troglopedetinae ), with descriptions of two new species from Thailand",
+"year": 2020,
+"sentences": [
+"Such fusing may be due to regeneration after the loss of antennal segments following predator attack as observed by Ernsting and Fokkema (1983) in Orchesella."
+],
+"contexts": [
+"II and III. Such fusing may be due to regeneration after the loss of antennal segments following predator attack as observed by Ernsting and Fokkema (1983) in Orchesella. S-chaetae on antennal segments vary in number and probably type diversity, depending on size, age, and sex of Collembola, but this remains to be documented."
+]
+},
+{
+"tid": "G035",
+"genus": "Orthonychiurus",
+"doc_id": "PMC12284588",
+"collection": "pmc",
+"title": "﻿A new arboreal species of Vitronura Yosii, 1969 and a new record of Yuukianura Yosii, 1955 ( Collembola , Neanuridae ) from China, with notes on the feeding behavior of Neanurinae",
+"year": 2025,
+"sentences": [
+"We also compared the feeding action of Y.szeptyckii with that of Crossodonthina sp. and Orthonychiurus sp.",
+"This feeding action is similar to that of Orthonychiurus sp.",
+"In summary, the feeding preference and action of Y.szeptyckii differ significantly from Crossodonthina sp., while resembling those of non-neanurid Collembola, such as Orthonychiurus.",
+"Supplementary materials AA74774D-7F1E-5837-8C0F-C21A923D4B3A Data type mp4 Explanation note Supplementary videos on YouTube (https://youtu.be/_SVKQAGRTvw): A Yuukianura feeding on yeast B Orthonychiurus feeding on yeast C Crossodonthina feeding on slime mold. https://binary.pensoft.net/file/1374374 This dataset is made available under the Open Database License (http://opendatacommons.org/licenses/odbl/1.0/)."
+],
+"contexts": [
+"Crossodonthina sp. feeding on slime mold. We also compared the feeding action of Y.szeptyckii with that of Crossodonthina sp. and Orthonychiurus sp. (Suppl. material 1).",
+"While it is feeding, Y.szeptyckii presses its buccal cone against the food surface and sticks out its maxillae to grasp food particles and brings them into its mouth, while its head keeps moving to find a suitable feeding spot (Suppl. material 1: Video Part A). This feeding action is similar to that of Orthonychiurus sp. (Suppl. material 1: Video Part B) and other families of Collembola, but differs from that of Crossodonthina sp. of the same family (same subfamily and tribe).",
+"Mouthpart movements are detectable only by subtle head tremors (Suppl. material 1: Video Part C). In summary, the feeding preference and action of Y.szeptyckii differ significantly from Crossodonthina sp., while resembling those of non-neanurid Collembola, such as Orthonychiurus. This suggests that this group (Yuukianura) may occupy a unique position within the family Neanuridae.",
+"Author ORCIDs Ji-Gang Jiang https://orcid.org/0000-0002-4484-3312 Daoyuan Yu https://orcid.org/0000-0003-2984-0540 Data availability All of the data that support the findings of this study are available in the main text or Supplementary Information. Supplementary materials AA74774D-7F1E-5837-8C0F-C21A923D4B3A Data type mp4 Explanation note Supplementary videos on YouTube (https://youtu.be/_SVKQAGRTvw): A Yuukianura feeding on yeast B Orthonychiurus feeding on yeast C Crossodonthina feeding on slime mold. https://binary.pensoft.net/file/1374374 This dataset is made available under the Open Database License (http://opendatacommons.org/licenses/odbl/1.0/). The Open Database License (ODbL) is a license agreement intended to allow users to freely share, modify, and use this Dataset while maintaining this same freedom for others, provided that the original source and author(s) are credited."
+]
+},
+{
+"tid": "G036",
+"genus": "Orthonychiurus",
+"doc_id": "PMC12698804",
+"collection": "pmc",
+"title": "Laccaria bicolor adapts to phosphate deficiency at the developmental, transcriptional and metabolic levels",
+"year": 2025,
+"sentences": [
+"Accordingly, two specific L. bicolor mycocypin (311135 and 293826) showed toxic effect on the development of the nematode Caenorhabditis sp and acted as feeding deterrent to the springtail Orthonychiurus sp."
+],
+"contexts": [
+"Cysteine protease inhibitors synthesized from both plants and fungi can negatively affect foraging herbivores and fungivores by interfering with the digestion of food by proteases in the predator’s gut (Goulet et al. 2008; Michaud et al. 1995; Smid et al. 2013; Zhao et al. 1996). Accordingly, two specific L. bicolor mycocypin (311135 and 293826) showed toxic effect on the development of the nematode Caenorhabditis sp and acted as feeding deterrent to the springtail Orthonychiurus sp. (Plett et al. 2022)."
+]
+},
+{
+"tid": "G037",
+"genus": "Parisotoma",
+"doc_id": "504F2D6CFFC9FF9A97BEF759FB271BDF",
+"collection": "plazi",
+"title": "Mucronia enigmatica Fjellberg, 2010, sp. n.",
+"year": "",
+"sentences": [
+"Similarly transformed palps and maxillae are commonly seen in several genera of Isotomidae ( Archisotoma , Parisotoma , Desoria ) and probably reflects a specialisation to particular food or feeding habits."
+],
+"contexts": [
+"The remarkably transformed maxillae and the modified labial palps may actually not be significant on generic level. Similarly transformed palps and maxillae are commonly seen in several genera of Isotomidae ( Archisotoma , Parisotoma , Desoria ) and probably reflects a specialisation to particular food or feeding habits. The simply lobed PAO and the bisetose mucro however, appears unique in the family."
+]
+},
+{
+"tid": "G038",
+"genus": "Proisotoma",
+"doc_id": "PMC10048822",
+"collection": "pmc",
+"title": "Responses of Soil Collembolans to Land Degradation in a Black Soil Region in China",
+"year": 2023,
+"sentences": [
+"Proisotoma, primary decomposers that feed on litter and some fungi, had an abundant population, and were thus located in a relatively low niche [46]."
+],
+"contexts": [
+"In this study, we determined that Proisotoma minima, a dominant species in all the habitats, was negatively correlated with the majority of soil Collembolan species in the habitats with low levels of land degradation (NLD and LLD), yet they were positively correlated with most of the other species in the habitats with high levels of land degradation (MLD and SLD) (Figure 2). Proisotoma, primary decomposers that feed on litter and some fungi, had an abundant population, and were thus located in a relatively low niche [46]. In the habitats with low levels of land degradation, the environmental conditions were relatively better than that of other habitats; consequently, a large number of Proisotoma minima were able to occupy the living spaces of species with identical niches."
+]
+},
+{
+"tid": "G039",
+"genus": "Protaphorura",
+"doc_id": "PMC6458381",
+"collection": "pmc",
+"title": "Collembola interact with mycorrhizal fungi in modifying oak morphology, C and N incorporation and transcriptomics",
+"year": 2019,
+"sentences": [
+"Notably, the enrichment in the nutrient reservoir activity GO term was most pronounced in the combined treatment with Protaphorura and Piloderma, again suggesting that Collembola and mycorrhiza complement each other in fostering plant nutrition.",
+"Due to the enrichment of upregulated contigs related to defence, Protaphorura probably primed oak seedlings against potential attacks by herbivores.",
+"However, the response of oak microcuttings in the present study may also be based on Protaphorura feeding on plant roots, which occasionally occurs, but does not detrimentally affect plant growth [19].",
+"The above-mentioned reduction in root 15N concentrations and root biomass as well as the enrichment of a defence-related contig probably was due to Protaphorura feeding on roots (see above), resulting in increased defence-related GO terms."
+],
+"contexts": [
+"Additionally, in presence of Protaphorura the GO term nutrient reservoir activity was enriched in upregulated contigs in leaves, suggesting that Protaphorura stimulated the mobilization of nutrients from storage pools to support leaf development. Notably, the enrichment in the nutrient reservoir activity GO term was most pronounced in the combined treatment with Protaphorura and Piloderma, again suggesting that Collembola and mycorrhiza complement each other in fostering plant nutrition. Collembola-mediated changes in root growth and N incorporation are in line with earlier findings that Collembola alter root morphology [18,19] and nitrogen uptake by plants from soil organic matter [43,44].",
+"For preventing damage, plants may use environmental cues providing information on potential or upcoming attacks [52]. Due to the enrichment of upregulated contigs related to defence, Protaphorura probably primed oak seedlings against potential attacks by herbivores. Priming may be related to plants physically sensing the presence of rhizosphere arthropods, suggesting that discrimination of different arthropod taxa by plants is limited.",
+"In the case of the bacterium, the priming-like response led to diminished powdery mildew symptoms. However, the response of oak microcuttings in the present study may also be based on Protaphorura feeding on plant roots, which occasionally occurs, but does not detrimentally affect plant growth [19]. Further, plants may also sense cues of the cuticle of Collembola, potentially chitin.",
+"Supporting the assumption that Protaphorura altered the investment of oaks into plant defence during RF, their presence led to an enrichment of contigs related to defence, namely tir-nbs-lrr resistance protein related to a wide spectrum of defence responses against antagonists. The above-mentioned reduction in root 15N concentrations and root biomass as well as the enrichment of a defence-related contig probably was due to Protaphorura feeding on roots (see above), resulting in increased defence-related GO terms. The contrasting effects of Protaphorura during RF as compared to SF reflect the very different gene expression patterns of oak during these phases [29] and suggest that oaks very differently respond to environmental cues including interacting biota during the two allocation and developmental phases RF and SF."
+]
+},
+{
+"tid": "G040",
+"genus": "Protaphorura",
+"doc_id": "PMC8453724",
+"collection": "pmc",
+"title": "Multidimensional trophic niche revealed by complementary approaches: Gut content, digestive enzymes, fatty acids and stable isotopes in Collembola",
+"year": 2021,
+"sentences": [
+"The strongest distinction in multidimensional trophic niche space was observed between Orchesella flavescens (surface‐dwelling species of Entomobryidae) and Protaphorura (soil‐dwelling genus of Onychiuridae)."
+],
+"contexts": [
+"Multidimensional trophic niches of Collembola species Principal component analysis revealed trophic niche differentiation among the six selected species that had data across seven trophic niche parameters (Figure 2). The strongest distinction in multidimensional trophic niche space was observed between Orchesella flavescens (surface‐dwelling species of Entomobryidae) and Protaphorura (soil‐dwelling genus of Onychiuridae). The former species was associated with high proportions of plant‐synthesised FAs and plant particles in the gut, and the latter with high proportions of fungi‐synthesised FAs and fungi in the gut (PC1 and PC2)."
+]
+},
+{
+"tid": "G041",
+"genus": "Pseudosinella",
+"doc_id": "33717699",
+"collection": "medline",
+"title": "Trophic niche differentiation and utilisation of food resources in Collembola is altered by rainforest conversion to plantation systems.",
+"year": "2021",
+"sentences": [
+"Some species of Paronellidae in rainforest and jungle rubber had Δ15N values below those of leaf litter suggesting algivory (Salina sp.1, Callyntrura sp.1 and Lepidonella sp.1), while a dominant species, Pseudosinella sp.1, had the highest Δ15N values in most of the land-use systems suggesting that this species at least in part lives as predator or scavenger."
+],
+"contexts": [
+"Across the studied ecosystems, atmobiotic species (Symphypleona and Paronellidae) occupied the lowest, whereas euedaphic Collembola species occupied the highest trophic position, resembling patterns in temperate forests. Some species of Paronellidae in rainforest and jungle rubber had Δ15N values below those of leaf litter suggesting algivory (Salina sp.1, Callyntrura sp.1 and Lepidonella sp.1), while a dominant species, Pseudosinella sp.1, had the highest Δ15N values in most of the land-use systems suggesting that this species at least in part lives as predator or scavenger. Overall, the results suggest that rainforest conversion into plantation systems is associated with marked shifts in the structure of trophic niches in soil and litter Collembola with potential consequences for ecosystem functioning and food-web stability."
+]
+},
+{
+"tid": "G042",
+"genus": "Pseudosinella",
+"doc_id": "PMC10993886",
+"collection": "pmc",
+"title": "Seasonal fluctuations of litter and soil Collembola and their drivers in rainforest and plantation systems",
+"year": 2024,
+"sentences": [
+"Dominant genera/species at our study sites, i.e., Pseudosinella sp., Folsomides centralis and Isotomiella spp., have been assumed to predominantly live as fungivores (Susanti et al., 2021) and fungivory was suggested to generally dominate in Collembola communities of tropical ecosystems (Takeda, 1996)."
+],
+"contexts": [
+"A’Bear, Boddy & Hefin (2012) reported arbuscular mycorrhizal fungi to potentially serve as a food resource for springtails under favorable conditions. Dominant genera/species at our study sites, i.e., Pseudosinella sp., Folsomides centralis and Isotomiella spp., have been assumed to predominantly live as fungivores (Susanti et al., 2021) and fungivory was suggested to generally dominate in Collembola communities of tropical ecosystems (Takeda, 1996). Supporting this assumption, results of our CCA indicated that Isotomiella cf. minor and Folsomides centralis in plantation systems have the same direction with saprotrophic as well as arbuscular mycorrhizal fungi in litter."
+]
+},
+{
+"tid": "G043",
+"genus": "Pseudosinella",
+"doc_id": "PMC7934680",
+"collection": "pmc",
+"title": "Trophic niche differentiation and utilisation of food resources in Collembola is altered by rainforest conversion to plantation systems",
+"year": 2021,
+"sentences": [
+"Some species of Paronellidae in rainforest and jungle rubber had Δ15N values below those of leaf litter suggesting algivory (Salina sp.1, Callyntrura sp.1 and Lepidonella sp.1), while a dominant species, Pseudosinella sp.1, had the highest Δ15N values in most of the land-use systems suggesting that this species at least in part lives as predator or scavenger.",
+"Stable isotope values of the most abundant Collembola species present in all land-use systems, Pseudosinella sp.1, did not vary significantly among land-use systems both in Δ13C (F3,21 = 1.44, p = 0.260) and Δ15N (F3,21 = 0.88, p = 0.467).",
+"In rainforest, Δ13C values of Pseudosinella sp.1 were highest and differed significantly from those of Lepidocyrtus sp.1 and Pararrhopalites sp.1, whereas in jungle rubber they were highest in Homidia cingula and differed significantly from Callyntrura sp.1. Δ15N values across abundant species varied significantly in rainforest (F4,14 = 5.00, p = 0.010), jungle rubber (F5,18 = 4.70, p = 0.006) and oil palm plantations (F2,9 = 23.59, p = 0.001), but not in rubber plantations ( F5,19 = 2.43, p = 0.072) (Fig. 3; for details see Tables S10–S13).",
+"In rainforest, Pseudosinella sp.1 occupied the highest trophic position, followed by Isotomiella cf . minor, whereas Allacma sp.1 occupied the lowest trophic position.",
+"Similar to rainforest, in jungle rubber, Pseudosinella sp.1 also occupied the highest trophic position, but Δ15N values were lowest in Callyntrura sp.1.",
+"Overall, Pseudosinella sp.1, the most dominant species, occupied the highest trophic position across all species.",
+"The most dominant Collembola species at our study sites, Pseudosinella sp.1, occupied a similar trophic niche in each of the land-use systems studied, suggesting that its diet changes little with the conversion of rainforest into plantation systems.",
+"Pseudosinella sp.1 colonized both litter and soil, and, as indicated by Δ15N values, occupied the highest trophic position among all Collembola species studied.",
+"Among the Collembola species studied Δ13C values of Pseudosinella sp.1 in rainforest, and Callyntrura sp.1 and Sphyroteca sp.1 in jungle rubber differed significantly from those of other Collembola species indicating that these species are able to exploit resources not available to the other Collembola species in the respective land-use system.",
+"In rainforest, Pseudosinella sp.1 had the highest δ15N values followed by Isotomiella cf. minor and Acrocyrtus sp. suggesting that these species are as microbivores in undisturbed ecosystems.",
+"Conform to the patterns in Collembola families, the results suggest that atmobiotic and epedaphic species occupied the lowest trophic position across land-use systems, whereas euedaphic species such as Pseudosinella sp.1 occupied the highest trophic position."
+],
+"contexts": [
+"Across the studied ecosystems, atmobiotic species (Symphypleona and Paronellidae) occupied the lowest, whereas euedaphic Collembola species occupied the highest trophic position, resembling patterns in temperate forests. Some species of Paronellidae in rainforest and jungle rubber had Δ15N values below those of leaf litter suggesting algivory (Salina sp.1, Callyntrura sp.1 and Lepidonella sp.1), while a dominant species, Pseudosinella sp.1, had the highest Δ15N values in most of the land-use systems suggesting that this species at least in part lives as predator or scavenger. Overall, the results suggest that rainforest conversion into plantation systems is associated with marked shifts in the structure of trophic niches in soil and litter Collembola with potential consequences for ecosystem functioning and food-web stability.",
+"Mean Δ15N values of Collembola did not vary significantly among land-use systems (F3,153 = 1.46, p = 0.228; Fig. 1B, Tables S4, S5). Stable isotope values of the most abundant Collembola species present in all land-use systems, Pseudosinella sp.1, did not vary significantly among land-use systems both in Δ13C (F3,21 = 1.44, p = 0.260) and Δ15N (F3,21 = 0.88, p = 0.467). Niche differentiation among species Δ13C values across abundant species (represented by at least three measurements, see Methods) varied significantly in rainforest (F4,12 = 6.34, p = 0.005) and jungle rubber (F5,17 = 3.67, p = 0.020), but not in rubber (F5,19 = 1.39, p = 0.270) and oil palm plantations (F2,9 = 1.10, p = 0.370).",
+"Niche differentiation among species Δ13C values across abundant species (represented by at least three measurements, see Methods) varied significantly in rainforest (F4,12 = 6.34, p = 0.005) and jungle rubber (F5,17 = 3.67, p = 0.020), but not in rubber (F5,19 = 1.39, p = 0.270) and oil palm plantations (F2,9 = 1.10, p = 0.370). In rainforest, Δ13C values of Pseudosinella sp.1 were highest and differed significantly from those of Lepidocyrtus sp.1 and Pararrhopalites sp.1, whereas in jungle rubber they were highest in Homidia cingula and differed significantly from Callyntrura sp.1. Δ15N values across abundant species varied significantly in rainforest (F4,14 = 5.00, p = 0.010), jungle rubber (F5,18 = 4.70, p = 0.006) and oil palm plantations (F2,9 = 23.59, p = 0.001), but not in rubber plantations ( F5,19 = 2.43, p = 0.072) (Fig. 3; for details see Tables S10–S13). In rainforest, Pseudosinella sp.1 occupied the highest trophic position, followed by Isotomiella cf . minor, whereas Allacma sp.1 occupied the lowest trophic position.",
+"In rainforest, Δ13C values of Pseudosinella sp.1 were highest and differed significantly from those of Lepidocyrtus sp.1 and Pararrhopalites sp.1, whereas in jungle rubber they were highest in Homidia cingula and differed significantly from Callyntrura sp.1. Δ15N values across abundant species varied significantly in rainforest (F4,14 = 5.00, p = 0.010), jungle rubber (F5,18 = 4.70, p = 0.006) and oil palm plantations (F2,9 = 23.59, p = 0.001), but not in rubber plantations ( F5,19 = 2.43, p = 0.072) (Fig. 3; for details see Tables S10–S13). In rainforest, Pseudosinella sp.1 occupied the highest trophic position, followed by Isotomiella cf . minor, whereas Allacma sp.1 occupied the lowest trophic position. Similar to rainforest, in jungle rubber, Pseudosinella sp.1 also occupied the highest trophic position, but Δ15N values were lowest in Callyntrura sp.1.",
+"In rainforest, Pseudosinella sp.1 occupied the highest trophic position, followed by Isotomiella cf . minor, whereas Allacma sp.1 occupied the lowest trophic position. Similar to rainforest, in jungle rubber, Pseudosinella sp.1 also occupied the highest trophic position, but Δ15N values were lowest in Callyntrura sp.1. Overall, Pseudosinella sp.1, the most dominant species, occupied the highest trophic position across all species.",
+"Similar to rainforest, in jungle rubber, Pseudosinella sp.1 also occupied the highest trophic position, but Δ15N values were lowest in Callyntrura sp.1. Overall, Pseudosinella sp.1, the most dominant species, occupied the highest trophic position across all species. Across all samples analyzed (20 species in rainforest, 17 species jungle rubber, 15 species in rubber plantations, and 13 species in oil palm plantations) 3% of the measurements had Δ15N values below that of litter (see Fig.",
+"Overall, these findings suggest that the structure of soil food-webs in monoculture plantations, especially oil palm, is simplified due to reduced number of trophic levels. The most dominant Collembola species at our study sites, Pseudosinella sp.1, occupied a similar trophic niche in each of the land-use systems studied, suggesting that its diet changes little with the conversion of rainforest into plantation systems. Pseudosinella sp.1 colonized both litter and soil, and, as indicated by Δ15N values, occupied the highest trophic position among all Collembola species studied.",
+"The most dominant Collembola species at our study sites, Pseudosinella sp.1, occupied a similar trophic niche in each of the land-use systems studied, suggesting that its diet changes little with the conversion of rainforest into plantation systems. Pseudosinella sp.1 colonized both litter and soil, and, as indicated by Δ15N values, occupied the highest trophic position among all Collembola species studied. High Δ15N values suggest that this species may either feed on mycrorrhizal fungi, which are enriched in 15N (Hobbie, Weber & Trappe, 2001; Potapov & Tiunov, 2016), and/or live as predators feeding e.g., on nematodes, which are similarly abundant across the land-use systems studied (Krashevska et al., 2019).",
+"(2018) also found the interspecific (in contrast to intraspecific) variation in trophic niches of Collembola to be higher in natural (forest and meadows) than in disturbed habitats (pastures and lawns). Among the Collembola species studied Δ13C values of Pseudosinella sp.1 in rainforest, and Callyntrura sp.1 and Sphyroteca sp.1 in jungle rubber differed significantly from those of other Collembola species indicating that these species are able to exploit resources not available to the other Collembola species in the respective land-use system. Similar to Δ13C values, Collembola species in each land-use system, except rubber plantations, also differed in Δ15N values.",
+"In jungle rubber, Callyntrura sp.1 was most depleted in δ15N among the studied Collembola species indicating that this species occupied the lowest trophic position pointing to phycophagy (Potapov Korotkevich & Tiunov, 2018). In rainforest, Pseudosinella sp.1 had the highest δ15N values followed by Isotomiella cf. minor and Acrocyrtus sp. suggesting that these species are as microbivores in undisturbed ecosystems. Overall, based on Δ13C and Δ15N values, trophic niche differentiation among species was most pronounced in rainforest, presumably due to the availability of a wider spectrum of food resources and more stable environmental conditions than in plantations.",
+"Trophic niches of Collembola in our study varied with life form as shown previously for temperate ecosystems (Ponge, 2000; Potapov et al., 2016). Conform to the patterns in Collembola families, the results suggest that atmobiotic and epedaphic species occupied the lowest trophic position across land-use systems, whereas euedaphic species such as Pseudosinella sp.1 occupied the highest trophic position. This is in line with the results of the study of Potapov et al."
+]
+},
+{
+"tid": "G044",
+"genus": "Sinella",
+"doc_id": "PMC5390908",
+"collection": "pmc",
+"title": "Plant community composition determines the strength of top-down control in a soil food web motif",
+"year": 2015,
+"sentences": [
+"Further, we also found no interactive effects of predator density and plant monocultures on Collembola species (Proisotoma: F = 0.10, P = 0.90; Folsomia: F = 0.32, P = 0.72; Sinella: F = 0.16, P = 0.84) (Supplementary Figure S1)."
+],
+"contexts": [
+"By contrast, S. curviseta showed no response to the interaction between predator density and plant community composition (GLMM, F = 0.008 and P = 0.9; Figure 2d). Further, we also found no interactive effects of predator density and plant monocultures on Collembola species (Proisotoma: F = 0.10, P = 0.90; Folsomia: F = 0.32, P = 0.72; Sinella: F = 0.16, P = 0.84) (Supplementary Figure S1). In line with our expectations, soil microbial biomass C was significantly higher in the mixed plant community compared to monoculture plant communities (+30%; LMM, F = 8.13, P <0.01; Figure 3a), but did not vary significantly among the different monocultures (LMM, F = 2.12, p = 0.11, Supplementary Figure S2)."
+]
+},
+{
+"tid": "G045",
+"genus": "Superodontella",
+"doc_id": "PMC8328430",
+"collection": "pmc",
+"title": "Conversion of rainforest into oil palm and rubber plantations affects the functional composition of litter and soil Collembola",
+"year": 2021,
+"sentences": [
+"Further, the density of some Collembola species in litter of rainforest also correlated with the amount of Gram‐negative bacteria, especially two Poduromorpha species, that is, Xenylla sp.1 and Superodontella sp.1, suggesting that these species may feed on bacteria or bacterial feeding nematodes."
+],
+"contexts": [
+"The presence of a number of species, including Acrocyrtus sp.3, Lepidocyrtus sp.1, Pararrhopalites sp.1, Sphaeridia sp.1, Sphaeridia sp.2, and two euedaphic species (Pseudosinella sp.1 and Onychiuridae spp.) in rainforest, as well as in jungle rubber, was associated with high water content. Further, the density of some Collembola species in litter of rainforest also correlated with the amount of Gram‐negative bacteria, especially two Poduromorpha species, that is, Xenylla sp.1 and Superodontella sp.1, suggesting that these species may feed on bacteria or bacterial feeding nematodes. Species in litter and soil of plantations, such as Homidia cingula, Isotomurus cf. parabalteatus, Dicranocentrus sp.1, Acrocyrtus sp.1, Folsomides centralis, and Megalothorax cf. minimus, were associated with high pH."
+]
+},
+{
+"tid": "G046",
+"genus": "Tetrodontophora",
+"doc_id": "PMC5602048",
+"collection": "pmc",
+"title": "Gut contents, digestive half-lives and feeding state prediction in the soil predatory mite Pergamasus longicornis (Mesostigmata: Parasitidae)",
+"year": 2017,
+"sentences": [
+"Unless P. longicornis specialised just in feeding upon say purple coloured springtails like Hypogastrura sp. or Tetrodontophora sp."
+],
+"contexts": [
+"A pale replete gut should thus infer ingestion/digestion. Unless P. longicornis specialised just in feeding upon say purple coloured springtails like Hypogastrura sp. or Tetrodontophora sp. (and there is no evidence that they do), the bulk of prey material imbibed should be colourless."
+]
+},
+{
+"tid": "G047",
+"genus": "Tomocerus",
+"doc_id": "PMC5728517",
+"collection": "pmc",
+"title": "Root-derived carbon and nitrogen from beech and ash trees differentially fuel soil animal food webs of deciduous forests",
+"year": 2017,
+"sentences": [
+"In the two analyzed Tomocerus species the enrichment in 13C was intermediate, indicating that to some extent root-derived resources contribute to their diet, which is in line with previous studies [36,37].",
+"Tomocerus species are known to feed on a variety of food materials including litter but also fungi and bacteria in the rhizosphere [62], algae [63] as well as Nematoda [64].",
+"The high variance in the natural abundance of stable isotopes found in the present study also indicate that the diet of Tomocerus species varies between individuals.",
+"Overall, incorporation of root-derived C but little root-derived N likely was due to feeding on mycorrhizal fungi but the intermediate 13C signature suggests that they only form a small fraction of the diet of Tomocerus species."
+],
+"contexts": [
+"[61]. In the two analyzed Tomocerus species the enrichment in 13C was intermediate, indicating that to some extent root-derived resources contribute to their diet, which is in line with previous studies [36,37]. Low incorporation of root-derived N suggests that it was not based on root feeding but rather on feeding on rhizosphere microorganisms which had incorporated N from root exudates.",
+"Low incorporation of root-derived N suggests that it was not based on root feeding but rather on feeding on rhizosphere microorganisms which had incorporated N from root exudates. Tomocerus species are known to feed on a variety of food materials including litter but also fungi and bacteria in the rhizosphere [62], algae [63] as well as Nematoda [64]. Omnivory in Collembola has been proposed previously [65] and mixed diets have been shown to increase growth in Collembola [66].",
+"Omnivory in Collembola has been proposed previously [65] and mixed diets have been shown to increase growth in Collembola [66]. The high variance in the natural abundance of stable isotopes found in the present study also indicate that the diet of Tomocerus species varies between individuals. Overall, incorporation of root-derived C but little root-derived N likely was due to feeding on mycorrhizal fungi but the intermediate 13C signature suggests that they only form a small fraction of the diet of Tomocerus species.",
+"The high variance in the natural abundance of stable isotopes found in the present study also indicate that the diet of Tomocerus species varies between individuals. Overall, incorporation of root-derived C but little root-derived N likely was due to feeding on mycorrhizal fungi but the intermediate 13C signature suggests that they only form a small fraction of the diet of Tomocerus species. The Uropodina species studied, U. cassidea, U. cylindricus and T. aegrota, incorporated little root-derived C."
+]
+},
+{
+"tid": "G048",
+"genus": "Troglopedetes",
+"doc_id": "10.18590/euscorpius.2011.vol2011.iss134.1",
+"collection": "pmc",
+"title": "The genus Akrav Levy, 2007 (Scorpiones: Akravidae) revisited",
+"year": 2011,
+"sentences": [
+"The only candidate detritivore in the impoverished ecosystem of the Ayyalon Cave is the abovementioned Troglopedetes sp. , a resident, undescribed species of springtails ( Collembola : Paronellidae ), primitive hexapods with an unclear phylogenetic position (formerly considered basal insects)."
+],
+"contexts": [
+"These piles clearly are not a feature of scorpion cuticle, and are instead consistent with feces of small animals. The only candidate detritivore in the impoverished ecosystem of the Ayyalon Cave is the abovementioned Troglopedetes sp. , a resident, undescribed species of springtails ( Collembola : Paronellidae ), primitive hexapods with an unclear phylogenetic position (formerly considered basal insects). The putative feces are consistent in their size with Collembola (which measure ca. 1 mm)."
+]
+},
+{
+"tid": "G049",
+"genus": "Willowsia",
+"doc_id": "8514C9F3706553B4AB85FC8527576B70",
+"collection": "plazi",
+"title": "Willowsia solanella Jordana, Fiera & Baquero, 2026, sp. nov.",
+"year": "",
+"sentences": [
+"Like other members of the genus Willowsia , it is fungivorous – detritivorous, feeding primarily on superficial molds and fine organic debris."
+],
+"contexts": [
+"Willowsia solanella sp. nov. appears to be a synanthropic species inhabiting indoor environments where moisture, organic particles, and fungal growth are present. Like other members of the genus Willowsia , it is fungivorous – detritivorous, feeding primarily on superficial molds and fine organic debris. Its presence is not associated with damage to stored products and should be considered ecologically harmless, likely contributing to the decomposition of organic matter in human-modified microhabitats."
+]
+},
+{
+"tid": "G050",
+"genus": "Xenylla",
+"doc_id": "PMC8328430",
+"collection": "pmc",
+"title": "Conversion of rainforest into oil palm and rubber plantations affects the functional composition of litter and soil Collembola",
+"year": 2021,
+"sentences": [
+"Further, the density of some Collembola species in litter of rainforest also correlated with the amount of Gram‐negative bacteria, especially two Poduromorpha species, that is, Xenylla sp.1 and Superodontella sp.1, suggesting that these species may feed on bacteria or bacterial feeding nematodes."
+],
+"contexts": [
+"The presence of a number of species, including Acrocyrtus sp.3, Lepidocyrtus sp.1, Pararrhopalites sp.1, Sphaeridia sp.1, Sphaeridia sp.2, and two euedaphic species (Pseudosinella sp.1 and Onychiuridae spp.) in rainforest, as well as in jungle rubber, was associated with high water content. Further, the density of some Collembola species in litter of rainforest also correlated with the amount of Gram‐negative bacteria, especially two Poduromorpha species, that is, Xenylla sp.1 and Superodontella sp.1, suggesting that these species may feed on bacteria or bacterial feeding nematodes. Species in litter and soil of plantations, such as Homidia cingula, Isotomurus cf. parabalteatus, Dicranocentrus sp.1, Acrocyrtus sp.1, Folsomides centralis, and Megalothorax cf. minimus, were associated with high pH."
+]
+}
+]

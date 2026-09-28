@@ -20,12 +20,15 @@ answering configurations.
 | `data/benchmark_traits.csv` | The trait benchmark: 126 questions with gold answers |
 | `data/sampling_frame.csv` | Metadata of the 859 Plazi treatments the questions were drawn from (no treatment text) |
 | `data/curation/traits/` | Raw candidates and curation decisions for the trait benchmark (two rounds) |
-| `data/curation/trophic/` | Curation decisions and review sheets for the trophic-guild benchmark (work in progress) |
+| `data/benchmark_trophic.csv` | The trophic-guild benchmark: 102 diet questions (81 species, 21 genus level) with gold food items and gold guilds |
+| `data/curation/trophic/` | Candidate sentences, review sheets, curation decisions and `build_trophic.py` for the trophic-guild benchmark |
 | `scripts/kybele_d103_eval.py` | QA runner: sends the questions to the QA API in five configurations |
 | `scripts/bench_to_candidates.py` | Converts `benchmark_traits.csv` into the runner's input file |
 | `scripts/score.py` | String metrics (exact match, answer contains, SQuAD F1, ROUGE-L, faithfulness proxy, gold retrieval) |
 | `scripts/score_traits.py` | Trait-level scoring (correct / wrong / no answer); needs `trait_extraction_v3.py`, see below |
-| `scripts/kybele_trophic_harvest.py` | Harvests candidate diet statements from SIBiLS (Medline, PMC, Plazi) for the trophic-guild benchmark |
+| `scripts/kybele_trophic_harvest.py` | Harvests candidate species-level diet statements from SIBiLS (Medline, PMC, Plazi) |
+| `scripts/kybele_trophic_genus.py` | Harvests candidate genus-level diet statements from SIBiLS |
+| `scripts/score_trophic.py` | Trophic-guild scoring (guilds with the pipeline's vocabulary and with an extended one, food match, gold retrieval) |
 | `scripts/make_spotcheck.py` | Draws the specialist spot-check sample and writes the reviewer workbook (needs `openpyxl`) |
 | `spotcheck/` | Spot-check sample (25 questions) and reviewer workbook |
 | `results/traits_main/` | Main run: raw responses (`runs.jsonl`), log, `scored.csv`, `summary.json`, `scored_traits.csv`, `summary_traits.json` |
@@ -94,10 +97,37 @@ generic queries), `query`, `search_score`, `article_title`, `doi`, `treatment_ur
 
 ### Trophic-guild benchmark
 
-A separate trophic-guild benchmark (diet statements for springtail species from Medline, PMC and
-Plazi, harvested with `scripts/kybele_trophic_harvest.py`) is being finalised, with a target of
-more than 100 questions. It will be added as `data/benchmark_trophic.csv`. The curation decisions
-and review sheets so far are in `data/curation/trophic/`.
+`data/benchmark_trophic.csv` holds 102 diet questions: 81 about 48 species ("What does *species*
+feed on?") and 21 about 17 genera ("What does *genus* feed on?", the wording of the KYBELE
+trait pipeline, which assigns guilds at genus level). Treatments rarely state diet, so the
+questions come from Medline abstracts (26), PMC full texts (72) and Plazi treatments (4), all
+indexed by SIBiLS; they cover 69 documents.
+
+**Harvest.** `scripts/kybele_trophic_harvest.py` (species level: general and food-specific
+feeding queries, then one and a deeper second query per species for the 330 trait-mining species)
+and `scripts/kybele_trophic_genus.py` (genus level: one query per genus for 168 genera) keep
+sentences that name a springtail species or genus together with a feeding cue. They produced
+1,033 candidate sentences (`data/curation/trophic/candidate_sentences_*.jsonl`).
+
+**Curation.** 295 taxon–document pairs were checked against their context with AI assistance
+(`review*.json`) and 101 were kept (`curation_t1.py`, `curation_t2.py`, `curation_t3.py`,
+`curation_g.py`); one question comes from the trait-mining expert review (Folsomia fimetarioides).
+Kept: what the taxon eats, from field observation, gut content, stable isotopes or fatty acids,
+laboratory feeding or preference trials, or cited literature. Dropped: the springtail as prey;
+occurrence or substrate taken as diet; laboratory culture, stock or toxicity-test diets;
+statements about Collembola in general; reference-list entries and table fragments; guild labels
+used in passing or only to name a role in an experimental food web; Medline/PMC copies of a
+document already used. Caps: one question per taxon and document, at most 4 questions per
+document, at most 6 documents per taxon (15 for Folsomia candida, which has 14). Hedged statements
+("suggesting", "assumed") are kept and flagged (18). Rebuild the benchmark with
+`cd data/curation/trophic && python3 build_trophic.py`.
+
+**Columns of `benchmark_trophic.csv`:** `qid` (P001–P102), `docid` (PMCID, PMID, DOI or Plazi
+treatment ID of the gold document), `taxon`, `taxon_rank` (`species` or `genus`), `question`,
+`gold_answer` (food items; alternatives separated by ` \|\| `), `gold_guilds` (Potapov et al. 2022
+guilds, `|`-separated), `evidence` (`lab`, `literature`, `isotope`, `gut`, `field`), `hedged`,
+`collection`, `source_title`, `gold_context` (the sentence with one sentence either side),
+`curation_ref` (ID in the review sheets) and `curation_note`.
 
 ## Reproducing the evaluation
 
@@ -130,6 +160,20 @@ curl -L -o scripts/trait_extraction_v3.py https://raw.githubusercontent.com/ecsl
 python3 scripts/score.py        data/benchmark_traits.csv kybele_d103/runs.jsonl kybele_d103
 python3 scripts/score_traits.py data/benchmark_traits.csv kybele_d103/runs.jsonl kybele_d103
 ```
+
+For the trophic-guild benchmark:
+
+```bash
+python3 scripts/bench_to_candidates.py data/benchmark_trophic.csv kybele_trophic_eval/candidates.csv
+python3 scripts/kybele_d103_eval.py --out kybele_trophic_eval
+python3 scripts/score_trophic.py data/benchmark_trophic.csv kybele_trophic_eval/runs.jsonl kybele_trophic_eval
+```
+
+`score_trophic.py` reads the answer the way the trait pipeline does (the highest-scoring answer
+across collections) and scores its guilds twice: with the vocabulary of `trait_extraction_v3`
+as it is, and with that vocabulary extended by terms it misses (litter, roots, fungal and
+bacterial genus names, invertebrates and others, listed in the script). The pipeline vocabulary
+recognises the gold guild in 73 of the 102 first gold answers, the extended one in all 102.
 
 The arguments are the benchmark, the runs file and an existing output folder. Only the last
 valid answer per question and configuration is scored; failed requests are ignored.

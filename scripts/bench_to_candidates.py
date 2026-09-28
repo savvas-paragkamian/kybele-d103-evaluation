@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """
-Convert data/benchmark_traits.csv into the candidates.csv that kybele_d103_eval.py reads.
+Convert data/benchmark_traits.csv or data/benchmark_trophic.csv into the candidates.csv that
+kybele_d103_eval.py reads.
 
 The runner expects the column names it writes itself (species instead of taxon, plus
 candidate_answer and curation) and a gold_answer column, which marks the file as curated.
@@ -8,6 +9,7 @@ candidate_answer is set to the first gold alternative and curation is left empty
 is used by the runner or the scorers.
 
 Usage: python3 scripts/bench_to_candidates.py data/benchmark_traits.csv kybele_d103/candidates.csv
+       python3 scripts/bench_to_candidates.py data/benchmark_trophic.csv kybele_trophic_eval/candidates.csv
 """
 
 import csv
@@ -25,6 +27,8 @@ def main(bench_path, out_path):
     for r in rows:
         c = {k: r.get(k, "") for k in FIELDS}
         c["species"] = r["taxon"]
+        c["treatment_title"] = r.get("treatment_title") or r.get("source_title", "")  # fallback doc_ref
+        c["article_title"] = r.get("article_title") or r.get("source_title", "")
         c["candidate_answer"] = r["gold_answer"].split("||")[0].strip()
         out.append(c)
     os.makedirs(os.path.dirname(out_path) or ".", exist_ok=True)
