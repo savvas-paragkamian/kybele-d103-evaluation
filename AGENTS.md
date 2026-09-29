@@ -272,6 +272,7 @@ The planned actions P1–P17 are in [TODO.md](TODO.md).
 - Keep one change per commit, and say in the message whether results were re-scored.
 - Run `python3 -m py_compile scripts/*.py` and the reproduction check in section 4 before pushing.
 - Keep the scripts standard-library only where they call the network. `make_spotcheck.py`
-  (openpyxl) is the exception.
+  (openpyxl) and `make_figures.py` (matplotlib) work offline and are the exceptions. Re-run
+  `make_figures.py` after any re-scoring.
 - Owners: SIB for the QA service (P1–P5). The trait-mining team for the pipeline and vocabularies
   (P6–P17; the node is still to be named). The coordinator for the deliverable and releases.

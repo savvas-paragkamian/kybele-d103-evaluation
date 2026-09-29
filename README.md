@@ -29,10 +29,12 @@ answering configurations.
 | `scripts/kybele_trophic_harvest.py` | Harvests candidate species-level diet statements from SIBiLS (Medline, PMC, Plazi) |
 | `scripts/kybele_trophic_genus.py` | Harvests candidate genus-level diet statements from SIBiLS |
 | `scripts/score_trophic.py` | Trophic-guild scoring (guilds with the pipeline's vocabulary and with an extended one, food match, gold retrieval) |
+| `scripts/make_figures.py` | Draws the result figures (needs `matplotlib`); dense retrieval is scored on its successful requests only |
 | `scripts/make_spotcheck.py` | Draws the specialist spot-check sample and writes the reviewer workbook (needs `openpyxl`) |
 | `spotcheck/` | Spot-check sample (25 questions) and reviewer workbook |
 | `results/traits_main/` | Main run: raw responses (`runs.jsonl`), log, `scored.csv`, `summary.json`, `scored_traits.csv`, `summary_traits.json` |
 | `results/traits_repeat/` | Repeat run of the same 126 questions, same files |
+| `results/figures/` | The two D10.3 result figures (PNG and SVG), drawn by `scripts/make_figures.py` from the scored results |
 | `results/trophic/` | Trophic-guild run: raw responses, log, `scored.csv`, `summary.json`, `scored_trophic.csv`, `summary_trophic.json` |
 | `AGENTS.md` | Project memory for collaborators and AI agents: context, rules, curation and scoring definitions, key results, decision log, known issues |
 | `TODO.md` | Open work: publication, remaining D10.3 items, benchmark tasks, planned actions P1–P17, re-evaluation checklist |
