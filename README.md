@@ -34,6 +34,8 @@ answering configurations.
 | `results/traits_main/` | Main run: raw responses (`runs.jsonl`), log, `scored.csv`, `summary.json`, `scored_traits.csv`, `summary_traits.json` |
 | `results/traits_repeat/` | Repeat run of the same 126 questions, same files |
 | `results/trophic/` | Trophic-guild run: raw responses, log, `scored.csv`, `summary.json`, `scored_trophic.csv`, `summary_trophic.json` |
+| `AGENTS.md` | Project memory for collaborators and AI agents: context, rules, curation and scoring definitions, key results, decision log, known issues |
+| `TODO.md` | Open work: publication, remaining D10.3 items, benchmark tasks, planned actions P1–P17, re-evaluation checklist |
 | `LICENSE`, `LICENSE-DATA`, `CITATION.cff` | Licences and citation metadata |
 
 ## Trait benchmark
