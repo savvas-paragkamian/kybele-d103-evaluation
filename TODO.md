@@ -121,10 +121,11 @@ with the "measured" column (see section 5 below).
 | P21 | TM | Track recall, not only removed errors: score each pipeline version on species outside the expert review and on the population benchmark | v3 stores a guild for 4 of 21 held-out species with a documented diet, against 7 of 10 reviewed ones |
 | P22 | TM | Choose the reader per trait: the extractive reader for body size on the pipeline's documents, the generative reader for diet and habitat | Body size on the pipeline's documents: extractive 100 % precision, 62 % recall; generative stored 38 % recall |
 | P23 | SIB | Return a confidence for generative answers (token log-probabilities, or a flag for hedged answers), and the passage the model read | `answer_score` is `None` for generative answers; hedged answers are right 76–82 %, plain ones 91–98 % |
+| P24 | TM | Store a diet only when both readers agree on the same documents, and send disagreements for review | Agreement: 97–100 % precision at 28–71 % recall; generative alone 91–95 % per question, 58–62 % per label |
 
 - [ ] P1 · [ ] P2 · [ ] P3 · [ ] P4 · [ ] P5 · [ ] P6 · [ ] P7 · [ ] P8 · [ ] P9 · [ ] P10 ·
   [ ] P11 · [ ] P12 · [ ] P13 · [ ] P14 · [ ] P15 · [ ] P16 · [ ] P17 · [ ] P18 · [ ] P19 ·
-  [ ] P20 · [ ] P21 · [ ] P22 · [ ] P23
+  [ ] P20 · [ ] P21 · [ ] P22 · [ ] P23 · [ ] P24
 
 The scorer here already works around P15 and P16 for its "guild of the answer" measure. The
 "guild recorded by the pipeline" measure deliberately keeps the pipeline's behaviour, so it will

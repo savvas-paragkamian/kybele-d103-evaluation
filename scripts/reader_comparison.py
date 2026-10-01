@@ -106,9 +106,15 @@ def items(cfg):
     for r in neg_cfg_rows:
         b = bench_n[r["qid"]]
         ans = r["pipeline_answer"] if pipe else r["plazi_answer"]
-        given = (r["pipeline"] if pipe else r["plazi"]) == "wrong"
         qt = b["question_type"]
-        stored_given = st.negative(st.stored_outcome(ans, qt, b["taxon"], "", None, set())) == "wrong"
+        if qt == "trophic_guild":
+            # read like the answerable diet questions: any feeding group the answer states (sentence-level reader)
+            # counts as a value given; the stored value is the pipeline's reading of the answer
+            given = bool(so.answer_guilds(ans, b["taxon"]))
+            stored_given = bool(so.pipeline_guilds(ans, b["taxon"], "species"))
+        else:
+            given = (r["pipeline"] if pipe else r["plazi"]) == "wrong"
+            stored_given = st.negative(st.stored_outcome(ans, qt, b["taxon"], "", None, set())) == "wrong"
         out.append({"set": "body_size_negative" if qt == "body_size" else "diet_negative", "qid": r["qid"],
                     "taxon": b["taxon"], "answer_text": ans, "answer": "wrong" if given else "correct",
                     "stored": "wrong" if stored_given else "correct", "food": None, "negative": True})

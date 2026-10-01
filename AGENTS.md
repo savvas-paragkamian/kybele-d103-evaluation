@@ -92,6 +92,7 @@ retrieval (see section 3), so the service configurations alone do not measure L2
    python3 scripts/score_pipeline_output.py --out $T && cmp $T/summary_pipeline_output.json results/pipeline_output/summary_pipeline_output.json
    python3 scripts/score_traits.py  data/benchmark_traits.csv  results/traits_pipeline_extractive/runs.jsonl $T && cmp $T/summary_traits.json results/traits_pipeline_extractive/summary_traits.json
    python3 scripts/reader_comparison.py --out $T && cmp $T/summary.json results/reader_comparison/summary.json
+   python3 scripts/rigor_analysis.py --out $T && cmp $T/summary.json results/rigor/summary.json
    ```
 2. **`data/benchmark_trophic.csv` is generated.** Change `data/curation/trophic/curation_*.py`
    and rebuild with `cd data/curation/trophic && python3 build_trophic.py`. Never edit the CSV.
@@ -267,11 +268,20 @@ Readers and components (`results/reader_comparison/`, `reader_comparison.py`):
 - Body size precision / recall (60 + 30 negative): service generative 61 / 58 %, stored by v3
   94 / 50 %; pipeline stored 100 / 38 %; pipeline's documents with the extractive reader 100 / 62 %;
   gold document extractive 100 / 83 %. At the pipeline's 92 % share of unanswerable questions, the
-  service's body sizes are 6–10 % correct, 56 % once stored by v3. Diet guilds: 92–95 % precise in
+  service's body sizes are 6–10 % correct, 56 % once stored by v3. Diet guilds: 91–95 % precise (per question) in
   every generative configuration; recall 88 % service, 69 % pipeline answer, 56 % stored.
 - Generative wording: plain assertions right 91–98 %, hedged 76–82 %.
 - Unanswerable share in the pipeline's use: 211 of 290 v3 diet answers and 264 of 290 body-size
   answers state no value, plus 40 species with no answer (76 % and 92 % of 330).
+
+Stricter measures (`results/rigor/`, `rigor_analysis.py`; after Domazetoski et al. 2025, Keck et al.
+2025, Münch et al. 2026):
+- Body size error size: 13 of the 20 wrong end-to-end extractive values are > 25 % off (NMAE of wrong
+  values 3.8); every value the pipeline stores is within 2 %.
+- Diet scored per feeding group: generative 58–62 % precise against 91–95 % per question; constant
+  "fungi" 58 % at label level end to end. Report both: label level is a lower bound, per question an
+  upper bound.
+- Readers agreeing on the same documents: 97–100 % diet precision at 28–71 % recall.
 
 Expert-reviewed trait mining (from collembola-trait-mining; only version 3 is reported):
 - The expert review gives a test set of 56 adjudicated species–trait cases (27 trophic guild, 16
@@ -316,6 +326,8 @@ The planned actions P1–P17 are in [TODO.md](TODO.md).
 | 2026-10-01 | Only version 3 of the trait-mining output is evaluated and reported | Version 3 is the current pipeline; version 2 survives only as the origin of the 56 adjudicated cases |
 | 2026-10-01 | Analysis configuration `pipeline_extractive`; readers compared on identical documents; precision–recall grid with negative items | To answer whether the generative reader is more informative and whether curation and the pipeline improve precision and recall |
 | 2026-10-01 | Generative wording (plain / hedged / denies) as the confidence proxy | The service returns no score for generative answers |
+| 2026-10-01 | Stricter measures added: error size, label-level precision and recall, selective answering, bootstrap intervals | Practice in trait-extraction and LLM-evaluation studies (Domazetoski 2025, Keck 2025, Münch 2026); the per-question "any group matches" rule overstates diet precision |
+| 2026-10-01 | Diet on no-answer questions read like answerable ones (any feeding group stated counts) | Positives and negatives were read by different rules; one rule for both. Changes extractive diet precision only (generative and pipeline unchanged except one service answer) |
 | 2026-10-01 | Precision re-weighted to 76 % (diet) and 92 % (body size) unanswerable | The shares measured in the pipeline's own version 3 answers; the benchmark's 1-in-3 and 1-in-4.4 negative shares flatter guessing readers |
 
 ## 9. Known issues and pitfalls
@@ -345,6 +357,10 @@ The planned actions P1–P17 are in [TODO.md](TODO.md).
   `doc_refs`), not a benchmark artefact.
 - **The pipeline's phrase search** covers only title, abstract and keywords in PMC, so most PMC
   diet statements (in the full text) never reach its reader.
+- **Two readings of diet.** The scored files from `score_traits.py` read diet on no-answer questions
+  with the pipeline's extractor; `reader_comparison.py`, `rigor_analysis.py` and the figures read it
+  with the sentence-level reader used for answerable questions, so an extractive "leaf litter" counts
+  as a value given. Quote negative-item diet results from the latter.
 - **Gold incompleteness.** A trophic gold answer comes from one statement. Another sentence in
   the same document may support a different guild (for example Tomocerus minor, P079), so the
   wrong rate is an upper bound.

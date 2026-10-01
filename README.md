@@ -85,6 +85,7 @@ A drawn version is `results/figures/flowchart.png`.
 | `scripts/check_pipeline_sync.py` | Checks the pipeline constants copied into the runner and scorers against collembola-trait-mining at the pinned commit |
 | `scripts/score_pipeline_output.py` | Scores the pipeline's published version 3 trait table and its genus table against the gold of this repository (offline L2 benchmark) |
 | `scripts/attribution.py` | Attributes errors to retrieval, reading, answer selection and extraction on the same items |
+| `scripts/rigor_analysis.py` | Stricter measures: error size for body size, label-level precision and recall, selective answering by confidence, bootstrap intervals |
 | `scripts/reader_comparison.py` | Extractive against generative reader on identical documents (McNemar), and the precision–recall grid of retrieval × reader × version 3 extraction |
 | `scripts/make_negatives.py` | Builds the negative items (`NOT_DOCUMENTED` gold) from the sampling frame |
 | `scripts/make_population_sample.py` | Samples the pipeline's own species for the population benchmark and builds it once curated |
@@ -109,6 +110,7 @@ A drawn version is `results/figures/flowchart.png`.
 | `results/pipeline_output/` | The pipeline's version 3 table and genus table scored against the gold (`score_pipeline_output.py`) |
 | `results/attribution/` | Layer attribution of the main, trophic and pipeline runs (`attribution.py`) |
 | `results/*_pipeline_extractive/` | The pipeline's documents read by the extractive reader (analysis configuration `pipeline_extractive`), for the three item sets |
+| `results/rigor/` | Stricter measures (`rigor_analysis.py`): `summary.json` |
 | `results/reader_comparison/` | Reader comparison and precision–recall grid (`reader_comparison.py`): `summary.json`, `items.csv` |
 | `data/benchmark_negatives.csv` | Negative items: questions whose trait is not documented anywhere the pipeline can read |
 | `data/curation/negatives/` | Log of every treatment checked for the negative items |
@@ -447,10 +449,33 @@ pipeline's 92 % share of unanswerable questions):
   generative reader carries the diet and names the species, which version 3 needs to store a value.
 - The trait-mining repository (phrase search, version 3 extraction) raises body-size precision to
   93–100 % at a cost in recall; the curated gold document raises recall. For diet guilds, every
-  generative path is 92–95 % precise and the paths differ in recall (88 % service, 69 % pipeline
+  generative path is 91–95 % precise per question and the paths differ in recall (88 % service, 69 % pipeline
   answer, 56 % stored).
 - Generative wording as confidence: plain assertions are right 91–98 % of the time, hedged ones
   76–82 %; with service retrieval, 14 of 16 hedged answers to negative questions invent a value.
+
+### Stricter measures
+
+`scripts/rigor_analysis.py` (`results/rigor/`), following how trait-extraction studies score numerical
+and categorical traits (Domazetoski et al. 2025; Keck et al. 2025) and how self-reported confidence is
+used to choose answers (Münch et al. 2026). Bootstrap 95 % intervals (2,000 resamples, seed 2026).
+
+- **Error size, body size.** Wrong values are rarely near misses. With the service's own search, 13
+  of the extractive reader's 20 wrong values are more than 25 % off (NMAE of the wrong values 3.8;
+  generative 0.41); the values the pipeline stores are all within 2 %.
+- **Label-level precision and recall (diet, habitat).** Scored per feeding group rather than "any
+  group matches", generative diets are 58–62 % precise (service 58 % [51–64], pipeline 60 % [52–68],
+  gold document 62 % [55–71]) against 91–95 % per question. A constant "fungi" answer is 58 % precise
+  at label level end to end, so the extra groups add recall (62 % against 34 %) but not precision.
+  Label precision is a lower bound (a group supported by another document counts as wrong), the
+  per-question measure an upper bound. Habitat classes stored by the pipeline: 85 % [75–96] precise,
+  35 % [23–49] recall.
+- **Selective answering.** Keeping a generative diet only when the extractive reader agrees on the
+  same documents gives 97–100 % precision at 28–71 % recall; plain wording alone gives 96–100 %
+  precision at 19–43 % recall. The extractive score separates good from bad diet answers but not body
+  sizes found by the service's own search.
+- Both analyses (`reader_comparison.py`, `rigor_analysis.py`) read diet the same way for answerable and
+  no-answer questions and give identical precision and recall.
 
 **Offline, the version 3 table the pipeline published** (`results/pipeline_output/`, commit
 `1d5b5b6`; only version 3 is evaluated), against the gold of the 31 benchmark species that are
@@ -479,18 +504,21 @@ pipeline's own vocabulary instead of the extended one: `doc_generative` 77 % (85
 ### Negative items
 
 `results/negatives/` (runner v6, 30 September 2026; dense retrieval not run). Correct means no value
-given (for `pipeline`: none kept and none stored):
+given (for `pipeline`: none kept and none stored). Diet is read as for the answerable diet questions:
+any feeding group the answer states counts as a value.
 
 | Configuration | Body size, n = 30 | Diet, n = 30 |
 |---|--:|--:|
-| `doc_extractive` | 100 % | 90 % |
+| `doc_extractive` | 100 % | 77 % |
 | `doc_generative` | 100 % | 100 % |
-| `e2e_sparse_extractive` | 27 % | 97 % |
-| `e2e_sparse_generative` | 53 % | 100 % |
+| `e2e_sparse_extractive` | 27 % | 67 % |
+| `e2e_sparse_generative` | 53 % | 97 % |
+| `pipeline_extractive` | 100 % | 83 % |
 | `pipeline` (answer and stored value) | 100 % | 100 % |
 
-- Given the treatment, both readers abstain on body size. The extractive reader's answer implies a
-  guild for 3 of 30 diet questions.
+- Given the treatment, both readers abstain on body size. Asked for a diet that is not documented,
+  the extractive reader often returns a substrate ("leaf litter"), read as detritus feeding: 7 of 30
+  given the treatment, 10 of 30 end to end. The pipeline's extractor stores none of these.
 - With the service's own retrieval, answers give a body size for species that have none
   documented: 22 of 30 extractive answers, and 14 of 30 generative ones. Of the generative ones,
   11 say the length is not stated and then offer another species' value; 3 state a value outright,

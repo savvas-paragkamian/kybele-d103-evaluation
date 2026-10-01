@@ -20,6 +20,7 @@ Usage: python3 scripts/make_figures.py   (needs matplotlib; run from the reposit
 import csv
 import json
 import math
+import os
 from pathlib import Path
 
 import matplotlib
@@ -28,7 +29,10 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
-OUT = ROOT / "results" / "figures"
+# KYBELE_DOC=1 draws the figures for the deliverable: no title or subtitle inside the image (the
+# report's caption carries them), cropped, into results/figures/doc/.
+DOC = os.environ.get("KYBELE_DOC") == "1"
+OUT = ROOT / "results" / "figures" / ("doc" if DOC else "")
 
 CONFIGS = [
     ("doc_extractive", "Gold document, extractive"),
@@ -46,6 +50,16 @@ SOURCES = {"traits": {"pipeline": "results/traits_pipeline", "pipeline_extractiv
 ORANGE, LIGHT = "#eb6834", "#d9d8d3"
 ACCENT, DARK, MID = "#2a78d6", "#52514e", "#7f7e79"
 INK, INK2, GRID, SURFACE = "#0b0b0b", "#52514e", "#e4e3df", "#ffffff"
+
+
+def doc_scale(fig):
+    """In document mode, enlarge all text in proportion to how much the figure will be shrunk to
+    fit the report's 6.3-inch text width (figures are drawn 8.6-10.4 inches wide)."""
+    if not DOC:
+        return
+    f = max(1.0, fig.get_figwidth() / 7.5)
+    for t in fig.findobj(matplotlib.text.Text):
+        t.set_fontsize(t.get_fontsize() * f)
 
 
 def wilson(k, n, z=1.96):
@@ -88,6 +102,8 @@ def style(ax, title, subtitle):
         ax.spines[s].set_visible(False)
     ax.spines["bottom"].set_color(GRID)
     ax.tick_params(axis="both", length=0)
+    if DOC:
+        return
     t = ax.figure.text(0.012, 0.985, title, fontsize=12, fontweight="bold", color=INK, va="top", linespacing=1.3)
     ax.figure.text(0.012, 0.895 if ax.figure.get_figheight() > 6 else 0.88, subtitle, fontsize=8.8, color=INK2,
                    va="top", linespacing=1.4)
@@ -274,7 +290,15 @@ def fig_negatives():
         ns = []
         for j, (trait, lab, col, hollow, mk) in enumerate(series):
             rs = [r for r in rows if r["config"] == cfg and r["trait"] == trait]
-            k, n = sum(r[key] == "correct" for r in rs), len(rs)
+            if trait == "trophic_guild_negative":
+                # read like the answerable diet questions: any feeding group the answer states is a value given
+                import score_trophic as so  # noqa: E402  (needs trait_extraction_v3.py)
+                taxa = {b["qid"]: b["taxon"] for b in csv.DictReader(open(ROOT / "data/benchmark_negatives.csv", encoding="utf-8"))}
+                ans = "pipeline_answer" if cfg.startswith("pipeline") else "plazi_answer"
+                k = sum(not so.answer_guilds(r[ans], taxa[r["qid"]]) for r in rs)
+            else:
+                k = sum(r[key] == "correct" for r in rs)
+            n = len(rs)
             lo, hi = wilson(k, n)
             point(ax, 100 * k / n, y0 + (0.14 if j == 0 else -0.14), lo, hi, col, hollow, mk)
             ns.append(n)
@@ -283,7 +307,8 @@ def fig_negatives():
     ax.set_ylim(-0.75, len(cfgs) - 0.4)
     style(ax, "When nothing is documented, the pipeline abstains; the service's own\nretrieval gives a body size for half the species or more",
           "Negative items (trait not documented in the treatment or in any document the pipeline's phrase\n"
-          "search returns): share answered correctly by giving no value, with 95 % Wilson intervals.")
+          "search returns): share answered correctly by giving no value, with 95 % Wilson intervals. Diet: any feeding group\n"
+          "the answer states counts as a value (an extractive \"leaf litter\" counts), as for the answerable diet questions.")
     handles = [plt.Line2D([], [], marker=mk, color=col, markerfacecolor=col, linewidth=2,
                           markersize=7, label=lab) for _, lab, col, h, mk in series]
     fig.legend(handles=handles, loc="upper left", bbox_to_anchor=(0.37, 0.80), ncol=2, frameon=False, fontsize=9)
@@ -334,8 +359,9 @@ def main():
                        ("fig_pipeline_losses", fig_pipeline_losses), ("fig_negatives", fig_negatives),
                        ("fig_pipeline_tables", fig_pipeline_tables)):
         fig = make()
+        doc_scale(fig)
         for ext in ("png", "svg"):
-            fig.savefig(OUT / f"{name}.{ext}", facecolor=SURFACE)
+            fig.savefig(OUT / f"{name}.{ext}", facecolor=SURFACE, **({"bbox_inches": "tight", "pad_inches": 0.15} if DOC else {}))
         plt.close(fig)
         print("wrote", OUT / f"{name}.png")
 

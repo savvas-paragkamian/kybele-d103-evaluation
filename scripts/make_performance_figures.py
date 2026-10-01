@@ -8,6 +8,9 @@ Draw the D10.3 performance figures (curves) from the raw and scored results.
                                               is documented (an ROC-type curve), body size and diet
   results/figures/perf_pr.(png|svg)           precision and recall: extractive curves (score threshold) and the
                                               operating points of the generative configurations and the pipeline
+  results/figures/perf_value_error.(png|svg)  body size: how far off the stated values are (error size)
+  results/figures/perf_labels.(png|svg)       label-level precision and recall for feeding groups and habitat classes
+  results/figures/perf_selective.(png|svg)    accuracy against coverage for three confidence signals
   results/figures/perf_calibration.(png|svg)  observed accuracy against the extractive answer score
   results/figures/perf_latency.(png|svg)      response time per configuration (median, quartiles, 5-95 %)
 
@@ -63,6 +66,8 @@ def best_score(resp):
 
 def frame(fig, title, subtitle, sub_y=0.88):
     fig.patch.set_facecolor(SURFACE)
+    if mf.DOC:
+        return
     fig.text(0.012, 0.985, title, fontsize=12, fontweight="bold", color=INK, va="top", linespacing=1.3)
     fig.text(0.012, sub_y, subtitle, fontsize=8.8, color=INK2, va="top", linespacing=1.4)
 
@@ -159,9 +164,15 @@ def labelled(cfg, panel):
         pos = [(best_score(rr[(r["qid"], cfg)]["response"]), r["answer"]) for r in rows]
     trait = "body_size_negative" if panel == "body_size" else "trophic_guild_negative"
     nrows = [r for r in scored("results/negatives/scored_traits.csv") if r["config"] == cfg and r["trait"] == trait]
+    nbench = {b["qid"]: b for b in csv.DictReader(open(ROOT / "data/benchmark_negatives.csv", encoding="utf-8"))}
     nr = runs("results/negatives/runs.jsonl")
     key = "pipeline" if cfg == "pipeline" else "plazi"
-    neg = [(plazi_score(nr[(r["qid"], cfg)]["response"]), r[key] == "wrong") for r in nrows]
+    if panel == "body_size":
+        neg = [(plazi_score(nr[(r["qid"], cfg)]["response"]), r[key] == "wrong") for r in nrows]
+    else:  # diet: read like the answerable questions (any feeding group stated counts as a value given)
+        ans_key = "pipeline_answer" if cfg == "pipeline" else "plazi_answer"
+        neg = [(plazi_score(nr[(r["qid"], cfg)]["response"]), bool(so.answer_guilds(r[ans_key], r["qid"] and
+                nbench[r["qid"]]["taxon"]))) for r in nrows]
     return pos, neg, rows, nrows
 
 
@@ -205,14 +216,157 @@ def perf_threshold():
           "for body size it is no better than chance at separating them from correct answers",
           "Each curve sweeps a threshold on the reader's answer score: below it the answer is withheld. Filled dot:\n"
           "every answer kept, as run (correct / given a value with nothing documented). Hollow dot: threshold 0.5.\n"
-          "Dashed: no better than chance. The generative reader returns no score. Each item set is read as it is\n"
-          "scored elsewhere: body size and negatives by the Plazi answer, diet by the highest-scoring answer.",
+          "Dashed: no better than chance. The generative reader returns no score. Body size: the Plazi answer. Diet: the highest-\n"
+          "scoring answer; any feeding group it states counts as a value, for answerable and no-answer questions alike.",
           sub_y=0.89)
     legend(fig, [line_handle(c, l) for _, l, c in configs], 0.715, ncol=2, x=0.09)
     return fig
 
 
 RC = ROOT / "results/reader_comparison/summary.json"
+RIGOR = ROOT / "results/rigor/summary.json"
+SET_COLOR = {"gold document": ACCENT, "service retrieval": ORANGE, "pipeline documents": None}  # aqua set below
+CFG_OF = {"gold document": ("doc_extractive", "doc_generative"),
+          "service retrieval": ("e2e_sparse_extractive", "e2e_sparse_generative"),
+          "pipeline documents": ("pipeline_extractive", "pipeline")}
+CFG_LABEL = {"doc_extractive": "Gold document, extractive", "doc_generative": "Gold document, generative",
+             "e2e_sparse_extractive": "Service search, extractive", "e2e_sparse_generative": "Service search, generative",
+             "pipeline_extractive": "Pipeline's documents, extractive", "pipeline": "Trait pipeline (generative)"}
+
+
+def perf_value_error():
+    """How far off the stated body sizes are (Domazetoski et al. 2025 score numerical traits by error size)."""
+    rig = json.load(open(RIGOR))["numeric_error"]
+    colors = {"gold document": ACCENT, "service retrieval": ORANGE, "pipeline documents": AQUA}
+    fig, axes = plt.subplots(1, 2, figsize=(9.4, 5.6), dpi=200, sharey=True)
+    fig.subplots_adjust(left=0.08, right=0.98, top=0.64, bottom=0.13, wspace=0.10)
+    for ax, (reader, idx) in zip(axes, (("Extractive reader", 0), ("Generative reader", 1))):
+        for setting, col in colors.items():
+            v = rig[f"{CFG_OF[setting][idx]} | answer"]
+            errs = [max(e, 0.001) * 100 for e in v["rel_errors"]]
+            n = len(errs)
+            xs = [0.1] + errs + [1e4]
+            ys = [0] + [100 * (i + 1) / n for i in range(n)] + [100]
+            ax.step(xs, ys, where="post", color=col, linewidth=2,
+                    label=f"{setting[0].upper() + setting[1:]}: {n} values; {v['negatives_with_value']} of 30 "
+                          f"with nothing documented")
+        ax.axvline(2, color=INK2, linewidth=1, linestyle=(0, (2, 2)))
+        ax.axvline(25, color=INK2, linewidth=1, linestyle=(0, (1, 3)))
+        ax.text(2.2, 52, "2 %", fontsize=8, color=INK2)
+        ax.text(27, 52, "25 %", fontsize=8, color=INK2)
+        ax.set_xscale("log")
+        ax.set_xlim(0.08, 1.2e4)
+        ax.set_xticks([0.1, 1, 10, 100, 1000])
+        ax.set_xticklabels(["exact", "1 %", "10 %", "100 %", "1,000 %"])
+        axes_style(ax, xlabel="Relative error of the stated body length (closest value, log scale)")
+        ax.set_title(reader, loc="left", fontsize=10, color=INK, fontweight="bold")
+        ax.legend(loc="lower right", frameon=False, fontsize=7.5)
+    axes[0].set_ylabel("Answers with a value (cumulative)", fontsize=9, color=INK2)
+    frame(fig, "Wrong body sizes are rarely near misses: with the service's own search, 13 of the extractive\n"
+          "reader's 20 wrong values are more than 25 % off, mostly another species' size",
+          "Cumulative share of answers that state a body length, by the relative error of the stated value closest to a gold value\n"
+          "(answers to the 60 body-size questions). Steps at \"exact\" are answers within rounding. The legend also counts values\n"
+          "given for the 30 questions with nothing documented, which have no gold value. Normalised mean absolute error of\n"
+          "the wrong values: 3.8 (service, extractive), 0.41 (service, generative), 0.55 (pipeline). Extractive: the gold-document\n"
+          "line lies under the pipeline line (both all exact).", sub_y=0.89)
+    return fig
+
+
+def perf_labels():
+    """Label-level precision and recall for the categorical traits (Domazetoski et al. 2025; Keck et al. 2025)."""
+    rig = json.load(open(RIGOR))
+    lab, dq, base = rig["labels"], rig["diet_questions"], rig["fungi_baseline"]
+    cfgs = list(CFG_LABEL)
+    fig, axes = plt.subplots(1, 2, figsize=(10.4, 6.2), dpi=200, sharey=True)
+    fig.subplots_adjust(left=0.22, right=0.985, top=0.64, bottom=0.09, wspace=0.08)
+    for ax, trait in zip(axes, ("diet", "habitat")):
+        for i, cfg in enumerate(cfgs):
+            y = len(cfgs) - 1 - i
+            v = lab[f"{trait} | {cfg} | answer"]
+            for key, ci, col, mk, dy in (("micro_precision", "precision_ci95", ACCENT, "o", 0.16),
+                                         ("micro_recall", "recall_ci95", ORANGE, "s", -0.16)):
+                x = 100 * v[key]
+                lo, hi = (100 * c for c in v[ci])
+                ax.plot([lo, hi], [y + dy, y + dy], color=col, linewidth=2, zorder=2)
+                ax.scatter([x], [y + dy], s=50, marker=mk, color=col, edgecolors=SURFACE, linewidths=1.5, zorder=3)
+            if trait == "diet":
+                lenient = 100 * dq[f"{cfg} | answer"]["precision"]
+                ax.scatter([lenient], [y + 0.16], s=50, marker="o", facecolors=SURFACE, edgecolors=INK2,
+                           linewidths=1.5, zorder=3)
+                b = base["per-question gold (gold document)" if cfg.startswith("doc") else "taxon gold (end to end, pipeline)"]
+                ax.plot([100 * b["label_precision"]] * 2, [y - 0.38, y + 0.38], color=INK2, linewidth=1,
+                        linestyle=(0, (2, 2)), zorder=1)
+        axes_style(ax, pct_x=True, pct_y=False)
+        ax.grid(axis="y", visible=False)
+        ax.set_title("Diet: feeding groups" if trait == "diet" else "Habitat: habitat classes", loc="left",
+                     fontsize=10, color=INK, fontweight="bold")
+    axes[0].set_yticks(range(len(cfgs)))
+    axes[0].set_yticklabels([CFG_LABEL[c] for c in reversed(cfgs)], fontsize=9, color=INK)
+    frame(fig, "Scored label by label, end-to-end generative diets are 58–60 % precise, as precise as always\n"
+          "answering \"fungi\" (58 %), but they recover more of the documented groups (45–62 % against 34 %)",
+          "Micro-averaged over labels, with bootstrap 95 % intervals: precision = feeding groups or habitat classes given that are in\n"
+          "the gold (labels given for the 30 diet questions with nothing documented count as wrong); recall = gold labels recovered.\n"
+          "Open grey circle: per-question precision (right when any group matches). Dashed: precision of the constant answer \"fungi\".\n"
+          "A group supported by another document counts as wrong, so label precision is a lower bound and per-question an upper one.",
+          sub_y=0.895)
+    legend(fig, [line_handle(ACCENT, "Label precision"), line_handle(ORANGE, "Label recall", marker="s"),
+                 plt.Line2D([], [], marker="o", color=INK2, markerfacecolor=SURFACE, linewidth=0, markersize=7,
+                            label="Per-question precision (diet)"),
+                 plt.Line2D([], [], color=INK2, linewidth=1, linestyle=(0, (2, 2)), label='Constant "fungi"')],
+           0.725, ncol=4, x=0.22)
+    return fig
+
+
+def perf_selective():
+    """Accuracy against coverage for three confidence signals (Münch et al. 2026)."""
+    sel = json.load(open(RIGOR))["selective"]
+    settings = [("gold document", "Gold document"), ("service retrieval", "Service search"),
+                ("pipeline documents", "Pipeline's documents")]
+    fig, axes = plt.subplots(2, 3, figsize=(10.4, 7.9), dpi=200, sharex=True, sharey=True)
+    fig.subplots_adjust(left=0.08, right=0.985, top=0.67, bottom=0.08, wspace=0.08, hspace=0.25)
+    for row, trait in enumerate(("body size", "diet")):
+        for col, (setting, title) in enumerate(settings):
+            ax = axes[row][col]
+            v = sel[f"{trait} | {setting}"]
+            share = 100 * v["n_answerable"] / v["n_questions"]
+            ax.axvline(share, color=INK2, linewidth=1, linestyle=(0, (2, 2)))
+            curve = v["extractive_score_curve"]
+            ax.plot([100 * c["coverage"] for c in curve], [100 * c["accuracy"] for c in curve], color=ACCENT,
+                    linewidth=2, zorder=2)
+            for key, mk, face, col_ in (("generative_all", "s", SURFACE, ORANGE), ("generative_plain", "^", SURFACE, ORANGE),
+                                        ("readers_agree", "D", AQUA, AQUA)):
+                p = v[key]
+                if p["accuracy"] is not None:
+                    ax.scatter([100 * p["coverage"]], [100 * p["accuracy"]], s=62, marker=mk, facecolors=face,
+                               edgecolors=col_, linewidths=2, zorder=4)
+            axes_style(ax, pct_x=True)
+            ax.set_xticks([0, 50, 100])
+            ax.set_xticklabels(["0 %", "50 %", "100 %"])
+            ax.set_ylim(30, 104)
+            ax.set_yticks([40, 60, 80, 100])
+            ax.set_yticklabels(["40 %", "60 %", "80 %", "100 %"])
+            if row == 0:
+                ax.set_title(title, loc="left", fontsize=10, color=INK, fontweight="bold")
+            if row == 1:
+                ax.set_xlabel("Questions given a value (coverage)", fontsize=9, color=INK2)
+            if col == 0:
+                ax.set_ylabel(("Body size" if trait == "body size" else "Diet") + "\nValues given that are right",
+                              fontsize=9, color=INK2)
+    frame(fig, "When the two readers agree, 97–100 % of diet answers are right; the extractive score separates\n"
+          "good from bad diet answers, but not body sizes found by the service's own search",
+          "Each panel: answerable and no-answer questions together (90 for body size, 132 for diet). x: share of questions given a\n"
+          "value; y: share of those values that are right. Blue line: extractive answers kept above a falling score threshold. Orange:\n"
+          "all generative answers (square) and only plainly worded ones (triangle). Aqua: generative answers kept only when the\n"
+          "extractive reader gives an agreeing value on the same documents (where it hides a triangle, both are at the same point).\n"
+          "Dashed: share of questions that have an answer.", sub_y=0.895)
+    handles = [line_handle(ACCENT, "Extractive, score threshold"),
+               plt.Line2D([], [], marker="s", color=ORANGE, markerfacecolor=SURFACE, linewidth=0, markersize=7,
+                          markeredgewidth=2, label="Generative, all"),
+               plt.Line2D([], [], marker="^", color=ORANGE, markerfacecolor=SURFACE, linewidth=0, markersize=7,
+                          markeredgewidth=2, label="Generative, plain wording"),
+               plt.Line2D([], [], marker="D", color=AQUA, linewidth=0, markersize=7, label="Both readers agree")]
+    legend(fig, handles, 0.735, ncol=4, x=0.08)
+    return fig
 SETTING_SHAPE = {"service retrieval": ("o", "service"), "pipeline documents": ("s", "pipeline docs"),
                  "gold document": ("D", "gold doc")}
 
@@ -258,8 +412,8 @@ def perf_readers():
           "Share of questions per reader, paired on identical documents in each retrieval setting (n = 60 body size, 55 habitat,\n"
           "102 diet, 30 + 30 negative questions). p: exact McNemar test on the questions only one reader gets right, shown when\n"
           "below 0.05. \"Stored\" is the value trait_extraction_v3 writes from the answer; extractive spans rarely name the species\n"
-          "(1–6 % against 83–89 %), so the extractor binds few of their diets. No difference on negative items is significant\n"
-          "(service retrieval, no body size given: 53 % against 27 %, p = 0.06).", sub_y=0.885)
+          "(1–6 % against 83–89 %), so the extractor binds few of their diets. Negative items: the extractive reader returns a\n"
+          "substrate such as \"leaf litter\" as a diet (p = 0.02 and 0.004); no body-size difference is significant (p = 0.06).", sub_y=0.885)
     legend(fig, [plt.Line2D([], [], marker="o", color=ACCENT, linewidth=0, markersize=7, label="Extractive reader (BioBERT)"),
                  plt.Line2D([], [], marker="s", color=ORANGE, linewidth=0, markersize=7, label="Generative reader (Qwen3-8B)")],
            0.715, ncol=2, x=0.22)
@@ -272,7 +426,7 @@ def perf_pr():
     settings = [("service retrieval", "Service retrieval (BM25)"), ("pipeline documents", "Pipeline's phrase search"),
                 ("gold document", "Curated gold document")]
     fig, axes = plt.subplots(2, 3, figsize=(10.4, 8.4), dpi=200, sharex=True, sharey=True)
-    fig.subplots_adjust(left=0.08, right=0.985, top=0.70, bottom=0.07, wspace=0.08, hspace=0.30)
+    fig.subplots_adjust(left=0.08, right=0.985, top=0.70, bottom=0.07, wspace=0.16 if mf.DOC else 0.08, hspace=0.30)
     for row, trait in enumerate(("body size", "diet")):
         g = grid[trait]
         for col, (setting, title) in enumerate(settings):
@@ -281,10 +435,20 @@ def perf_pr():
                 r = [f1 / (2 - f1)] + [x / 1000 for x in range(int(1000 * f1 / (2 - f1)) + 1, 1001)]
                 pr = [(100 * x, min(100.0, 100 * f1 * x / (2 * x - f1))) for x in r]
                 ax.plot([a for a, _ in pr], [b for _, b in pr], color=GRID, linewidth=1, zorder=0)
-                if row == 0 and col == 0:
+                if row == 0 and col == 0 and not mf.DOC:  # in the report the caption names the curves
                     ax.text(pr[0][0] + 1, 100.5, f"F1 {f1}", fontsize=7, color=INK2, ha="left", va="bottom")
             pt = lambda lvl: (100 * g[f"{setting} | {lvl}"]["recall"], 100 * g[f"{setting} | {lvl}"]["precision"])
             ex, ga = pt("extractive | answer"), pt("generative | answer")
+            rig = json.load(open(RIGOR))["body_size_facts" if trait == "body size" else "diet_questions"]
+            cfg_of = {"service retrieval": ("e2e_sparse_extractive", "e2e_sparse_generative"),
+                      "pipeline documents": ("pipeline_extractive", "pipeline"),
+                      "gold document": ("doc_extractive", "doc_generative")}[setting]
+            for cfg, lvl, ccol in ((cfg_of[0], "answer", ACCENT), (cfg_of[1], "answer", ORANGE), (cfg_of[1], "stored", ORANGE)):
+                v = rig[f"{cfg} | {lvl}"]
+                x, y = 100 * v["recall"], 100 * v["precision"]
+                (rl, rh), (pl, ph) = v["recall_ci95"], v["precision_ci95"]
+                ax.plot([100 * rl, 100 * rh], [y, y], color=ccol, linewidth=1, alpha=0.55, zorder=1)
+                ax.plot([x, x], [100 * pl, 100 * ph], color=ccol, linewidth=1, alpha=0.55, zorder=1)
             gs, gp = pt("generative | stored"), pt("generative | answer_plain")
             for dst, ls in ((gs, "-"), (gp, ":")):
                 ax.annotate("", xy=dst, xytext=ga, zorder=2,
@@ -294,6 +458,8 @@ def perf_pr():
             ax.scatter(*gs, s=70, marker="s", color=ORANGE, edgecolors=SURFACE, linewidths=1.5, zorder=4)
             ax.scatter(*gp, s=70, marker="^", facecolors=SURFACE, edgecolors=ORANGE, linewidths=1.5, zorder=4)
             axes_style(ax, pct_x=True)
+            ax.set_xticks([0, 50, 100])
+            ax.set_xticklabels(["0 %", "50 %", "100 %"])
             ax.set_ylim(30, 104)
             ax.set_yticks([40, 60, 80, 100])
             ax.set_yticklabels(["40 %", "60 %", "80 %", "100 %"])
@@ -309,8 +475,8 @@ def perf_pr():
           "the curated gold document lifts both for the extractive reader. Diet: generative paths differ in recall",
           "Each panel: one retrieval setting. A value is a true positive when it matches the gold and a false positive when it is wrong\n"
           "or the question has nothing documented (30 negative items per trait). Solid arrow: from the generative answer to the value\n"
-          "trait_extraction_v3 stores; dotted arrow: keeping only plainly worded generative answers. Diet precision is of the guild,\n"
-          "which a constant \"fungi\" answer already gets right for 63–75 %. Counts and intervals: results/reader_comparison/.",
+          "trait_extraction_v3 stores; dotted arrow: keeping only plainly worded generative answers. Thin lines: bootstrap 95 %\n"
+          "intervals. Diet counts a question as right when any feeding group matches; per label, precision is 58–70 % (perf_labels).",
           sub_y=0.895)
     handles = [plt.Line2D([], [], marker="o", color=ACCENT, linewidth=0, markersize=7, label="Extractive answer"),
                plt.Line2D([], [], marker="s", color=ORANGE, linewidth=0, markersize=7, markerfacecolor=SURFACE,
@@ -355,7 +521,8 @@ def perf_prevalence():
           "Precision re-weighted to a given share of unanswerable questions, from the answerable and negative items of each\n"
           "configuration. Dashed vertical: the share in the pipeline's own use (version 3 answers that state no value, plus\n"
           "species with no document): 92 % for body size, 76 % for diet. A curve ends flat when no negative item was\n"
-          "given a value; such estimates rest on 30 negative items per trait. Generative diet guilds stay above 90 %.",
+          "given a value; such estimates rest on 30 negative items per trait. Diet: 93–95 % through the pipeline; with the service's\n"
+          "own search, one invented diet among the 30 no-answer questions brings precision to 83 % at the pipeline's mix.",
           sub_y=0.885)
     handles = [plt.Line2D([], [], color=c, linewidth=2, linestyle=ls, label=l) for _, l, c, ls in series]
     legend(fig, handles, 0.715, ncol=2, x=0.09)
@@ -491,10 +658,13 @@ def main():
     OUT.mkdir(parents=True, exist_ok=True)
     for name, make in (("perf_position", perf_position), ("perf_threshold", perf_threshold), ("perf_pr", perf_pr),
                        ("perf_readers", perf_readers), ("perf_prevalence", perf_prevalence),
+                       ("perf_value_error", perf_value_error), ("perf_labels", perf_labels),
+                       ("perf_selective", perf_selective),
                        ("perf_calibration", perf_calibration), ("perf_latency", perf_latency)):
         fig = make()
+        mf.doc_scale(fig)
         for ext in ("png", "svg"):
-            fig.savefig(OUT / f"{name}.{ext}", facecolor=SURFACE)
+            fig.savefig(OUT / f"{name}.{ext}", facecolor=SURFACE, **({"bbox_inches": "tight", "pad_inches": 0.15} if mf.DOC else {}))
         plt.close(fig)
         print("wrote", OUT / f"{name}.png")
 

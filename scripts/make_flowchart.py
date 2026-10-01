@@ -7,6 +7,7 @@ D10.3 evaluation in this repository (L3) and the report sections each part feeds
 Usage: python3 scripts/make_flowchart.py   (needs matplotlib; run from the repository root)
 """
 
+import os
 from pathlib import Path
 
 import matplotlib
@@ -43,7 +44,7 @@ BOXES = {
     "s3": (78, 39, 21, 8.5, "§3 How it was tested", "seven ways of asking the\nservice; comparison with D10.2", DELIV_BG, ORANGE),
     "s4": (78, 21, 21, 15.5, "§4 Results", "body size and habitat\nthe published trait table\ndiet\nquestions with no answer\nwhere correct answers get lost\nthe two readers compared\nprecision and recall", DELIV_BG, ORANGE),
     "s5": (78, 14.5, 21, 5, "§5 What goes wrong", "", DELIV_BG, ORANGE),
-    "s6": (78, 7.5, 21, 5.5, "§6 Fixes", "5 made, 23 planned", DELIV_BG, ORANGE),
+    "s6": (78, 7.5, 21, 5.5, "§6 Fixes", "5 made, 24 planned", DELIV_BG, ORANGE),
     "s7": (78, 1.5, 21, 5, "§7 Conclusions", "", DELIV_BG, ORANGE),
 }
 
@@ -103,17 +104,20 @@ def main():
             ax.text((p[0] + q[0]) / 2 + dx, (p[1] + q[1]) / 2 + dy, label, fontsize=7.6, color=INK2,
                     ha="center", va="center", zorder=4, linespacing=1.2)
 
-    fig.text(0.012, 0.985, "KYBELE D10.3: what is evaluated, by which part of the repository,\n"
-             "and where each result goes in the deliverable", fontsize=13, fontweight="bold", color=INK,
-             va="top", linespacing=1.3)
-    fig.text(0.012, 0.895, "L1 and L2 are tested from outside: the runner asks the QA service the way the service configurations\n"
-             "and the trait pipeline do, and the scorers read the answers with the pipeline's own extractor against the\n"
-             "independent gold.  * Population benchmark sampled, awaiting specialist curation.",
-             fontsize=8.8, color=INK2, va="top", linespacing=1.4)
-    OUT.mkdir(parents=True, exist_ok=True)
+    if os.environ.get("KYBELE_DOC") != "1":
+        fig.text(0.012, 0.985, "KYBELE D10.3: what is evaluated, by which part of the repository,\n"
+                 "and where each result goes in the deliverable", fontsize=13, fontweight="bold", color=INK,
+                 va="top", linespacing=1.3)
+        fig.text(0.012, 0.895, "L1 and L2 are tested from outside: the runner asks the QA service the way the service configurations\n"
+                 "and the trait pipeline do, and the scorers read the answers with the pipeline's own extractor against the\n"
+                 "independent gold.  * Population benchmark sampled, awaiting specialist curation.",
+                 fontsize=8.8, color=INK2, va="top", linespacing=1.4)
+    doc = os.environ.get("KYBELE_DOC") == "1"
+    out = OUT / "doc" if doc else OUT
+    out.mkdir(parents=True, exist_ok=True)
     for ext in ("png", "svg"):
-        fig.savefig(OUT / f"flowchart.{ext}", facecolor=SURFACE)
-    print("wrote", OUT / "flowchart.png")
+        fig.savefig(out / f"flowchart.{ext}", facecolor=SURFACE, **({"bbox_inches": "tight", "pad_inches": 0.15} if doc else {}))
+    print("wrote", out / "flowchart.png")
 
 
 if __name__ == "__main__":
