@@ -31,6 +31,9 @@ kybele_d103); every stage is resumable, so re-run the same command after an inte
                                 POST {base}/qa, generative, with those IDs as doc_refs; no
                                 document means no answer, as in the pipeline. Genus: POST
                                 {base}/qa, generative, sparse retrieval, as its genus batch.
+        pipeline_extractive     the same request path with the extractive reader, for a paired
+                                comparison of the two readers on the pipeline's own documents
+                                (not part of the pipeline; run it with --configs)
      One JSON line per (question, configuration) is appended to runs.jsonl; failed requests
      and empty server responses are retried on the next run.
   3. Packaging. Writes <out>_results.zip (treatments.jsonl if present, candidates.csv,
@@ -110,6 +113,7 @@ CONFIGS = [
     ("e2e_sparse_generative", {"mode": "generative", "retrieval": "sparse"}),  # API default; the pipeline's genus batch
     ("e2e_dense_generative", {"mode": "generative", "retrieval": "dense"}),
     ("pipeline", {"mode": "generative"}),  # the trait-mining pipeline's own request path, see run_pipeline()
+    ("pipeline_extractive", {"mode": "extractive"}),  # the same documents, read by the extractive reader
 ]
 
 # The trait-mining pipeline reproduced by the "pipeline" configuration. The constants below are
@@ -576,14 +580,14 @@ def phrase_search_ids(binomial, trait_key, n=PIPELINE_N):
     return list(dict.fromkeys(ids)), failed
 
 
-def run_pipeline(base, row, runs_path, logf):
+def run_pipeline(base, row, runs_path, logf, cfg="pipeline"):
     """The trait-mining pipeline's request path (see CONFIGS and the module docstring)."""
-    cfg = "pipeline"
+    mode = dict(CONFIGS)[cfg]["mode"]
     rank = row.get("taxon_rank") or "species"
     rec = {"qid": row["qid"], "config": cfg, "taxon_rank": rank, "wall_s": None, "error": ""}
     try:
         if rank == "genus":
-            payload = {"question": row["question"], "mode": "generative", "retrieval": "sparse"}
+            payload = {"question": row["question"], "mode": mode, "retrieval": "sparse"}
             resp, wall = ask(base, payload, endpoint="/qa")
             rec.update(pipeline_path="genus_batch", wall_s=wall, response=trim_response(resp))
             status = f"ok {wall}s"
@@ -601,7 +605,7 @@ def run_pipeline(base, row, runs_path, logf):
                            response={"collection_results": [], "model": None, "pipeline_time": None})
                 status = "no document contains the binomial"
             else:
-                payload = {"question": row["question"], "mode": "generative", "doc_refs": ids}
+                payload = {"question": row["question"], "mode": mode, "doc_refs": ids}
                 resp, wall = ask(base, payload, endpoint="/qa")
                 rec.update(wall_s=round(time.time() - t0, 2), response=trim_response(resp))
                 status = f"ok {rec['wall_s']}s, {len(ids)} docs" + (", gold among them" if rec["gold_in_pipeline_ids"] else "")
@@ -639,8 +643,8 @@ def stage_qa(out, rows, workers, logf, configs=None):
                 continue
             for row in rows:
                 if (row["qid"], cfg) not in done:
-                    fn = run_pipeline if cfg == "pipeline" else run_e2e
-                    args = (base, row, runs_path, logf) if cfg == "pipeline" else (base, row, cfg, params, runs_path, logf)
+                    fn = run_pipeline if cfg.startswith("pipeline") else run_e2e
+                    args = (base, row, runs_path, logf, cfg) if cfg.startswith("pipeline") else (base, row, cfg, params, runs_path, logf)
                     futs.append(ex.submit(fn, *args))
         for i, f in enumerate(as_completed(futs), 1):
             try:
@@ -699,9 +703,10 @@ def main():
     ap.add_argument("--out", default="kybele_d103")
     ap.add_argument("--probe", action="store_true", help="connectivity check only")
     ap.add_argument("--qa-base", default=None, help="QA API base URL (default: https://qa.sibils.org/api)")
-    ap.add_argument("--configs", default="", help="comma-separated configurations to run (default: all six)")
+    ap.add_argument("--configs", default="", help="comma-separated configurations to run "
+                    "(default: the five service configurations and pipeline)")
     args = ap.parse_args()
-    configs = [c.strip() for c in args.configs.split(",") if c.strip()]
+    configs = [c.strip() for c in args.configs.split(",") if c.strip()] or [c for c, _ in CONFIGS if c != "pipeline_extractive"]
     unknown = set(configs) - {c for c, _ in CONFIGS}
     if unknown:
         sys.exit(f"unknown configuration(s): {', '.join(sorted(unknown))}")

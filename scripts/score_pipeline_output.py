@@ -3,18 +3,17 @@
 Score the published output of the KYBELE trait-mining pipeline (layer 2) against the D10.3 gold.
 
 The runner's pipeline configuration replays the pipeline's request path live. This script does
-the complementary, offline check: it takes the trait tables the pipeline actually published
-(github.com/ecsltae/collembola-trait-mining at PIPELINE_COMMIT) and compares them, species by
-species, with the independently curated gold of this repository.
+the complementary, offline check: it takes the version 3 trait table the pipeline published
+(github.com/ecsltae/collembola-trait-mining at PIPELINE_COMMIT; only version 3 is evaluated) and
+compares it, species by species, with the independently curated gold of this repository.
 
-  trophic   species level: collembola_species_traits_v2.csv (trophic_guilds, the column the
-            experts reviewed) and _v3.csv (trophic_guild, the primary column) against the union of
-            the gold guilds of the species in data/benchmark_trophic.csv;
-            genus level: results/collembola_trophic_guilds.csv (trophic_guilds) against the gold
-            guilds of the genus questions.
-  body size v2 body_size_range_mm and v3 body_size_mm against the gold values of
-            data/benchmark_traits.csv (few species overlap; reported for completeness).
-  habitat   v2 habitat_categories and v3 habitat against the gold classes (same caveat).
+  trophic   species level: collembola_species_traits_v3.csv (trophic_guild, the primary column)
+            against the union of the gold guilds of the species in data/benchmark_trophic.csv;
+            genus level: results/collembola_trophic_guilds.csv (trophic_guilds), the pipeline's
+            genus table, against the gold guilds of the genus questions.
+  body size body_size_mm against the gold values of data/benchmark_traits.csv (few species
+            overlap; reported for completeness).
+  habitat   habitat against the gold classes (same caveat).
 
 Outcomes per species: correct (a stored value matches the gold), wrong (values stored, none
 matches), abstained (nothing stored). For trophic guilds also "unsupported": at least one stored
@@ -49,7 +48,6 @@ sys.path.insert(0, str(ROOT / "scripts"))
 PIPELINE_COMMIT = "1d5b5b62ab8fa6c13e5097701affdbba442c8764"
 RAW = f"https://raw.githubusercontent.com/ecsltae/collembola-trait-mining/{PIPELINE_COMMIT}/"
 TABLES = {
-    "v2": "collembola_species_traits_v2.csv",
     "v3": "collembola_species_traits_v3.csv",
     "genus": "results/collembola_trophic_guilds.csv",
     "review": "review_adjudication_2026-09.csv",
@@ -118,7 +116,6 @@ def main():
     import score_traits as st  # noqa: E402  (needs trait_extraction_v3.py)
 
     load = lambda name: list(csv.DictReader(open(tdir / Path(TABLES[name]).name, encoding="utf-8")))
-    v2 = {r["species"]: r for r in load("v2")}
     v3 = {r["species"]: r for r in load("v3")}
     genus_tab = {r["genus"]: r for r in load("genus")}
     reviewed = {r["species"] for r in load("review") if r["trait"] == "trophic_guild"}
@@ -134,14 +131,12 @@ def main():
     rows = []
     for (rank, taxon), gold in sorted(gold_g.items()):
         if rank == "species":
-            for ver, tab, col in (("v2", v2, "trophic_guilds"), ("v3", v3, "trophic_guild")):
-                if taxon not in tab:
-                    continue
-                t = tab[taxon]
-                out, uns = guild_outcome(split(t[col]), gold)
-                rows.append({"trait": "trophic_guild", "rank": rank, "taxon": taxon, "version": ver,
+            if taxon in v3:
+                t = v3[taxon]
+                out, uns = guild_outcome(split(t["trophic_guild"]), gold)
+                rows.append({"trait": "trophic_guild", "rank": rank, "taxon": taxon, "version": "v3",
                              "qids": "|".join(qids[(rank, taxon)]), "gold": "|".join(sorted(gold)),
-                             "stored": "|".join(sorted(split(t[col]))),
+                             "stored": "|".join(sorted(split(t["trophic_guild"]))),
                              "stored_indirect": "|".join(sorted(split(t.get("trophic_guild_indirect", "")))),
                              "outcome": out, "unsupported": uns,
                              "gold_doc_in_sources": int(bool(gold_docs[(rank, taxon)] & sources(t["trophic_sources"]))),
@@ -161,12 +156,10 @@ def main():
         sp, qt = b["taxon"], b["question_type"]
         if qt not in ("body_size", "habitat"):
             continue
-        for ver, tab in (("v2", v2), ("v3", v3)):
-            if sp not in tab:
-                continue
-            t = tab[sp]
+        if sp in v3:
+            t = v3[sp]
             if qt == "body_size":
-                stored = st._range_values(t["body_size_range_mm"] if ver == "v2" else t["body_size_mm"])
+                stored = st._range_values(t["body_size_mm"])
                 gv = st.gold_values(b["gold_answer"])
                 out = "abstained" if not stored else (
                     "correct" if any(abs(v - g) <= 0.02 * g for v in stored for g in gv) else "wrong")
@@ -174,11 +167,11 @@ def main():
                 src = t["body_size_sources"]
             else:
                 gc = st.gold_habitat(b["qid"], b["gold_answer"], sp)
-                stored = split(t["habitat_categories"] if ver == "v2" else t["habitat"])
+                stored = split(t["habitat"])
                 out = "abstained" if not stored else ("correct" if stored & gc else "wrong")
                 shown = "|".join(sorted(stored))
                 src = t["habitat_sources"]
-            rows.append({"trait": qt, "rank": "species", "taxon": sp, "version": ver, "qids": b["qid"],
+            rows.append({"trait": qt, "rank": "species", "taxon": sp, "version": "v3", "qids": b["qid"],
                          "gold": b["gold_answer"], "stored": shown, "stored_indirect": "",
                          "outcome": out, "unsupported": "", "gold_doc_in_sources": int(b["docid"] in sources(src)),
                          "in_expert_review": ""})
@@ -190,29 +183,27 @@ def main():
     for b in pop:
         sp, qt, gold = b["taxon"], b["question_type"], b["gold_answer"]
         neg = gold == st.NOT_DOCUMENTED
-        for ver, tab in (("v2", v2), ("v3", v3)):
-            if sp not in tab:
-                continue
-            t = tab[sp]
+        if sp in v3:
+            t = v3[sp]
             if qt == "body_size":
-                vals = st._range_values(t["body_size_range_mm"] if ver == "v2" else t["body_size_mm"])
+                vals = st._range_values(t["body_size_mm"])
                 shown = "|".join(str(v) for v in vals)
                 hit = (not neg) and any(abs(v - g) <= 0.02 * g for v in vals for g in st.gold_values(gold))
                 src = t["body_size_sources"]
             elif qt == "habitat":
-                vals = split(t["habitat_categories"] if ver == "v2" else t["habitat"])
+                vals = split(t["habitat"])
                 shown = "|".join(sorted(vals))
                 gc = split(b.get("gold_habitat_classes")) or (set() if neg else st.gold_habitat(b["qid"], gold, sp))
                 hit = bool(vals & gc)
                 src = t["habitat_sources"]
             else:
-                vals = split(t["trophic_guilds"] if ver == "v2" else t["trophic_guild"])
+                vals = split(t["trophic_guild"])
                 shown = "|".join(sorted(vals))
                 hit = bool(expand(vals) & expand(split(b["gold_guilds"])))
                 src = t["trophic_sources"]
             outcome = ("correct" if not vals else "wrong") if neg else ("abstained" if not vals else ("correct" if hit else "wrong"))
             rows.append({"trait": f"population/{qt}" + ("_negative" if neg else ""), "rank": "species", "taxon": sp,
-                         "version": ver, "qids": b["qid"], "gold": gold, "stored": shown, "stored_indirect": "",
+                         "version": "v3", "qids": b["qid"], "gold": gold, "stored": shown, "stored_indirect": "",
                          "outcome": outcome, "unsupported": "",
                          "gold_doc_in_sources": int(bool(b["docid"]) and b["docid"] in sources(src)),
                          "in_expert_review": ""})
@@ -225,7 +216,7 @@ def main():
         w.writerows(rows)
 
     summ = {"pipeline_commit": PIPELINE_COMMIT}
-    for ver in ("v2", "v3", "genus_batch"):
+    for ver in ("v3", "genus_batch"):
         rs = [r for r in rows if r["trait"] == "trophic_guild" and r["version"] == ver]
         if not rs:
             continue
@@ -233,16 +224,10 @@ def main():
         if ver != "genus_batch":
             summ[f"trophic_guild/{ver}"]["not_in_expert_review"] = summarise([r for r in rs if not r["in_expert_review"]], True)
             summ[f"trophic_guild/{ver}"]["in_expert_review"] = summarise([r for r in rs if r["in_expert_review"]], True)
-    for qt in ("body_size", "habitat"):
-        for ver in ("v2", "v3"):
-            rs = [r for r in rows if r["trait"] == qt and r["version"] == ver]
-            if rs:
-                summ[f"{qt}/{ver}"] = {"all": summarise(rs)}
-    for trait in sorted({r["trait"] for r in rows if r["trait"].startswith("population/")}):
-        for ver in ("v2", "v3"):
-            rs = [r for r in rows if r["trait"] == trait and r["version"] == ver]
-            if rs:
-                summ[f"{trait}/{ver}"] = {"all": summarise(rs)}
+    for trait in ["body_size", "habitat"] + sorted({r["trait"] for r in rows if r["trait"].startswith("population/")}):
+        rs = [r for r in rows if r["trait"] == trait]
+        if rs:
+            summ[f"{trait}/v3"] = {"all": summarise(rs)}
     json.dump(summ, open(out / "summary_pipeline_output.json", "w"), indent=2)
     for k, v in summ.items():
         if k == "pipeline_commit":

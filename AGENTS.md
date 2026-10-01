@@ -42,7 +42,7 @@ retrieval (see section 3), so the service configurations alone do not measure L2
 | Trophic-guild benchmark | `data/benchmark_trophic.csv`, `results/trophic/`, `results/trophic_pipeline/` | 102 diet questions (81 species, 21 genus level) from 69 Medline/PMC/Plazi documents | Can it find what a springtail eats, and does the pipeline record it? |
 | Negative items | `data/benchmark_negatives.csv`, `results/negatives/` | body size and diet questions with `NOT_DOCUMENTED` gold | Does the system abstain when nothing is documented? |
 | Population benchmark | `data/population/population_curation.csv` (in curation) | 100 of the pipeline's 330 species x 3 traits | Precision, recall and abstention on the species the pipeline is used for |
-| Published pipeline tables | `results/pipeline_output/` (`score_pipeline_output.py`) | v2, v3 and genus tables against the gold of the overlapping species | Is what the pipeline published right, on species the expert review did not see? |
+| Published pipeline table | `results/pipeline_output/` (`score_pipeline_output.py`) | version 3 table and genus table against the gold of the overlapping species | Is what the pipeline published right, on species the expert review did not see? |
 | Expert-reviewed trait mining | in collembola-trait-mining, not here | 56 adjudicated pairs | Does the pipeline's output survive expert review? |
 
 ## 3. Running things
@@ -71,6 +71,9 @@ retrieval (see section 3), so the service configurations alone do not measure L2
   document means no answer. Genus: `POST /qa`, generative, sparse. It records `pipeline_ids`,
   `gold_in_pipeline_ids` and `no_docs`. **The species pipeline is not `e2e_sparse_generative`**;
   earlier text (and the D10.3 draft) said it was.
+- **`pipeline_extractive`** (analysis only, not part of the default run): the pipeline's request
+  path with the extractive reader, so that the two readers can be compared on identical documents
+  in all three retrieval settings (`reader_comparison.py`). Run it with `--configs pipeline_extractive`.
 - **Pipeline sync.** The runner and scorers copy pipeline logic rather than import it (upstream
   needs `requests`). Run `scripts/check_pipeline_sync.py` before any re-evaluation; it fails when
   the pinned or given upstream code differs.
@@ -87,6 +90,8 @@ retrieval (see section 3), so the service configurations alone do not measure L2
    python3 scripts/score_trophic.py data/benchmark_trophic.csv results/trophic_pipeline/runs.jsonl $T && cmp $T/summary_trophic.json results/trophic_pipeline/summary_trophic.json
    python3 scripts/score_traits.py  data/benchmark_negatives.csv results/negatives/runs.jsonl    $T && cmp $T/summary_traits.json  results/negatives/summary_traits.json
    python3 scripts/score_pipeline_output.py --out $T && cmp $T/summary_pipeline_output.json results/pipeline_output/summary_pipeline_output.json
+   python3 scripts/score_traits.py  data/benchmark_traits.csv  results/traits_pipeline_extractive/runs.jsonl $T && cmp $T/summary_traits.json results/traits_pipeline_extractive/summary_traits.json
+   python3 scripts/reader_comparison.py --out $T && cmp $T/summary.json results/reader_comparison/summary.json
    ```
 2. **`data/benchmark_trophic.csv` is generated.** Change `data/curation/trophic/curation_*.py`
    and rebuild with `cd data/curation/trophic && python3 build_trophic.py`. Never edit the CSV.
@@ -240,9 +245,10 @@ runner v6, 30 September 2026):
 | Trophic, genus | 21 | 95.2 % | 95.2 % | 47.6 % |
 
 - Food named: 30 % for species (69 % `doc_generative`, 44 % `e2e_sparse_generative`).
-- With `doc_refs` the service returns Medline first whenever Medline documents are present; the
-  pipeline keeps the first non-empty answer, so an abstract's "not stated" beats the treatment's
-  value. Plazi answer correct 67/122, kept answer 52, stored 47. Keeping the first answer that does
+- With `doc_refs` the service lists collections alphabetically (Medline, Plazi, PMC; `sorted()` in
+  BioMoQA-RAG `api_server.py`), not by relevance; the pipeline keeps the first non-empty answer, so
+  an abstract's "not stated" beats the treatment's value. Keeping the highest `answer_score` changes
+  nothing: generative answers carry no score. Plazi answer correct 67/122, kept answer 52, stored 47. Keeping the first answer that does
   not deny the trait: stored 46 → 59 of 115 (traits), 37 → 44 of 81 (species diet).
 - Published v3 table, species with a documented diet that the expert review did not cover: a
   correct guild stored for 4 of 21, nothing for 17, none wrong; the gold document is among the
@@ -253,11 +259,26 @@ configurations and `pipeline` abstain on (nearly) all; end to end, the service g
 for 22/30 (extractive) and 14/30 (generative) species with none documented, 11 of the 14 after
 saying it is not stated; N005 is an outright invented value citing the species' own treatment.
 
-Expert-reviewed trait mining (from collembola-trait-mining):
-- The reviewers flagged 27 of 40 trophic guilds (68 %) and 14 of 27 body sizes. The repository
-  summary says 15; this is still to be reconciled.
-- Claim-level extraction (version 3) removed 49 of the 56 flagged values (88 %) and reached the
-  expected value in 42 (75 %).
+Readers and components (`results/reader_comparison/`, `reader_comparison.py`):
+- Identical documents, extractive vs generative: body size 83 vs 55 % given the gold treatment
+  (p < 0.001), 62 vs 43 % on the pipeline's documents (p = 0.02); diet guild 31 vs 88 % and food
+  named 16 vs 44 % with service retrieval (p < 0.001); diet stored by v3 8–20 % vs 56–72 % (extractive
+  spans name the species in 1–6 % of answers, generative in 83–89 %).
+- Body size precision / recall (60 + 30 negative): service generative 61 / 58 %, stored by v3
+  94 / 50 %; pipeline stored 100 / 38 %; pipeline's documents with the extractive reader 100 / 62 %;
+  gold document extractive 100 / 83 %. At the pipeline's 92 % share of unanswerable questions, the
+  service's body sizes are 6–10 % correct, 56 % once stored by v3. Diet guilds: 92–95 % precise in
+  every generative configuration; recall 88 % service, 69 % pipeline answer, 56 % stored.
+- Generative wording: plain assertions right 91–98 %, hedged 76–82 %.
+- Unanswerable share in the pipeline's use: 211 of 290 v3 diet answers and 264 of 290 body-size
+  answers state no value, plus 40 species with no answer (76 % and 92 % of 330).
+
+Expert-reviewed trait mining (from collembola-trait-mining; only version 3 is reported):
+- The expert review gives a test set of 56 adjudicated species–trait cases (27 trophic guild, 16
+  body size, 13 habitat). Version 3 no longer assigns the rejected value in 49 (88 %) and reaches
+  the expected value in 42 (75 %). Version 3's rules were written for these cases, so the figures
+  show how far known failures were fixed, not precision or recall on new species.
+- Version 2 error rates are no longer reported in D10.3 (decision of 1 October 2026).
 - Actions A1–A5 below are implemented in the pipeline and the service.
 
 | # | Implemented action |
@@ -292,6 +313,10 @@ The planned actions P1–P17 are in [TODO.md](TODO.md).
 | 2026-09-30 | Population benchmark on the pipeline's own species, curated blind | Only 5 of 126 treatment-benchmark species are among the 330 the pipeline processes |
 | 2026-09-30 | Published pipeline tables scored against this repository's gold | The expert-review scores are on the cases the v3 rules were written for; this gives an independent check |
 | 2026-09-30 | Existing results left byte-identical; new measures only in new folders and files | The scorer changes apply to the new configuration and item types only |
+| 2026-10-01 | Only version 3 of the trait-mining output is evaluated and reported | Version 3 is the current pipeline; version 2 survives only as the origin of the 56 adjudicated cases |
+| 2026-10-01 | Analysis configuration `pipeline_extractive`; readers compared on identical documents; precision–recall grid with negative items | To answer whether the generative reader is more informative and whether curation and the pipeline improve precision and recall |
+| 2026-10-01 | Generative wording (plain / hedged / denies) as the confidence proxy | The service returns no score for generative answers |
+| 2026-10-01 | Precision re-weighted to 76 % (diet) and 92 % (body size) unanswerable | The shares measured in the pipeline's own version 3 answers; the benchmark's 1-in-3 and 1-in-4.4 negative shares flatter guessing readers |
 
 ## 9. Known issues and pitfalls
 
@@ -300,8 +325,16 @@ The planned actions P1–P17 are in [TODO.md](TODO.md).
   `log.txt` ("runner v5"). A browser may save a second download as
   `kybele_d103_eval(1).py`, and the old file then runs by mistake.
 - **Dense generative server error.** The service returns an empty result with `model: ""` and
-  `pipeline_time: null` instead of an HTTP error. This hit 102 of 126 trait questions and 22 of
-  102 trophic questions. The runner and scorers treat it as a failure (planned action P1).
+  `pipeline_time: null` instead of an HTTP error: `/qa` and `/qa/multi` catch every exception and
+  log it on the server only. This hit 102 of 126 trait questions and 22 of 102 trophic questions,
+  and still occurs (re-tested 1 October 2026). It follows BM25: success for 94 of 111 questions where
+  BM25 filled all 30 slots, 10 of 111 where it returned fewer, 0 of 63 where a collection was empty
+  (the hybrid retriever then returns the dense index's hits without the collection filter,
+  `parallel_hybrid.py`). Sparse generation never failed. The exact exception needs SIB's log (P1).
+- **No generative confidence.** BioMoQA-RAG sets `answer_score` to `None` for every generative
+  answer (`pipeline.py`), and the generative `doc_text` is the document's title and the first 800
+  characters of its abstract, not the passage the model read. Score-based curves exist for the
+  extractive reader only; `reader_comparison.py` uses the answer's wording as an ordinal proxy.
 - **doc_refs resolution** in BioMoQA-RAG is a keyword search. If an ID is not found exactly, it
   falls back to the top hit, which can be a different document. Always check
   `doc_ref_hit_gold`; it was true for all 126 trait and all 102 trophic questions.

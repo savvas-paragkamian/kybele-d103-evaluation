@@ -239,7 +239,7 @@ def main(bench_path, runs_path, out_dir="."):
     rows = []
     for (qid, cfg), run in sorted(latest.items()):
         b = bench[qid]
-        species_path = cfg == "pipeline" and b.get("taxon_rank", "species") == "species"
+        species_path = cfg.startswith("pipeline") and b.get("taxon_rank", "species") == "species"
         ans, col, ids = (first_answer if species_path else pipeline_answer)(run["response"])
         gold_g = item_g[qid] if cfg.startswith("doc") else taxon_g[b["taxon"]]
         rows.append({"qid": qid, "config": cfg, "taxon": b["taxon"], "rank": b.get("taxon_rank", "species"),
@@ -255,7 +255,7 @@ def main(bench_path, runs_path, out_dir="."):
                      "gold_retrieved": int(bool(run.get("gold_in_pipeline_ids"))) if species_path
                      else int(str(b["docid"]) in ids),
                      "doc_ref_hit_gold": run.get("doc_ref_hit_gold"), "wall_s": run.get("wall_s")})
-        if cfg == "pipeline":
+        if cfg.startswith("pipeline"):
             rows[-1].update(no_docs=int(bool(run.get("no_docs"))), n_pipeline_docs=len(run.get("pipeline_ids") or []))
 
     out = Path(out_dir)
@@ -275,7 +275,7 @@ def main(bench_path, runs_path, out_dir="."):
         s["food_match"] = round(sum(r["food_match"] for r in rs) / n, 3)
         s["gold_retrieved"] = round(sum(r["gold_retrieved"] for r in rs) / n, 3)
         s["mean_wall_s"] = round(sum(r["wall_s"] or 0 for r in rs) / n, 2)
-        if rs[0]["config"] == "pipeline":
+        if rs[0]["config"].startswith("pipeline"):
             s["no_docs"] = round(sum(r["no_docs"] for r in rs) / n, 3)
             s["answer_collection"] = dict(sorted(Counter(r["answer_collection"] or "none" for r in rs).items()))
         return s

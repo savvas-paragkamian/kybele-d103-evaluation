@@ -51,8 +51,9 @@ The deliverable text is kept by the coordinator. Its remaining `[TBC]` placehold
   version deployed on qa.sibils.org.
 - [ ] **SIB:** Section 5.2, confirm the passage window the generative model receives (assumed about
   600 characters chosen by a keyword window).
-- [ ] **TM:** Section 4.2, reconcile the flagged body sizes: 14 of 27 in the adjudication file
-  against 15 (56 %) in the repository summary.
+- [x] ~~**TM:** Section 4.2, reconcile the flagged body sizes: 14 of 27 in the adjudication file
+  against 15 (56 %) in the repository summary.~~ Not needed: D10.3 now reports only version 3, so
+  version 2 error rates are no longer given (1 October 2026).
 - [ ] **Coord:** Section 6.2, the target date for every planned action P1–P17. Also the owner of
   P6–P17, now shown as "[Node]".
 - [ ] **Coord:** Section 7, the remaining WP10 deliverables and milestones this work feeds into,
@@ -97,7 +98,7 @@ with the "measured" column (see section 5 below).
 
 | # | Owner | Action | Measured before |
 |---|---|---|---|
-| P1 | SIB | Fix the dense-retrieval generative failure and return an error instead of an empty answer | 102 of 126 trait requests failed, 22 of 102 trophic requests |
+| P1 | SIB | Fix the dense-retrieval generative failure and return an error instead of an empty answer | 102 of 126 trait requests failed, 22 of 102 trophic requests; 0 of 63 succeed when BM25 finds nothing in one collection (fallback to the unfiltered dense index); `/qa/multi` swallows the exception |
 | P2 | SIB | For taxon-specific trait questions, rank the Plazi answer first, or rank collections by answer confidence | PMC answer ranked first for 94 of 126 questions |
 | P3 | SIB | Enforce the full binomial in every retrieval path, including the keyword fallback, and drop passages whose subject is another taxon | All 20 wrong end-to-end body sizes came from other documents |
 | P4 | SIB | Instruct the generative model to quote the stated value, and choose its passage by treatment section rather than keyword overlap | "Not stated" in 43 % of answers; in 14 of 25 body-size cases the value was in the returned passage |
@@ -115,13 +116,15 @@ with the "measured" column (see section 5 below).
 | P16 | TM | Genus classifier: remove "collembola", "mite" and "arthropod" from the predator keywords, and read the answer sentence by sentence | Unstated predator guild added to 5 of 21 genus answers |
 | P17 | TM | Report trophic-guild accuracy against a constant "fungi" answer and on non-fungal taxa, and track the named food, not only the guild | A constant "fungi" answer scores 63–75 % on guild |
 | P18 | TM | Keep the first answer that does not deny the trait (or read every collection's answer), not the first non-empty one | Stored value correct 46 → 59 of 115 traits, 37 → 44 of 81 species diets when simulated on the same responses |
-| P19 | SIB | Under `doc_refs`, order collections by the relevance of their answers, not Medline first | Medline returned first whenever present; its "not stated" displaced the treatment's value |
+| P19 | SIB | Under `doc_refs`, order collections by the relevance of their answers, not alphabetically (`sorted()` in `api_server.py`) | Medline listed first whenever present; its "not stated" displaced the treatment's value |
 | P20 | TM | Phrase search in PMC full text, not only title, abstract and keywords | Gold diet document reached the reader for 40 % of species questions |
-| P21 | TM | Track recall, not only removed errors: score each pipeline version on species outside the expert review and on the population benchmark | v3 stores a guild for 4 of 21 held-out species with a documented diet (v2: 6 right, 1 wrong) |
+| P21 | TM | Track recall, not only removed errors: score each pipeline version on species outside the expert review and on the population benchmark | v3 stores a guild for 4 of 21 held-out species with a documented diet, against 7 of 10 reviewed ones |
+| P22 | TM | Choose the reader per trait: the extractive reader for body size on the pipeline's documents, the generative reader for diet and habitat | Body size on the pipeline's documents: extractive 100 % precision, 62 % recall; generative stored 38 % recall |
+| P23 | SIB | Return a confidence for generative answers (token log-probabilities, or a flag for hedged answers), and the passage the model read | `answer_score` is `None` for generative answers; hedged answers are right 76–82 %, plain ones 91–98 % |
 
 - [ ] P1 · [ ] P2 · [ ] P3 · [ ] P4 · [ ] P5 · [ ] P6 · [ ] P7 · [ ] P8 · [ ] P9 · [ ] P10 ·
   [ ] P11 · [ ] P12 · [ ] P13 · [ ] P14 · [ ] P15 · [ ] P16 · [ ] P17 · [ ] P18 · [ ] P19 ·
-  [ ] P20 · [ ] P21
+  [ ] P20 · [ ] P21 · [ ] P22 · [ ] P23
 
 The scorer here already works around P15 and P16 for its "guild of the answer" measure. The
 "guild recorded by the pipeline" measure deliberately keeps the pipeline's behaviour, so it will

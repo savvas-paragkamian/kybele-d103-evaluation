@@ -5,8 +5,8 @@ that the trait is not documented (gold_answer NOT_DOCUMENTED).
 
 The benchmarks otherwise hold only answerable questions, so they measure how often the system
 finds a stated value but never how often it asserts a value that no source supports. In the
-trait-mining run most species have no documented diet (the pipeline's answers deny it for 260 of
-290 species), so abstaining correctly is the common case in practice.
+trait-mining run most species have no documented diet (211 of the 290 version 3 diet
+answers state no diet at all, and 264 of 290 body-size answers no size), so abstaining correctly is the common case in practice.
 
 Pool: the treatments of data/sampling_frame.csv that belong to a Collembola family query, are
 titled with their own binomial, have at least 1,500 characters of text, and whose species and

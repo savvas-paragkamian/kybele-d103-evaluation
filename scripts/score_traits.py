@@ -213,7 +213,7 @@ def negative(outcome):
 
 
 def primary(r):
-    return r["pipeline"] if r["config"] == "pipeline" else r["plazi"]
+    return r["pipeline"] if r["config"].startswith("pipeline") else r["plazi"]
 
 
 def answers(resp):
@@ -268,7 +268,7 @@ def main(bench_path, runs_path, out_dir="."):
         if qt == "trophic_guild":
             gg = item_guilds[qid] if cfg.startswith("doc") else species_guilds[sp]
         answers_to_score = [("plazi", plazi), ("top", top)]
-        if cfg == "pipeline":
+        if cfg.startswith("pipeline"):
             pa, pcol = pipeline_answer(run["response"])
             rec.update(pipeline_answer=pa, pipeline_collection=pcol, pipeline_path=run.get("pipeline_path", ""),
                        n_pipeline_docs=len(run.get("pipeline_ids") or []), no_docs=int(bool(run.get("no_docs"))),
@@ -284,7 +284,7 @@ def main(bench_path, runs_path, out_dir="."):
                 rec[pref + "_food"] = 0 if neg else food_match(ans, gold)
             if neg:
                 rec[pref] = negative(rec[pref])
-        if cfg == "pipeline":
+        if cfg.startswith("pipeline"):
             st = stored_outcome(rec["pipeline_answer"], qt, sp, "" if neg else gold, gc, gg)
             rec["stored"] = negative(st) if neg else ("unscored" if qt == "habitat" and not gc else st)
         rows.append(rec)
@@ -315,7 +315,7 @@ def main(bench_path, runs_path, out_dir="."):
                 sub = [r for r in rs if lo <= r["answer_offset"] <= hi]
                 if sub:
                     s[lab] = {"n": len(sub), "correct": round(sum(primary(r) == "correct" for r in sub) / len(sub), 3)}
-            if cfg == "pipeline":
+            if cfg.startswith("pipeline"):
                 ss = [r for r in rs if r["stored"] != "unscored"]
                 cs = Counter(r["stored"] for r in ss)
                 s["stored"] = {"n": len(ss), **{k: round(cs[k] / len(ss), 3) for k in ("correct", "wrong", "no_answer")}}
