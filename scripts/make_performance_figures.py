@@ -95,6 +95,12 @@ def axes_style(ax, xlabel=None, ylabel=None, pct_x=False, pct_y=True):
 
 
 def legend(fig, handles, y, ncol=2, x=0.08):
+    if mf.DOC:
+        # Text is scaled up in document mode, so a legend hung from y would grow into the panel titles:
+        # stand it on a line just above the titles instead (the saved figure is cropped tight).
+        y0 = fig.subplotpars.top + 0.45 / fig.get_figheight()
+        fig.legend(handles=handles, loc="lower left", bbox_to_anchor=(x, y0), ncol=ncol, frameon=False, fontsize=9)
+        return
     fig.legend(handles=handles, loc="upper left", bbox_to_anchor=(x, y), ncol=ncol, frameon=False, fontsize=9)
 
 
@@ -201,8 +207,15 @@ def perf_threshold():
             ax.plot([p[0] for p in pts], [p[1] for p in pts], color=col, linewidth=2, drawstyle="steps-post", zorder=2)
             x0, y0, _ = pts[-1]  # threshold 0: every answer kept, as run
             ax.scatter([x0], [y0], s=64, color=col, edgecolors=SURFACE, linewidths=2, zorder=3)
-            ax.text(x0 - 2 if x0 > 60 else x0 + 2, y0 + 4, f"as run: {round(y0)} % / {round(x0)} %",
-                    ha="right" if x0 > 60 else "left", va="bottom", fontsize=8.5, color=INK)
+            lab = f"as run: {round(y0)} % / {round(x0)} %"
+            if y0 < x0 and x0 > 60:  # under the diagonal, far right: from the empty lower-right corner, with an arrow
+                ax.annotate(lab, (x0, y0), xytext=(99, max(8, y0 - 33)), ha="right", va="center", fontsize=8.5,
+                            color=INK, arrowprops=dict(arrowstyle="-", color=INK2, linewidth=0.8, shrinkB=5))
+            elif y0 < x0:  # under the diagonal: beneath the dot, clear of the curve that rises to it
+                ax.text(x0 + 2, y0 - 4, lab, ha="left", va="top", fontsize=8.5, color=INK)
+            else:
+                ax.text(x0 - 2 if x0 > 60 else x0 + 2, y0 + 4, lab, ha="right" if x0 > 60 else "left", va="bottom",
+                        fontsize=8.5, color=INK)
             # the threshold 0.5, a common default
             p5 = min(pts, key=lambda p: abs(p[2] - 0.5) if p[2] <= 1 else 9)
             ax.scatter([p5[0]], [p5[1]], s=56, facecolors=SURFACE, edgecolors=col, linewidths=2, zorder=3)
@@ -239,7 +252,7 @@ def perf_value_error():
     rig = json.load(open(RIGOR))["numeric_error"]
     colors = {"gold document": ACCENT, "service retrieval": ORANGE, "pipeline documents": AQUA}
     fig, axes = plt.subplots(1, 2, figsize=(9.4, 5.6), dpi=200, sharey=True)
-    fig.subplots_adjust(left=0.08, right=0.98, top=0.64, bottom=0.13, wspace=0.10)
+    fig.subplots_adjust(left=0.08, right=0.98, top=0.64, bottom=0.15, wspace=0.10)
     for ax, (reader, idx) in zip(axes, (("Extractive reader", 0), ("Generative reader", 1))):
         for setting, col in colors.items():
             v = rig[f"{CFG_OF[setting][idx]} | answer"]
@@ -248,25 +261,28 @@ def perf_value_error():
             xs = [0.1] + errs + [1e4]
             ys = [0] + [100 * (i + 1) / n for i in range(n)] + [100]
             ax.step(xs, ys, where="post", color=col, linewidth=2,
-                    label=f"{setting[0].upper() + setting[1:]}: {n} values; {v['negatives_with_value']} of 30 "
-                          f"with nothing documented")
+                    label=f"{setting[0].upper() + setting[1:]}: {n} ({v['negatives_with_value']}/30)")
         ax.axvline(2, color=INK2, linewidth=1, linestyle=(0, (2, 2)))
         ax.axvline(25, color=INK2, linewidth=1, linestyle=(0, (1, 3)))
-        ax.text(2.2, 52, "2 %", fontsize=8, color=INK2)
-        ax.text(27, 52, "25 %", fontsize=8, color=INK2)
+        ax.text(2.2, 45, "2 %", fontsize=8, color=INK2)
+        ax.text(27, 45, "25 %", fontsize=8, color=INK2)
         ax.set_xscale("log")
         ax.set_xlim(0.08, 1.2e4)
         ax.set_xticks([0.1, 1, 10, 100, 1000])
         ax.set_xticklabels(["exact", "1 %", "10 %", "100 %", "1,000 %"])
-        axes_style(ax, xlabel="Relative error of the stated body length (closest value, log scale)")
+        axes_style(ax)
         ax.set_title(reader, loc="left", fontsize=10, color=INK, fontweight="bold")
-        ax.legend(loc="lower right", frameon=False, fontsize=7.5)
+        lg = ax.legend(loc="lower right", frameon=True, fontsize=7.5, title="Values stated (and given\nwhere none documented)",
+                       title_fontsize=7.5, alignment="left", facecolor=SURFACE, edgecolor=SURFACE, framealpha=1)
+        lg.set_zorder(5)
     axes[0].set_ylabel("Answers with a value (cumulative)", fontsize=9, color=INK2)
+    fig.text(0.53, 0.06, "Relative error of the stated body length (closest gold value, log scale)", fontsize=9,
+             color=INK2, ha="center")
     frame(fig, "Wrong body sizes are rarely near misses: with the service's own search, 13 of the extractive\n"
           "reader's 20 wrong values are more than 25 % off, mostly another species' size",
           "Cumulative share of answers that state a body length, by the relative error of the stated value closest to a gold value\n"
-          "(answers to the 60 body-size questions). Steps at \"exact\" are answers within rounding. The legend also counts values\n"
-          "given for the 30 questions with nothing documented, which have no gold value. Normalised mean absolute error of\n"
+          "(answers to the 60 body-size questions). Steps at \"exact\" are answers within rounding. In brackets: of the 30 species\n"
+          "with nothing documented, how many were given a value anyway (no gold value, so not plotted). Normalised mean absolute error of\n"
           "the wrong values: 3.8 (service, extractive), 0.41 (service, generative), 0.55 (pipeline). Extractive: the gold-document\n"
           "line lies under the pipeline line (both all exact).", sub_y=0.89)
     return fig
@@ -323,7 +339,7 @@ def perf_selective():
     settings = [("gold document", "Gold document"), ("service retrieval", "Service search"),
                 ("pipeline documents", "Pipeline's documents")]
     fig, axes = plt.subplots(2, 3, figsize=(10.4, 7.9), dpi=200, sharex=True, sharey=True)
-    fig.subplots_adjust(left=0.08, right=0.985, top=0.67, bottom=0.08, wspace=0.08, hspace=0.25)
+    fig.subplots_adjust(left=0.08, right=0.985, top=0.67, bottom=0.08, wspace=0.16, hspace=0.25)
     for row, trait in enumerate(("body size", "diet")):
         for col, (setting, title) in enumerate(settings):
             ax = axes[row][col]
@@ -502,7 +518,7 @@ def perf_prevalence():
     for ax, trait in zip(axes, ("body size", "diet")):
         g = grid[trait]
         ax.axvline(100 * real[trait], color=INK2, linewidth=1, linestyle=(0, (2, 2)))
-        ax.text(100 * real[trait] - 1.5, 4, f"pipeline's use\n≈ {round(100 * real[trait])} %", fontsize=7.5,
+        ax.text(100 * real[trait] - 1.5, {"body size": 33, "diet": 52}[trait], f"pipeline's use\n≈ {round(100 * real[trait])} %", fontsize=7.5,
                 color=INK2, ha="right", va="bottom")
         for key, lab, col, ls in series:
             v = g[key]
