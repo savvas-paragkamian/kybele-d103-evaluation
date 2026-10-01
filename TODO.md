@@ -98,7 +98,7 @@ with the "measured" column (see section 5 below).
 
 | # | Owner | Action | Measured before |
 |---|---|---|---|
-| P1 | SIB | Fix the dense-retrieval generative failure and return an error instead of an empty answer | 102 of 126 trait requests failed, 22 of 102 trophic requests; 0 of 63 succeed when BM25 finds nothing in one collection (fallback to the unfiltered dense index); `/qa/multi` swallows the exception |
+| P1 | SIB | Fix the dense-retrieval generative failure and return an error instead of an empty answer | 102 of 126 trait requests failed, 22 of 102 trophic requests; 0 of 69 succeed when BM25 finds nothing in one collection (fallback to the unfiltered dense index); `/qa/multi` swallows the exception |
 | P2 | SIB | For taxon-specific trait questions, rank the Plazi answer first, or rank collections by answer confidence | PMC answer ranked first for 94 of 126 questions |
 | P3 | SIB | Enforce the full binomial in every retrieval path, including the keyword fallback, and drop passages whose subject is another taxon | All 20 wrong end-to-end body sizes came from other documents |
 | P4 | SIB | Instruct the generative model to quote the stated value, and choose its passage by treatment section rather than keyword overlap | "Not stated" in 43 % of answers; in 14 of 25 body-size cases the value was in the returned passage |

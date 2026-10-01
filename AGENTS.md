@@ -340,7 +340,7 @@ The planned actions P1–P17 are in [TODO.md](TODO.md).
   `pipeline_time: null` instead of an HTTP error: `/qa` and `/qa/multi` catch every exception and
   log it on the server only. This hit 102 of 126 trait questions and 22 of 102 trophic questions,
   and still occurs (re-tested 1 October 2026). It follows BM25: success for 94 of 111 questions where
-  BM25 filled all 30 slots, 10 of 111 where it returned fewer, 0 of 63 where a collection was empty
+  BM25 filled all 30 slots, 10 of 48 where it returned fewer, 0 of 69 where a collection was empty
   (the hybrid retriever then returns the dense index's hits without the collection filter,
   `parallel_hybrid.py`). Sparse generation never failed. The exact exception needs SIB's log (P1).
 - **No generative confidence.** BioMoQA-RAG sets `answer_score` to `None` for every generative

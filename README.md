@@ -352,8 +352,8 @@ dense retrieval. `*_extractive` use the extractive reader, `*_generative` the ge
 - `e2e_dense_generative` returned an internal server error (an empty result) for most
   questions; only 24 of 126 questions received an answer (22 scorable), so its figures are not
   comparable with the other configurations. The failure follows BM25: dense generation succeeded
-  for 94 of 111 questions where BM25 filled all 30 slots, 10 of 111 where it returned fewer, and
-  0 of 63 where one collection was empty (the hybrid retriever then falls back to the dense index
+  for 94 of 111 questions where BM25 filled all 30 slots, 10 of 48 where it returned fewer, and
+  0 of 69 where one collection was empty (the hybrid retriever then falls back to the dense index
   without the collection filter). `/qa/multi` catches the exception and returns an empty answer,
   so the error itself is only in SIB's server log. It still occurs (re-tested 1 October 2026).
   Sparse generative requests never failed.
